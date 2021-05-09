@@ -1,0 +1,408 @@
+/* =========== 基础 =========== */
+.content {
+	color: #333333;
+	font: normal 14px/1.8 Arial, "Microsoft YaHei", "WenQuanYi Micro Hei", Verdana, Tahoma, sans-serif;
+}
+
+.jiangqie-block {
+	padding: 30rpx;
+	border-top: 16rpx solid #F3F3F3;
+}
+
+.jiangqie-head {
+	font-size: 30rpx;
+	font-weight: 600;
+	line-height: 40rpx;
+	height: 60rpx;
+}
+
+.jiangqie-head text {
+	font-size: 24rpx;
+	font-weight: 200;
+	float: right;
+}
+
+/* =========== 轮播 =========== */
+swiper {
+	width: 100%;
+}
+
+swiper image {
+	width: 100%;
+	transition: all 0.1s linear;
+}
+
+.jiangqie-swiper {
+	width: 100%;
+	height: 360rpx;
+}
+
+.jiangqie-swiper swiper,
+.jiangqie-swiper swiper image {
+	height: 360rpx;
+}
+
+
+/* =========== 图标 =========== */
+.jiangqie-icon-block {
+	padding: 30rpx 0;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+	width: 100%;
+}
+
+.jiangqie-custom-icon {
+	width: 20%;
+	text-align: center;
+}
+
+.jiangqie-custom-icon image {
+	height: 90rpx;
+	width: 90rpx;
+}
+
+.jiangqie-custom-icon text {
+	display: block;
+	font-size: 24rpx;
+}
+
+/* =========== 简单内容 =========== */
+.jiangqie-simple {
+	font-size: 27rpx;
+	font-weight: 300;
+	line-height: 1.7rem;
+}
+
+/* =========== 滑动块 =========== */
+.jiangqie-scroll-block {
+	background-color: #F3F3F3;
+	padding-right: 0;
+	overflow: hidden;
+	display: inline-block;
+	width: 96%;
+}
+
+.jiangqie-scroll-view {
+	white-space: nowrap;
+}
+
+.jiangqie-scroll-block .jiangqie-head {
+	padding-right: 30rpx;
+}
+
+.jiangqie-scroll-view view {
+	height: 300rpx;
+	width: 300rpx;
+	position: relative;
+	margin-right: 20rpx;
+	display: inline-block;
+	overflow: hidden;
+}
+
+.jiangqie-scroll-view view image {
+	height: 300rpx;
+	width: 300rpx;
+	border-radius: 6rpx;
+}
+
+.jiangqie-scroll-view view text {
+	display: block;
+	width: 280rpx;
+	color: #FFF;
+	bottom: 0rpx;
+	position: absolute;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	z-index: 12;
+	font-size: 24rpx;
+	height: 70rpx;
+	line-height: 70rpx;
+	padding: 0 10rpx;
+	border-radius: 0 0 6rpx 6rpx;
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+}
+
+/* --- logo --- */
+.jiangqie-cooperate-block {
+	padding-right: 0;
+	overflow: hidden;
+	display: inline-block;
+	width: 96%;
+	border-bottom: none;
+	height: 140rpx;
+}
+
+.jiangqie-cooperate {
+	white-space: nowrap;
+	height: 140rpx;
+}
+
+.jiangqie-scroll-cooperate .jiangqie-head {
+	padding-right: 30rpx;
+}
+.jiangqie-cooperate swan-scroll-view {
+	display: inline;
+}
+
+.jiangqie-scroll-cooperate view {
+	height: 100rpx;
+	width: 240rpx;
+	position: relative;
+	margin-right: 20rpx;
+	display: inline-block;
+}
+
+.jiangqie-scroll-cooperate view image {
+	height: 100rpx;
+	width: 240rpx;
+	border-radius: 6rpx;
+	border: 1rpx solid #EEE;
+}
+
+
+/* =========== 基础列表 =========== */
+.jiangqie-list {}
+
+.jiangqie-list-img image {
+	border-radius: 4rpx;
+}
+
+.jiangqie-list-title+.jiangqie-list-img image {
+	width: 100%;
+	height: 320rpx;
+}
+
+.jiangqie-list-text {}
+
+.jiangqie-list-title {
+	max-height: 1.7rem;
+	line-height: 1.7rem;
+	margin-bottom: 20rpx;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-size: 30rpx;
+	font-weight: 600;
+}
+
+.jiangqie-list-data {
+	font-size: 24rpx;
+	color: #777777;
+}
+
+.jiangqie-list-data text {
+	margin-right: 20rpx;
+}
+
+
+/* =========== 左侧列表 =========== */
+.jiangqie-list-side {
+	display: flex;
+	padding: 20rpx 0;
+	border-bottom: 1rpx solid #EEEEEE;
+}
+
+.jiangqie-list-text>.jiangqie-list-title {
+	max-height: 3.4rem;
+	white-space: normal;
+	font-size: 30rpx;
+	font-weight: 600;
+}
+
+.jiangqie-list-side .jiangqie-list-img {
+	-webkit-box-flex: 0;
+	-webkit-flex: 0 0 220rpx;
+	-ms-flex: 0 0 220rpx;
+	flex: 0 0 220rpx;
+	width: 220rpx;
+	height: 180rpx;
+	border-radius: 4rpx;
+	overflow: hidden;
+}
+
+.jiangqie-list-side .jiangqie-list-img image {
+	width: 220rpx;
+	height: 180rpx;
+	border-radius: 4rpx;
+}
+
+.jiangqie-list-side .jiangqie-list-text {
+	padding-left: 30rpx;
+}
+
+
+
+/* =========== 浮动按钮 =========== */
+.jiangqie-float-block {
+	position: fixed;
+	right: 20rpx;
+	bottom: 160rpx;
+	width: 80rpx;
+	z-index: 19;
+}
+
+.jiangqie-float-block view {
+	height: 80rpx;
+	width: 80rpx;
+	border-radius: 50%;
+	margin-bottom: 30rpx;
+	text-align: center;
+	line-height: 80rpx;
+	font-size: 22rpx;
+	color: #FFFFFF;
+	background-color: #88B9E8;
+}
+
+/* =========== 表单 =========== */
+.jiangqie-form {}
+
+.jiangqie-form-line,
+.jiangqie-form-hightline {
+	margin-bottom: 30rpx;
+	padding: 20rpx;
+	border-radius: 6rpx;
+}
+
+.jiangqie-form-hightline {
+	min-height: 200rpx;
+	background: #F9F9F9;
+}
+
+.jiangqie-form-line {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	justify-content: space-between;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+	background: #F9F9F9;
+}
+
+.jiangqie-form-line view {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+}
+
+.jiangqie-form-line view text {
+	padding-right: 10rpx;
+}
+
+.jiangqie-form-line input {
+	width: 500rpx;
+}
+
+.jiangqie-form-btn {
+	text-align: center;
+	padding: 20rpx 0;
+}
+
+.jiangqie-button {
+	font-size: 28rpx;
+	font-weight: 200;
+	color: #FFF;
+	background-color: #007AFF;
+	border-radius: 8rpx;
+	height: 2.4rem;
+	line-height: 2.4rem;
+	width: 80%;
+	margin: 10rpx auto;
+}
+
+.jiangqie-form-tips {
+	font-size: 24rpx;
+	color: #007AFF;
+	font-weight: 200;
+	height: 3rem;
+	line-height: 3rem;
+}
+
+/* =========== 文章 =========== */
+
+.jiangqie-detail-title {
+	font-size: 36rpx;
+	font-weight: 600;
+	max-height: 3.4rem;
+	line-height: 1.7rem;
+	margin-bottom: 20rpx;
+	overflow: hidden;
+	margin-bottom: 30rpx;
+}
+
+.jiangqie-detail-data {
+	font-size: 24rpx;
+	color: #777777;
+}
+
+.jiangqie-detail-data text {
+	margin-right: 20rpx;
+}
+
+.jiangqie-detail-view {
+	padding: 30rpx 0;
+	font-size: 28rpx;
+	line-height: 1.8rem;
+}
+
+.jiangqie-detail-view view {
+	margin-bottom: 10rpx;
+}
+
+.jiangqie-detail-opt {
+	text-align: center;
+	padding: 60rpx;
+}
+
+.jiangqie-detail-opt view {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	justify-content: space-between;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+	padding: 6rpx 30rpx;
+	width: 150rpx;
+	margin: 0 auto;
+	border: 1rpx solid #CCC;
+	border-radius: 40rpx;
+	text-align: center;
+}
+
+.jiangqie-detail-opt text {
+	font-size: 26rpx;
+	color: #666666;
+}
+
+.jiangqie-detail-opt image {
+	height: 28rpx;
+	width: 28rpx;
+}
+
+.jiangqie-brand {
+	text-align: center;
+	line-height: 3rem;
+	font-size: 24rpx;
+	color: #999999;
+	border: none;
+}
+
+.jiangqie-simple {
+	font-weight: 400;
+}
+.jiangqie-head {
+	font-weight: 500;
+}
