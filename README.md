@@ -15,9 +15,11 @@
 
 ## 三、源码下载
 
-ps：下载包中含前后端源代码！(single为前端，jiangqie-ow-free为后端)
+ps：下载包中含前后端源代码！
 
-官网下载：www.jiangqie.com
+(client为uniapp开发的前端；jiangqie-ow-free为后端，是一个wordpress插件)
+
+官网下载：[www.jiangqie.com](https://www.jiangqie.com/)
 
 github下载（优先更新）：https://github.com/longwenjunjie/jiangqie_ow_free
 
