@@ -1,5 +1,5 @@
 
-![酱茄企业官网Free](https://gitee.com/longwenjunj/jiangqie_kafei/raw/master/screenshot/banner.png) 
+![酱茄企业官网Free](https://gitee.com/longwenjunj/jiangqie_ow_free/blob/main/screenshot/banner.png) 
 
 ## 一、小程序介绍
 
