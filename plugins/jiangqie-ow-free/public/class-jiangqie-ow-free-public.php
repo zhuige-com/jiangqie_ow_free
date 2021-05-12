@@ -17,19 +17,17 @@ class Jiangqie_Ow_Free_Public {
 	private $version;
 
 	public function __construct( $jiangqie_ow_free, $version ) {
-
 		$this->jiangqie_ow_free = $jiangqie_ow_free;
 		$this->version = $version;
-
 	}
 
 	public function plugin_init()
 	{
 		$token = '';
 		if (isset($_GET['token'])) {
-			$token = $_GET['token'];
+			$token = sanitize_text_field( wp_unslash( $_GET['token'] ) );
 		} else if (isset($_POST['token'])) {
-			$token = $_POST['token'];
+			$token = sanitize_text_field( wp_unslash( $_POST['token'] ) );
 		} else {
 			$json = json_decode(file_get_contents('php://input'), TRUE);
 			if ($json && isset($json['token'])) {

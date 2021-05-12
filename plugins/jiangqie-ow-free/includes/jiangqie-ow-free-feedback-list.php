@@ -25,7 +25,7 @@ class JiangQieOwFreeFeedbackList extends WP_List_Table
 		global $wpdb;
 		$this->jq_table_name = $wpdb->prefix . 'jiangqie_ow_feedback';
 	}
-	
+
 	public function ajax_user_can()
 	{
 		return false;
@@ -49,7 +49,7 @@ class JiangQieOwFreeFeedbackList extends WP_List_Table
 		$this->set_pagination_args(array(
 			'total_items' => $total_items,
 			'per_page'    => $per_page,
-			'total_pages' => ceil($total_items / $per_page), 
+			'total_pages' => ceil($total_items / $per_page),
 		));
 	}
 
@@ -79,7 +79,7 @@ class JiangQieOwFreeFeedbackList extends WP_List_Table
 
 		if (!empty($_REQUEST['orderby'])) {
 			$sql .= ' ORDER BY ' . esc_sql($_REQUEST['orderby']);
-			$sql .= !empty($_REQUEST['order']) ? ' ' . esc_sql($_REQUEST['order']) : ' ASC';
+			$sql .= isset($_REQUEST['order']) ? ' ' . esc_sql($_REQUEST['order']) : ' ASC';
 		} else {
 			$sql .= ' ORDER BY id ASC';
 		}
@@ -127,7 +127,7 @@ class JiangQieOwFreeFeedbackList extends WP_List_Table
 
 	protected function column_username($item)
 	{
-		$page = wp_unslash($_REQUEST['page']); // WPCS: Input var ok.
+		$page = (isset($_REQUEST['page'])) ? sanitize_text_field(wp_unslash($_REQUEST['page'])) : '';
 
 		// Build edit row action.
 		$edit_query_args = array('page' => $page, 'action' => 'detail', 'id'  => $item['id']);
@@ -170,13 +170,14 @@ class JiangQieOwFreeFeedbackList extends WP_List_Table
 
 	protected function process_bulk_action()
 	{
-		$action = isset($_GET['action']) ? $_GET['action'] : '';
+		$action = (isset($_GET['action'])) ? sanitize_text_field(wp_unslash($_GET['action'])) : '';
+
 		if ('bulk_delete' == $action) {
-			global $wpdb;
-			$table_ow_feedback = $wpdb->prefix . 'jiangqie_ow_feedback';
-			if (isset($_GET['ids'])) {
-				$cat_ids = $_GET['ids'];
-				$cat_ids = implode(',', $cat_ids);
+			$cat_ids = (isset($_GET['ids'])) ? wp_unslash($_GET['ids']) : '';
+			if (is_array($cat_ids ) && !empty($cat_ids)) {
+				global $wpdb;
+				$table_ow_feedback = $wpdb->prefix . 'jiangqie_ow_feedback';
+				$cat_ids = esc_sql(implode(',', $cat_ids));
 				$wpdb->query("DELETE FROM $table_ow_feedback WHERE id IN ($cat_ids)");
 			}
 		}
@@ -184,8 +185,8 @@ class JiangQieOwFreeFeedbackList extends WP_List_Table
 
 	protected function usort_reorder($a, $b)
 	{
-		$orderby = !empty($_REQUEST['orderby']) ? wp_unslash($_REQUEST['orderby']) : 'title'; // WPCS: Input var ok.
-		$order = !empty($_REQUEST['order']) ? wp_unslash($_REQUEST['order']) : 'asc'; // WPCS: Input var ok.
+		$orderby = (isset($_REQUEST['orderby'])) ? sanitize_text_field(wp_unslash($_REQUEST['orderby'])) : 'title';
+		$order = (isset($_REQUEST['order'])) ? sanitize_text_field(wp_unslash($_REQUEST['order'])) : 'asc';
 		$result = strcmp($a[$orderby], $b[$orderby]);
 
 		return ('asc' === $order) ? $result : -$result;
