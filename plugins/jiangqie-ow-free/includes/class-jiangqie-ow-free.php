@@ -91,6 +91,10 @@ class Jiangqie_Ow_Free
 			$app_secret = $wechat['secret'];
 		}
 
+		if (empty($app_id) || empty($app_secret)) {
+			return false;
+		}
+
 		$url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=$app_id&secret=$app_secret";
 		$body = wp_remote_get($url);
 		if (!is_array($body) || is_wp_error($body) || $body['response']['code'] != '200') {
@@ -126,6 +130,10 @@ class Jiangqie_Ow_Free
 			$app_secret = $qq['secret'];
 		}
 
+		if (empty($app_id) || empty($app_secret)) {
+			return false;
+		}
+
 		$url = "https://api.q.qq.com/api/getToken?grant_type=client_credential&appid=$app_id&secret=$app_secret";
 		$body = wp_remote_get($url);
 		if (!is_array($body) || is_wp_error($body) || $body['response']['code'] != '200') {
@@ -159,6 +167,10 @@ class Jiangqie_Ow_Free
 		if ($baidu) {
 			$app_id = $baidu['appid'];
 			$app_secret = $baidu['secret'];
+		}
+
+		if (empty($app_id) || empty($app_secret)) {
+			return false;
 		}
 
 		$url = "https://openapi.baidu.com/oauth/2.0/token?grant_type=client_credentials&client_id=$app_id&client_secret=$app_secret&scope=smartapp_snsapi_base

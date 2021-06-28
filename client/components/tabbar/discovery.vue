@@ -17,6 +17,8 @@
 				</view>
 			</view>
 
+			<uni-load-more :status="loadMore"></uni-load-more>
+
 			<view class="jiangqie-block jiangqie-brand">酱茄 JiangQie.com 提供技术支持</view>
 
 		</scroll-view>
@@ -25,7 +27,7 @@
 
 <script>
 	/*
-	 * 酱茄企业官网Free v1.0.0
+	 * 酱茄企业官网Free v1.0.5
 	 * Author: 酱茄
 	 * Help document: https://www.jiangqie.com/owfree/7685.html
 	 * github: https://github.com/longwenjunjie/jiangqie_ow_free
@@ -33,17 +35,17 @@
 	 * License：GPL-2.0
 	 * Copyright © 2021 www.jiangqie.com All rights reserved.
 	 */
-	
+
 	import Constant from '@/utils/constants';
 	import Util from '@/utils/util';
 	import Api from '@/utils/api';
 	import Rest from '@/utils/rest';
-	
+
 	export default {
 		data() {
 			return {
 				load: false,
-				
+
 				posts: [],
 				loadMore: 'more'
 			}
@@ -52,26 +54,30 @@
 			jqOnLoad() {
 				this.loadPost();
 			},
-			
+
 			jqOnShow() {
 				if (!this.load) {
 					this.load = true;
 					this.jqOnLoad();
 				}
 			},
-			
+
 			lower() {
 				if (this.loadMore == 'more') {
-					this.loadMore = 'loading';
 					this.loadPost();
 				}
 			},
-			
+
 			clickPost(post_id) {
 				Util.openLink('/pages/detail/detail?post_id=' + post_id);
 			},
-			
+
 			loadPost() {
+				if (this.loadMore == 'loading') {
+					return;
+				}
+				this.loadMore = 'loading';
+
 				Rest.post(Api.JQ_OW_FREE_POSTS_LAST, {
 					offset: this.posts.length
 				}).then(res => {
@@ -84,13 +90,13 @@
 </script>
 
 <style lang="scss">
-	.content {
-		width: 100%;
-		.main_box {
-			width: 100%;
-		}
+	.main_box {
+		width: 100vw;
+		height: 100vh;
+		padding-bottom: 120rpx;
+		box-sizing: border-box;
 	}
-	
+
 	.jiangqie-block:first-of-type {
 		border: none;
 	}

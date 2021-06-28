@@ -1,6 +1,6 @@
 <template>
 	<view class="content">
-		<scroll-view class="main_box" scroll-y="true" @scrolltolower="lower">
+		<scroll-view class="main_box" scroll-y="true">
 			<!-- 首页顶部轮播图 -->
 			<view v-if="slides.length>0" class="jiangqie-swiper">
 				<swiper indicator-dots="true" circular="ture" autoplay="autoplay" interval="2000" duration="duration">
@@ -139,7 +139,7 @@
 
 <script>
 	/*
-	 * 酱茄企业官网Free v1.0.0
+	 * 酱茄企业官网Free v1.0.5
 	 * Author: 酱茄
 	 * Help document: https://www.jiangqie.com/owfree/7685.html
 	 * github: https://github.com/longwenjunjie/jiangqie_ow_free
@@ -214,12 +214,6 @@
 					this.load = true;
 					this.jqOnLoad();
 				}
-			},
-			
-			lower() {
-				uni.showToast({
-					title: 'scroll-view的加载更多'
-				})
 			},
 			
 			clickLink(link) {

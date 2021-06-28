@@ -25,7 +25,7 @@
 
 <script>
 	/*
-	 * 酱茄企业官网Free v1.0.0
+	 * 酱茄企业官网Free v1.0.5
 	 * Author: 酱茄
 	 * Help document: https://www.jiangqie.com/owfree/7685.html
 	 * github: https://github.com/longwenjunjie/jiangqie_ow_free
@@ -78,7 +78,6 @@
 		
 		onReachBottom() {
 			if (this.loadMore == 'more') {
-				this.loadMore = 'loading';
 				this.loadPost();
 			}
 		},
@@ -89,6 +88,11 @@
 			},
 			
 			loadPost() {
+				if (this.loadMore == 'loading') {
+					return;
+				}
+				this.loadMore = 'loading';
+				
 				Rest.post(Api.JQ_OW_FREE_POSTS_LAST, {
 					offset: this.posts.length
 				}).then(res => {

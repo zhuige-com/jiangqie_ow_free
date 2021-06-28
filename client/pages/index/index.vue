@@ -4,15 +4,17 @@
 		<view :style="{'display':show_index == 0 ?'block':'none'}">
 			<tab-home ref="home"></tab-home>
 		</view>
+		
 		<!-- 发现 -->
 		<view :style="{'display':show_index == 1 ?'block':'none'}">
 			<tab-discovery ref="discovery"></tab-discovery>
 		</view>
+		
 		<!-- 数据 -->
 		<view :style="{'display':show_index == 2? 'block':'none'}">
 			<tab-guestbook ref="guestbook"></tab-guestbook>
 		</view>
-		<!-- is_lhp判断是否为刘海屏在main.js里，好像uniapp有一个css变量获取刘海屏的安全区域 -->
+		
 		<view class="tabBar">
 			<view class="tabBar_list">
 				<view v-for="(item) in tab_nav_list" :key="item.id" class="tabBar_item" @tap="cut_index(item.id)">
@@ -28,7 +30,7 @@
 
 <script>
 	/*
-	 * 酱茄企业官网Free v1.0.0
+	 * 酱茄企业官网Free v1.0.5
 	 * Author: 酱茄
 	 * Help document: https://www.jiangqie.com/owfree/7685.html
 	 * github: https://github.com/longwenjunjie/jiangqie_ow_free
@@ -71,8 +73,7 @@
 					name: '留言',
 					icon: '../../static/tabbar/mine.png',
 					icon_p: '../../static/tabbar/mine_p.png',
-				}], //菜单列表
-				// is_lhp: false
+				}],
 			}
 		},
 
@@ -84,8 +85,6 @@
 					this.$refs.home.jqOnShow() //初次加载第一个页面的请求数据
 				}, 100)
 			})
-
-			// console.log("是否为刘海屏", this.is_lhp)
 
 			uni.$on('feedback', (data) => {
 				this.cut_index(2);

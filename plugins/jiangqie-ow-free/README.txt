@@ -1,7 +1,7 @@
 === JiangQie Official Website Mini Program ===
 Contributors: jiangqie
 Donate link: https://www.jiangqie.com/
-Tags: 官网,小程序
+Tags: 官网,小程序,H5,微信,QQ,百度小程序
 Requires at least: 5.4
 Tested up to: 5.7
 Stable tag: 1.0.0

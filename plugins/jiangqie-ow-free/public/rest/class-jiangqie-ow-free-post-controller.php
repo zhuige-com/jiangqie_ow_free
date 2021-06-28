@@ -207,7 +207,9 @@ class Jiangqie_Ow_Free_Post_Controller extends Jiangqie_Ow_Free_Base_Controller
 		$args = array(
 			'method'  => 'POST',
 			'body' 	  => wp_json_encode($data),
-			'headers' => array(),
+			'headers' => array(
+				'Content-Type' => 'application/json'
+			),
 			'cookies' => array()
 		);
 

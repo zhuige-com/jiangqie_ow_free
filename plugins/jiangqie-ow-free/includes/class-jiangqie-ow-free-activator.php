@@ -30,7 +30,7 @@ class Jiangqie_Ow_Free_Activator
         //官网 反馈
         $table_ow_feedback = $wpdb->prefix . 'jiangqie_ow_feedback';
         $sql = "CREATE TABLE IF NOT EXISTS `$table_ow_feedback` (
-            `id` int(11) NOT NULL COMMENT 'ID',
+            `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID',
             `username` varchar(100) NOT NULL COMMENT '用户名',
             `phone` varchar(100) NOT NULL COMMENT '电话',
             `email` varchar(100) NOT NULL COMMENT 'E-mail',

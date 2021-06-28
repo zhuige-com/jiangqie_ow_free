@@ -21,15 +21,23 @@
 
 		<view class="jiangqie-block jiangqie-brand">酱茄 JiangQie.com 提供技术支持</view>
 
-		<view v-if="isShowPainter" isRenderImage style="position: fixed; top: 0;" @click="clickPainter()">
-			<l-painter isRenderImage :board="base" />
+		<!-- #ifdef MP-BAIDU -->
+		<view v-if="isShowPainter" isRenderImage style="position: fixed; top: 0;" @longpress="longTapPainter" @click="clickPainter()">
+			<l-painter isRenderImage :board="base" @success="onPainterSuccess" />
 		</view>
+		<!-- #endif -->
+		
+		<!-- #ifdef MP-WEIXIN || MP-QQ || H5 -->
+		<l-painter v-if="isShowPainter" isRenderImage custom-style="position: fixed; left: 200%;" :board="base"
+			@success="onPainterSuccess" />
+		<!-- #endif -->
+		
 	</view>
 </template>
 
 <script>
 	/*
-	 * 酱茄企业官网Free v1.0.0
+	 * 酱茄企业官网Free v1.0.5
 	 * Author: 酱茄
 	 * Help document: https://www.jiangqie.com/owfree/7685.html
 	 * github: https://github.com/longwenjunjie/jiangqie_ow_free
@@ -170,12 +178,48 @@
 				});
 			},
 
+			//海报分享-百度
+			// #ifdef MP-BAIDU
 			clickPainter() {
 				this.isShowPainter = false;
 			},
+			
+			longTapPainter() {
+				uni.showActionSheet({
+					itemList: ['保存到相册'],
+					success: (res) => {
+						if (res.tapIndex == 0) {
+							uni.showLoading({
+								title: '导出……'
+							})
+							let save2album = setInterval(() => {
+								if (!this.painterImage || this.painterImage.length == 0) {
+									return;
+								}
+								clearInterval(save2album)
+								uni.hideLoading();
+			
+								uni.saveImageToPhotosAlbum({
+									filePath: this.painterImage,
+									success() {
+										uni.showToast({
+											title:'已保存'
+										})
+									}
+								})
+							}, 500);
+						}
+					},
+					fail: (res) => {
+						console.log(res.errMsg);
+					}
+				});
+			},
+			// #endif
 
 			//海报分享
 			clickPoster() {
+				// #ifndef MP-BAIDU
 				if (this.painterImage) {
 					uni.previewImage({
 						urls: [this.painterImage]
@@ -183,6 +227,7 @@
 					console.log('海报分享');
 					return;
 				}
+				// #endif
 
 				this.isShowPainter = true;
 				this.base = {
@@ -261,14 +306,16 @@
 					]
 				}
 			},
-
-			// onPainterSuccess: function(e) {
-			// 	console.log(e)
-			// 	this.painterImage = e;
-			// 	uni.previewImage({
-			// 		urls: [e]
-			// 	});
-			// },
+			
+			onPainterSuccess: function(e) {
+				this.painterImage = e;
+				
+				// #ifndef MP-BAIDU
+				uni.previewImage({
+					urls: [e]
+				});
+				// #endif
+			},
 		}
 	}
 </script>

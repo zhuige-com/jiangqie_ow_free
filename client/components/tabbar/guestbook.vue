@@ -1,6 +1,6 @@
 <template>
 	<view class="content">
-		<scroll-view class="main_box" scroll-y="true" @scrolltolower="lower">
+		<scroll-view class="main_box" scroll-y="true">
 			<!-- 留言表单 -->
 			<view v-if="background" class="jiangqie-gust-img">
 				<image mode="aspectFill" :src="background"></image>
@@ -56,7 +56,7 @@
 
 <script>
 	/*
-	 * 酱茄企业官网Free v1.0.0
+	 * 酱茄企业官网Free v1.0.5
 	 * Author: 酱茄
 	 * Help document: https://www.jiangqie.com/owfree/7685.html
 	 * github: https://github.com/longwenjunjie/jiangqie_ow_free
@@ -100,10 +100,6 @@
 					this.load = true;
 					this.jqOnLoad();
 				}
-			},
-			
-			lower() {
-				
 			},
 			
 			clickSubmit() {

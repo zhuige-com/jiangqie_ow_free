@@ -1,8 +1,8 @@
 {
-    "name" : "tabbar",
+    "name" : "jiangqie_ow_free",
     "appid" : "",
-    "description" : "应用描述",
-    "versionName" : "1.0.0",
+    "description" : "酱茄企业官网Free",
+    "versionName" : "1.0.5",
     "versionCode" : "100",
     "transformPx" : false,
     /* 5+App特有相关 */
