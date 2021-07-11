@@ -34,13 +34,21 @@ function deactivate_jiangqie_ow_free()
 register_activation_hook(__FILE__, 'activate_jiangqie_ow_free');
 register_deactivation_hook(__FILE__, 'deactivate_jiangqie_ow_free');
 
+function jiangqie_ow_free_action_links($actions)
+{
+	$actions[] = '<a href="admin.php?page=jiangqie-ow-free">设置</a>';
+	$actions[] = '<a href="https://www.jiangqie.com/owfree/7685.html" target="_blank">技术支持</a>';
+    return $actions;
+}
+add_filter('plugin_action_links_' . plugin_basename(__FILE__), 'jiangqie_ow_free_action_links');
+
 require plugin_dir_path(__FILE__) . 'includes/class-jiangqie-ow-free.php';
 require plugin_dir_path(__FILE__) . 'includes/jiangqie-function.php';
+require plugin_dir_path(__FILE__) . 'includes/jiangqie-ow-free-dashboard.php';
 require plugin_dir_path(__FILE__) . 'includes/jiangqie-ow-free-feedback.php';
 
 function run_jiangqie_ow_free()
 {
-
 	$plugin = new Jiangqie_Ow_Free();
 	$plugin->run();
 }

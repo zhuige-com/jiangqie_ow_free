@@ -37,9 +37,11 @@ class Jiangqie_Ow_Free_Admin
 		$prefix = 'jiangqie-ow-free';
 
 		CSF::createOptions($prefix, array(
+			'framework_title' => '酱茄企业官网Free <small>by <a href="https://www.jiangqie.com" target="_blank" title="酱茄企业官网Free">www.jiangqie.com</a></small>',
 			'menu_title' => '酱茄企业官网Free',
 			'menu_slug'  => 'jiangqie-ow-free',
-			2
+			'menu_position' => 2,
+			'footer_credit' => 'Thank you for creating with <a href="https://www.jiangqie.com/" target="_blank">酱茄</a>',
 		));
 
 		$base_dir = plugin_dir_path(__FILE__);

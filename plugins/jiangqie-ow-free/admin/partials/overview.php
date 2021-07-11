@@ -10,12 +10,14 @@
  * Copyright © 2021 www.jiangqie.com All rights reserved.
  */
 
-$content = '酱茄企业官网Free';
-$res = wp_remote_get("https://key.jiangqie.com/api/goods/description?id=jq_xcx_ow_free", ['timeout' => 1]);
-if (!is_wp_error($res) && $res['response']['code'] == 200) {
-    $data = json_decode($res['body'], TRUE);
-    if ($data['code'] == 1) {
-        $content = $data['data'];
+$content = '欢迎使用酱茄官网Free小程序! <br/><br/> 微信客服：jianbing2011 (加开源群、问题咨询、项目定制、购买咨询) <br/><br/> <a href="https://www.jiangqie.com/xz" target="_blank">更多免费产品</a>';
+if (stripos($_SERVER["REQUEST_URI"], 'jiangqie-ow-free')) {
+    $res = wp_remote_get("https://key.jiangqie.com/api/goods/description?id=jq_xcx_ow_free", ['timeout' => 1]);
+    if (!is_wp_error($res) && $res['response']['code'] == 200) {
+        $data = json_decode($res['body'], TRUE);
+        if ($data['code'] == 1) {
+            $content = $data['data'];
+        }
     }
 }
 

@@ -151,7 +151,7 @@ class Jiangqie_Ow_Free_Post_Controller extends Jiangqie_Ow_Free_Base_Controller
 		if (strstr($content, 'errcode') !== false || strstr($content, 'errmsg') !== false) {
 			// $json = json_decode($content, TRUE);
 			// return $this->make_error($json['errmsg']);
-			return $this->make_success(plugins_url('/jiangqie-ow-free/public/images/wxacode.jpg'));
+			return $this->make_success(plugins_url('images/wxacode.jpg', dirname(__FILE__)));
 		}
 
 		//输出二维码
@@ -220,7 +220,7 @@ class Jiangqie_Ow_Free_Post_Controller extends Jiangqie_Ow_Free_Base_Controller
 
 		$content = wp_remote_retrieve_body($remote);
 		if (strstr($content, 'errcode') !== false || strstr($content, 'errmsg') !== false) {
-			return $this->make_success(plugins_url('/jiangqie-ow-free/public/images/qqacode.jpg'));
+			return $this->make_success(plugins_url('images/qqacode.jpg', dirname(__FILE__)));
 		}
 
 		//输出二维码
@@ -287,7 +287,7 @@ class Jiangqie_Ow_Free_Post_Controller extends Jiangqie_Ow_Free_Base_Controller
 
 		$content = wp_remote_retrieve_body($remote);
 		if (strstr($content, 'errno') !== false || strstr($content, 'errmsg') !== false) {
-			return $this->make_success(plugins_url('/jiangqie-ow-free/public/images/bdacode.jpg'));
+			return $this->make_success(plugins_url('images/bdacode.jpg', dirname(__FILE__)));
 		}
 
 		//输出二维码

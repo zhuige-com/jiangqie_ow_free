@@ -178,7 +178,7 @@ class Jiangqie_Ow_Free_Base_Controller extends WP_REST_Controller
 		}
 
 		if ($default) {
-			$thumbnails[] = plugins_url('/jiangqie-ow-free/public/images/default_thumb.png');
+			$thumbnails[] = plugins_url('images/default_thumb.png', dirname(__FILE__));
 		}
 
 		return $thumbnails;
@@ -207,7 +207,7 @@ class Jiangqie_Ow_Free_Base_Controller extends WP_REST_Controller
 		}
 
 		if ($default) {
-			return plugins_url('/jiangqie-ow-free/public/images/default_thumb.png');
+			return plugins_url('images/default_thumb.png', dirname(__FILE__));
 		}
 
 		return '';
@@ -217,7 +217,7 @@ class Jiangqie_Ow_Free_Base_Controller extends WP_REST_Controller
 	{
 		$avatar = get_user_meta($user_id, 'jiangqie_avatar', true);
 		if (empty($avatar)) {
-			$avatar = plugins_url('/jiangqie-ow-free/public/images/default_avatar.jpg');
+			$avatar = plugins_url('images/default_avatar.jpg', dirname(__FILE__));
 		}
 		return $avatar;
 	}

@@ -23,7 +23,7 @@ if ( ! class_exists( 'CSF_Options' ) ) {
     public $args         = array(
 
       // framework title
-      'framework_title'         => '酱茄企业官网Free <small>by <a href="https://www.jiangqie.com" target="_blank" title="酱茄企业官网Free">www.jiangqie.com</a></small>',
+      'framework_title'         => 'Codestar Framework <small>by Codestar</small>',
       'framework_class'         => '',
 
       // menu settings
@@ -32,7 +32,7 @@ if ( ! class_exists( 'CSF_Options' ) ) {
       'menu_type'               => 'menu',
       'menu_capability'         => 'manage_options',
       'menu_icon'               => null,
-      'menu_position'           => 2,
+      'menu_position'           => null,
       'menu_hidden'             => false,
       'menu_parent'             => '',
       'sub_menu_title'          => '',
@@ -490,7 +490,7 @@ if ( ! class_exists( 'CSF_Options' ) ) {
     }
 
     public function add_admin_footer_text() {
-      $default = 'Thank you for creating with <a href="https://www.jiangqie.com/" target="_blank">酱茄</a>';
+      $default = 'Thank you for creating with <a href="http://codestarframework.com/" target="_blank">Codestar Framework</a>';
       echo ( ! empty( $this->args['footer_credit'] ) ) ? $this->args['footer_credit'] : $default;
     }
 

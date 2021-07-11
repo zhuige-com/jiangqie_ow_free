@@ -31,7 +31,11 @@ class Jiangqie_Ow_Free
 	 */
 	public static function option_value($key, $default = '')
 	{
-		$options = get_option('jiangqie-ow-free');
+		static $options = false;
+		if (!$options) {
+			$options = get_option('jiangqie-ow-free');
+		}
+		
 		if (isset($options[$key]) && !empty($options[$key])) {
 			return $options[$key];
 		}
@@ -44,12 +48,11 @@ class Jiangqie_Ow_Free
 	 */
 	public static function option_image_url($image, $default = '')
 	{
-		// $image = Jiangqie_Ow_Free::option_value($key);
 		if ($image && isset($image['url']) && $image['url']) {
 			return $image['url'];
 		} else {
 			if ($default) {
-				return plugins_url('/jiangqie-ow-free/public/images/' . $default);
+				return plugins_url('public/images/' . $default, dirname(__FILE__));
 			} else {
 				return $default;
 			}
@@ -74,7 +77,7 @@ class Jiangqie_Ow_Free
 	 */
 	public static function get_wx_token()
 	{
-		$path_token = JIANGQIE_OW_FREE_BASE_DIR . 'jiangqie_ow_free_wx_access_token.data';
+		$path_token = JIANGQIE_OW_FREE_BASE_DIR . 'wx_access_token.data';
 		if (file_exists($path_token)) {
 			$str_token = file_get_contents($path_token);
 			$access_token = json_decode($str_token, TRUE);
@@ -113,7 +116,7 @@ class Jiangqie_Ow_Free
 	 */
 	public static function get_qq_token()
 	{
-		$path_token = JIANGQIE_OW_FREE_BASE_DIR . 'jiangqie_ow_free_qq_access_token.data';
+		$path_token = JIANGQIE_OW_FREE_BASE_DIR . 'qq_access_token.data';
 		if (file_exists($path_token)) {
 			$str_token = file_get_contents($path_token);
 			$access_token = json_decode($str_token, TRUE);
@@ -152,7 +155,7 @@ class Jiangqie_Ow_Free
 	 */
 	public static function get_bd_token()
 	{
-		$path_token = JIANGQIE_OW_FREE_BASE_DIR . 'jiangqie_ow_free_baidu_access_token.data';
+		$path_token = JIANGQIE_OW_FREE_BASE_DIR . 'bd_access_token.data';
 		if (file_exists($path_token)) {
 			$str_token = file_get_contents($path_token);
 			$access_token = json_decode($str_token, TRUE);

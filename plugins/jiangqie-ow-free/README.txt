@@ -1,10 +1,10 @@
 === JiangQie Official Website Mini Program ===
 Contributors: jiangqie
 Donate link: https://www.jiangqie.com/
-Tags: 官网,小程序,H5,微信,QQ,百度小程序
+Tags: 官网,小程序,H5,微信,QQ,百度
 Requires at least: 5.4
 Tested up to: 5.7
-Stable tag: 1.0.0
+Stable tag: 1.0.5
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -35,9 +35,9 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 官网下载：[www.jiangqie.com](https://www.jiangqie.com/)
 
-github下载（优先更新）：https://github.com/longwenjunjie/jiangqie_ow_free
+github下载：https://github.com/longwenjunjie/jiangqie_ow_free
 
-gitee下载：https://gitee.com/longwenjunj/jiangqie_ow_free
+gitee下载（优先更新）：https://gitee.com/longwenjunj/jiangqie_ow_free
 
 == Screenshots ==
 
@@ -45,6 +45,9 @@ gitee下载：https://gitee.com/longwenjunj/jiangqie_ow_free
 2. screenshot-2.png
 
 == Changelog ==
+
+= 1.0.5 =
+* 修复了已知的bug
 
 = 1.0 =
 * 第一版
