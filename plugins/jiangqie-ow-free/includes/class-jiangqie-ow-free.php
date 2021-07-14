@@ -248,6 +248,8 @@ class Jiangqie_Ow_Free
 		$this->loader->add_action('admin_enqueue_scripts', $this->admin, 'enqueue_scripts');
 
 		$this->loader->add_action('init', $this->admin, 'create_menu', 0);
+		$this->loader->add_action('admin_init', $this->admin, 'admin_init');
+		$this->loader->add_action('admin_menu', $this->admin, 'admin_menu', 20);
 	}
 
 	private function define_public_hooks()

@@ -13,7 +13,7 @@
 // 详情
 CSF::createSection($prefix, array(
     'id'    => 'detail',
-    'title' => '详情',
+    'title' => '详情设置',
     'icon'  => 'fas fa-plus-circle',
     'fields' => array(
 

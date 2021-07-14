@@ -52,4 +52,32 @@ class Jiangqie_Ow_Free_Admin
 		require_once $base_dir . 'partials/other.php';
 		require_once $base_dir . 'partials/detail.php';
 	}
+
+	public function admin_init()
+	{
+        $this->handle_external_redirects();
+    }
+
+    public function admin_menu()
+	{
+        add_submenu_page('jiangqie-ow-free', '', '安装文档', 'manage_options', 'jiangqie_ow_free_setup', array( &$this, 'handle_external_redirects' ) );
+        add_submenu_page('jiangqie-ow-free', '', '新版下载', 'manage_options', 'jiangqie_ow_free_upgrade', array( &$this, 'handle_external_redirects' ) );
+    }
+
+    public function handle_external_redirects()
+    {
+      if (empty($_GET['page'])) {
+        return;
+      }
+
+      if ('jiangqie_ow_free_setup' === $_GET['page']) {
+        wp_redirect('https://www.jiangqie.com/owfree/7713.html');
+        die;
+      }
+
+      if ('jiangqie_ow_free_upgrade' === $_GET['page']) {
+        wp_redirect('https://www.jiangqie.com/owfree/7685.html');
+        die;
+      }
+    }
 }
