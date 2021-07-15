@@ -3,7 +3,7 @@
 
 ## 一、小程序介绍
 
-酱茄企业官网小程序，酱茄（[www.jiangqie.com](https://www.jiangqie.com/)）专为中小企业开发的轻量级企业建站小程序（基于uni-app + wordpress），后台操作简单，维护方便，无需过多配置就能搭建一个企业小程序。
+酱茄企业官网小程序，酱茄（[www.jiangqie.com](https://www.jiangqie.com/)）专为中小企业开发的轻量级企业建站小程序（基于Uniapp+WordPress+php+mysql），后台操作简单，维护方便，无需过多配置就能搭建一个企业小程序。
 
 微信：**jianbing2011**（加微信可微信群交流）
 
@@ -13,19 +13,13 @@
 
 模块：留言反馈、产品服务、新闻动态、合作伙伴、关于我们等
 
-## 三、源码下载
-
-ps：下载包中含前后端源代码！
-
-(client为uniapp开发的前端；jiangqie-ow-free为后端，是一个wordpress插件)
+## 三、后端源码下载
 
 官网下载：[www.jiangqie.com](https://www.jiangqie.com/)
 
 gitee下载（优先更新）：https://gitee.com/longwenjunj/jiangqie_ow_free
 
 github下载：https://github.com/longwenjunjie/jiangqie_ow_free
-
-![酱茄源码系列](https://ow.jiangqie.com/img/jiangqie.png) 
 
 ## 四、安装文档/常见问题
 

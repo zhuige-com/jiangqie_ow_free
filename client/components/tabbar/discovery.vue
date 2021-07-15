@@ -19,7 +19,7 @@
 
 			<uni-load-more :status="loadMore"></uni-load-more>
 
-			<view class="jiangqie-block jiangqie-brand">酱茄 JiangQie.com 提供技术支持</view>
+			<view @click="clickJiangQie" class="jiangqie-block jiangqie-brand">酱茄 JiangQie.com 提供技术支持</view>
 
 		</scroll-view>
 	</view>
@@ -27,7 +27,7 @@
 
 <script>
 	/*
-	 * 酱茄企业官网Free v1.0.5
+	 * 酱茄企业官网Free
 	 * Author: 酱茄
 	 * Help document: https://www.jiangqie.com/owfree/7685.html
 	 * github: https://github.com/longwenjunjie/jiangqie_ow_free
@@ -70,6 +70,10 @@
 
 			clickPost(post_id) {
 				Util.openLink('/pages/detail/detail?post_id=' + post_id);
+			},
+			
+			clickJiangQie() {
+				Util.jiangqie();
 			},
 
 			loadPost() {

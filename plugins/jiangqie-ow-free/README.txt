@@ -4,7 +4,7 @@ Donate link: https://www.jiangqie.com/
 Tags: 官网,小程序,H5,微信,QQ,百度
 Requires at least: 5.4
 Tested up to: 5.7
-Stable tag: 1.0.5
+Stable tag: 1.1.0
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -45,6 +45,17 @@ gitee下载（优先更新）：https://gitee.com/longwenjunj/jiangqie_ow_free
 2. screenshot-2.png
 
 == Changelog ==
+
+= 1.1.0 =
+* 新增：动态新增loading样式
+* 优化：后端代码规范性调整
+* 优化：完善微信/百度海报长按保存问题
+* 优化：后台留言反馈的时间问题
+* 优化：留言反馈字段和代码优化
+* 优化：后端设置提示改中文
+* 优化：微缩图问题优化
+* 优化：代码优化，响应速度更快
+* 修复：百度端产品服务内容显示不全的问题
 
 = 1.0.5 =
 * 修复了已知的bug

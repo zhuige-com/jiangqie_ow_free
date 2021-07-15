@@ -30,7 +30,7 @@
 
 <script>
 	/*
-	 * 酱茄企业官网Free v1.0.5
+	 * 酱茄企业官网Free
 	 * Author: 酱茄
 	 * Help document: https://www.jiangqie.com/owfree/7685.html
 	 * github: https://github.com/longwenjunjie/jiangqie_ow_free

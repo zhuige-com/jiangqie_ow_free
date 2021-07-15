@@ -4,7 +4,7 @@
  * Plugin Name:		酱茄企业官网Free
  * Plugin URI:		https://www.jiangqie.com/owfree/7685.html
  * Description:		让Wordpress快速变身企业官网小程序。
- * Version:			1.0.0
+ * Version:			1.1.0
  * Author:			酱茄
  * Author URI:		https://www.jiangqie.com/
  * License:			GPLv2 or later
