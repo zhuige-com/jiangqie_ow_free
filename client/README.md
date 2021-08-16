@@ -17,9 +17,9 @@
 
 官网下载：[www.jiangqie.com](https://www.jiangqie.com/)
 
-gitee下载（优先更新）：https://gitee.com/longwenjunj/jiangqie_ow_free
+gitee下载（优先更新）：[gitee.com/longwenjunj/jiangqie_ow_free](https://gitee.com/longwenjunj/jiangqie_ow_free)
 
-github下载：https://github.com/longwenjunjie/jiangqie_ow_free
+github下载：[github.com/longwenjunjie/jiangqie_ow_free](https://github.com/longwenjunjie/jiangqie_ow_free)
 
 ## 四、安装文档/常见问题
 

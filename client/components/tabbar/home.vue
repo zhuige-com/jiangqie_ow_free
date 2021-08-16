@@ -115,7 +115,7 @@
 				</view>
 				<view class="jiangqie-cooperate">
 					<scroll-view class="jiangqie-scroll-cooperate" scroll-x="true">
-						<view v-for="(item, index) in friends" :key="index">
+						<view v-for="(item, index) in friends" :key="index" @click="clickLink(item.link)">
 							<image mode="aspectFill" :src="item.image"></image>
 						</view>
 					</scroll-view>
