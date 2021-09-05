@@ -227,6 +227,10 @@ class Jiangqie_Ow_Free_Base_Controller extends WP_REST_Controller
 	 */
 	public function msg_sec_check($content)
 	{
+		if (!isset($_REQUEST['os']) || (isset($_REQUEST['os']) && $_REQUEST['os'] != 'wx')) {
+			return true;
+		}
+		
 		$wx_session = Jiangqie_Ow_Free::get_wx_token();
 		$access_token = $wx_session['access_token'];
 		if (empty($access_token)) {

@@ -518,7 +518,7 @@ if ( ! class_exists( 'CSF_Field_typography' ) ) {
         'word-spacing',
       );
 
-      $unit = ( ! empty( $this->value['unit'] ) ) ? $this->value['unit'] : '';
+      $unit = ( ! empty( $this->value['unit'] ) ) ? $this->value['unit'] : 'px';
       $line_height_unit = ( ! empty( $this->value['line_height_unit'] ) ) ? $this->value['line_height_unit'] : $unit;
 
       foreach ( $properties as $property ) {

@@ -126,7 +126,7 @@
 			<view class="jiangqie-float-block">
 				<view v-if="phone_switch" @click="clickPhone()">电话</view>
 				<!-- #ifdef MP-WEIXIN || MP-BAIDU -->
-					<button v-if="contact_switch" open-type="contact"><view>客服</view></button>
+					<button class="button" v-if="contact_switch" open-type="contact"><view>客服</view></button>
 				<!-- #endif -->
 				<view v-if="feedback_switch" @click="clickFeedback()">反馈</view>
 			</view>
@@ -148,7 +148,6 @@
 	 * Copyright © 2021 www.jiangqie.com All rights reserved.
 	 */
 	
-	import Constant from '@/utils/constants';
 	import Util from '@/utils/util';
 	import Alert from '@/utils/alert';
 	import Api from '@/utils/api';
@@ -270,7 +269,7 @@
 	}
 	
 	.jiangqie-float-block {
-		button {
+		.button {
 			display: inline;
 			margin: 0;
 			padding: 0;

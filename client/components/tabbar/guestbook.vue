@@ -3,7 +3,7 @@
 		<scroll-view class="main_box" scroll-y="true">
 			<!-- 留言表单 -->
 			<view v-if="background" class="jiangqie-gust-img">
-				<image mode="aspectFill" :src="background"></image>
+				<image class="image" mode="aspectFill" :src="background"></image>
 			</view>
 			<view class="jiangqie-block">
 				<view v-if="title" class="jiangqie-head">{{title}}</view>
@@ -65,7 +65,6 @@
 	 * Copyright © 2021 www.jiangqie.com All rights reserved.
 	 */
 
-	import Constant from '@/utils/constants';
 	import Util from '@/utils/util';
 	import Alert from '@/utils/alert';
 	import Api from '@/utils/api';
@@ -138,7 +137,7 @@
 	}
 
 	.jiangqie-gust-img,
-	.jiangqie-gust-img image {
+	.jiangqie-gust-img .image {
 		height: 360rpx;
 		width: 100%;
 	}

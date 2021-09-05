@@ -46,7 +46,6 @@
 	 * Copyright © 2021 www.jiangqie.com All rights reserved.
 	 */
 	
-	import Constant from '@/utils/constants';
 	import Util from '@/utils/util';
 	import Api from '@/utils/api';
 	import Rest from '@/utils/rest';

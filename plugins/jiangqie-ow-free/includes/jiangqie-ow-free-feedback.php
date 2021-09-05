@@ -45,29 +45,29 @@ function jiangqie_ow_free_render_feedback()
 		$feedback_id = (isset($_GET['id'])) ? sanitize_text_field(wp_unslash($_GET['id'])) : '';
 
 		if ($feedback_id) {
-			$feedback = $wpdb->get_row("SELECT * FROM {$wpdb->prefix}jiangqie_ow_feedback WHERE id=$feedback_id", ARRAY_A);
+			$feedback = $wpdb->get_row($wpdb->prepare("SELECT * FROM {$wpdb->prefix}jiangqie_ow_feedback WHERE id=%d", $feedback_id), ARRAY_A);
 ?>
 			<h1>留言信息</h1>
 			<table class="form-table">
 				<tr>
 					<th><label>ID</label></th>
-					<td><?php echo $feedback['id']; ?></td>
+					<td><?php echo esc_html($feedback['id']); ?></td>
 				</tr>
 				<tr>
 					<th><label>姓名</label></th>
-					<td><?php echo $feedback['username']; ?></td>
+					<td><?php echo esc_html($feedback['username']); ?></td>
 				</tr>
 				<tr>
 					<th><label>电话</label></th>
-					<td><?php echo $feedback['phone']; ?></td>
+					<td><?php echo esc_html($feedback['phone']); ?></td>
 				</tr>
 				<tr>
 					<th><label>E-mail</label></th>
-					<td><?php echo $feedback['email']; ?></td>
+					<td><?php echo esc_html($feedback['email']); ?></td>
 				</tr>
 				<tr>
 					<th><label for="content">内容</label></th>
-					<td><textarea id="content" name="content" rows="5" cols="30" class="regular-text"><?php echo $feedback['content']; ?></textarea></td>
+					<td><textarea id="content" name="content" rows="5" cols="30" class="regular-text"><?php echo esc_textarea($feedback['content']); ?></textarea></td>
 				</tr>
 				<tr>
 					<th><label>时间</label></th>
@@ -83,7 +83,7 @@ function jiangqie_ow_free_render_feedback()
 			$feedback_id = (isset($_GET['id'])) ? sanitize_text_field(wp_unslash($_GET['id'])) : '';
 
 			if ($feedback_id) {
-				$wpdb->query("DELETE FROM {$wpdb->prefix}jiangqie_ow_feedback WHERE id=$feedback_id");
+				$wpdb->delete($wpdb->prefix . 'jiangqie_ow_feedback', ['id' => $feedback_id], ['%d']);
 			}
 		}
 		$owFeedbackList = new JiangQieOwFreeFeedbackList();

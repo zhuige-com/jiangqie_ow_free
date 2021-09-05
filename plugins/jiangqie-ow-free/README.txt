@@ -3,8 +3,8 @@ Contributors: jiangqie
 Donate link: https://www.jiangqie.com/
 Tags: 官网,小程序,H5,微信,QQ,百度
 Requires at least: 5.4
-Tested up to: 5.7
-Stable tag: 1.1.0
+Tested up to: 5.8
+Stable tag: 1.1.2
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -45,6 +45,12 @@ gitee下载（优先更新）：https://gitee.com/longwenjunj/jiangqie_ow_free
 2. screenshot-2.png
 
 == Changelog ==
+
+= 1.1.2 =
+* 修复：非法词安全检查
+
+= 1.1.1 =
+* 修复：安全问题
 
 = 1.1.0 =
 * 新增：动态新增loading样式

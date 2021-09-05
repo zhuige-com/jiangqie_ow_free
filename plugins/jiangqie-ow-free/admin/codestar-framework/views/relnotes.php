@@ -1,5 +1,12 @@
 <?php if ( ! defined( 'ABSPATH' ) ) { die; } // Cannot access directly. ?>
 
+<h3>v2.2.3</h3>
+<ul>
+  <li>Added: Upload field show "preview" option.</li>
+  <li>Added: "description" option for all framework create sections array.</li>
+  <li>Fixed: Option Framework admin sub-menu link click issue on Mobile.</li>
+</ul>
+
 <h3>v2.2.2</h3>
 <ul>
   <li>Added: WordPress 5.7 compatible.</li>

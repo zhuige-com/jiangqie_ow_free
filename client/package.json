@@ -1,7 +1,7 @@
 {
     "id": "jiangqie-ow-free",
     "name": "酱茄企业官网Free（含后端）-WordPress新闻资讯博客多端小程序",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "description": "酱茄企业官网小程序，酱茄专为中小企业开发的轻量级企业建站小程序",
     "keywords": [
         "官网",
@@ -13,7 +13,7 @@
     "displayName": "酱茄企业官网Free（含后端）-WordPress新闻资讯博客多端小程序",
     "repository": "https://github.com/longwenjunjie/jiangqie_ow_free",
     "engines": {
-        "HBuilderX": "^3.1.16"
+        "HBuilderX": "^3.1.22"
     },
     "dcloudext": {
         "category": [
@@ -72,6 +72,10 @@
                 "快应用": {
                     "华为": "u",
                     "联盟": "u"
+                },
+                "Vue": {
+                    "vue2": "y",
+                    "vue3": "u"
                 }
             }
         }

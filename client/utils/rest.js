@@ -7,8 +7,22 @@ function request(url, data = {}, method = "GET") {
 			title: '加载中'
 		});
 
-		// data.t = new Date().getTime();
-		// data.r = Math.floor(Math.random() * 10000);
+		if (method == "GET") {
+			data.t = new Date().getTime();
+			data.r = Math.floor(Math.random() * 10000);
+		}
+		
+		// #ifdef MP-WEIXIN
+		data.os = 'wx';
+		// #endif
+		
+		// #ifdef MP-BAIDU
+		data.os = 'bd';
+		// #endif
+		
+		// #ifdef MP-QQ
+		data.os = 'qq';
+		// #endif
 		
 		uni.request({
 			url: url,
@@ -21,13 +35,6 @@ function request(url, data = {}, method = "GET") {
 					reject(res.errMsg);
 					return;
 				}
-
-				// if (res.data.code == -1) {
-				// 	uni.navigateTo({
-				// 	    url: '/pages/user/login/login',
-				// 	});
-				// 	return;
-				// }
 				
 				resolve(res.data);
 			},
