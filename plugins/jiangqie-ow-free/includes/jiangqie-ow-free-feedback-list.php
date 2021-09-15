@@ -156,7 +156,6 @@ class JiangQieOwFreeFeedbackList extends WP_List_Table
 
 	protected function column_createtime($item)
 	{
-		date_default_timezone_set('Asia/Shanghai');
 		return date('Y-m-d H:i:s', $item['createtime']);
 	}
 

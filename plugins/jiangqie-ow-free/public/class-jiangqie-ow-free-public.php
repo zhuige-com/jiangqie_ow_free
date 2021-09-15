@@ -49,11 +49,11 @@ class Jiangqie_Ow_Free_Public {
 	}
 
 	public function enqueue_styles() {
-		wp_enqueue_style( $this->jiangqie_ow_free, plugin_dir_url( __FILE__ ) . 'css/jiangqie-ow-free-public.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->jiangqie_ow_free, JIANGQIE_OW_FREE_BASE_URL . 'public/css/jiangqie-ow-free-public.css', array(), $this->version, 'all' );
 	}
 
 	public function enqueue_scripts() {
-		wp_enqueue_script( $this->jiangqie_ow_free, plugin_dir_url( __FILE__ ) . 'js/jiangqie-ow-free-public.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->jiangqie_ow_free, JIANGQIE_OW_FREE_BASE_URL . 'public/js/jiangqie-ow-free-public.js', array( 'jquery' ), $this->version, false );
 	}
 
 }

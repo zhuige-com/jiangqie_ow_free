@@ -24,12 +24,12 @@ class Jiangqie_Ow_Free_Admin
 
 	public function enqueue_styles()
 	{
-		wp_enqueue_style($this->jiangqie_ow_free, plugin_dir_url(__FILE__) . 'css/jiangqie-ow-free-admin.css', array(), $this->version, 'all');
+		wp_enqueue_style($this->jiangqie_ow_free, JIANGQIE_OW_FREE_BASE_URL . 'admin/css/jiangqie-ow-free-admin.css', array(), $this->version, 'all');
 	}
 
 	public function enqueue_scripts()
 	{
-		wp_enqueue_script($this->jiangqie_ow_free, plugin_dir_url(__FILE__) . 'js/jiangqie-ow-free-admin.js', array('jquery'), $this->version, false);
+		wp_enqueue_script($this->jiangqie_ow_free, JIANGQIE_OW_FREE_BASE_URL . 'admin/js/jiangqie-ow-free-admin.js', array('jquery'), $this->version, false);
 	}
 
 	public function create_menu()

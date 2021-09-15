@@ -35,7 +35,7 @@ class Jiangqie_Ow_Free
 		if (!$options) {
 			$options = get_option('jiangqie-ow-free');
 		}
-		
+
 		if (isset($options[$key]) && !empty($options[$key])) {
 			return $options[$key];
 		}
@@ -192,12 +192,8 @@ class Jiangqie_Ow_Free
 
 	public function __construct()
 	{
-		if (defined('JIANGQIE_OW_FREE_VERSION')) {
-			$this->version = JIANGQIE_OW_FREE_VERSION;
-		} else {
-			$this->version = '1.0.0';
-		}
 		$this->jiangqie_ow_free = 'jiangqie-ow-free';
+		$this->version = JIANGQIE_OW_FREE_VERSION;
 
 		$this->main = $this;
 
@@ -209,23 +205,23 @@ class Jiangqie_Ow_Free
 
 	private function load_dependencies()
 	{
-		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-jiangqie-ow-free-loader.php';
-		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-jiangqie-ow-free-i18n.php';
-		require_once plugin_dir_path(dirname(__FILE__)) . 'admin/class-jiangqie-ow-free-admin.php';
-		require_once plugin_dir_path(dirname(__FILE__)) . 'public/class-jiangqie-ow-free-public.php';
+		require_once JIANGQIE_OW_FREE_BASE_DIR . 'includes/class-jiangqie-ow-free-loader.php';
+		require_once JIANGQIE_OW_FREE_BASE_DIR . 'includes/class-jiangqie-ow-free-i18n.php';
+		require_once JIANGQIE_OW_FREE_BASE_DIR . 'admin/class-jiangqie-ow-free-admin.php';
+		require_once JIANGQIE_OW_FREE_BASE_DIR . 'public/class-jiangqie-ow-free-public.php';
 
 		/**
 		 * rest api
 		 */
-		require_once plugin_dir_path(dirname(__FILE__)) . 'public/rest/class-jiangqie-ow-free-base-controller.php';
-		require_once plugin_dir_path(dirname(__FILE__)) . 'public/rest/class-jiangqie-ow-free-setting-controller.php';
-		require_once plugin_dir_path(dirname(__FILE__)) . 'public/rest/class-jiangqie-ow-free-post-controller.php';
-		require_once plugin_dir_path(dirname(__FILE__)) . 'public/rest/class-jiangqie-ow-free-user-controller.php';
+		require_once JIANGQIE_OW_FREE_BASE_DIR . 'public/rest/class-jiangqie-ow-free-base-controller.php';
+		require_once JIANGQIE_OW_FREE_BASE_DIR . 'public/rest/class-jiangqie-ow-free-setting-controller.php';
+		require_once JIANGQIE_OW_FREE_BASE_DIR . 'public/rest/class-jiangqie-ow-free-post-controller.php';
+		require_once JIANGQIE_OW_FREE_BASE_DIR . 'public/rest/class-jiangqie-ow-free-user-controller.php';
 
 		/**
 		 * 后台管理
 		 */
-		require_once plugin_dir_path(dirname(__FILE__)) . 'admin/codestar-framework/codestar-framework.php';
+		require_once JIANGQIE_OW_FREE_BASE_DIR . 'admin/codestar-framework/codestar-framework.php';
 
 		$this->loader = new Jiangqie_Ow_Free_Loader();
 	}

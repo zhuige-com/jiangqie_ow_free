@@ -16,18 +16,20 @@ if (!defined('WPINC')) {
 	die;
 }
 
-define('JIANGQIE_OW_FREE_VERSION', '1.0.0');
+define('JIANGQIE_OW_FREE_VERSION', '1.1.2');
 define('JIANGQIE_OW_FREE_BASE_DIR', plugin_dir_path(__FILE__));
+define('JIANGQIE_OW_FREE_BASE_NAME', plugin_basename(__FILE__));
+define('JIANGQIE_OW_FREE_BASE_URL', plugin_dir_url(__FILE__));
 
 function activate_jiangqie_ow_free()
 {
-	require_once plugin_dir_path(__FILE__) . 'includes/class-jiangqie-ow-free-activator.php';
+	require_once JIANGQIE_OW_FREE_BASE_DIR . 'includes/class-jiangqie-ow-free-activator.php';
 	Jiangqie_Ow_Free_Activator::activate();
 }
 
 function deactivate_jiangqie_ow_free()
 {
-	require_once plugin_dir_path(__FILE__) . 'includes/class-jiangqie-ow-free-deactivator.php';
+	require_once JIANGQIE_OW_FREE_BASE_DIR . 'includes/class-jiangqie-ow-free-deactivator.php';
 	Jiangqie_Ow_Free_Deactivator::deactivate();
 }
 
@@ -40,12 +42,12 @@ function jiangqie_ow_free_action_links($actions)
 	$actions[] = '<a href="https://www.jiangqie.com/owfree/7685.html" target="_blank">技术支持</a>';
     return $actions;
 }
-add_filter('plugin_action_links_' . plugin_basename(__FILE__), 'jiangqie_ow_free_action_links');
+add_filter('plugin_action_links_' . JIANGQIE_OW_FREE_BASE_NAME, 'jiangqie_ow_free_action_links');
 
-require plugin_dir_path(__FILE__) . 'includes/class-jiangqie-ow-free.php';
-require plugin_dir_path(__FILE__) . 'includes/jiangqie-function.php';
-require plugin_dir_path(__FILE__) . 'includes/jiangqie-ow-free-dashboard.php';
-require plugin_dir_path(__FILE__) . 'includes/jiangqie-ow-free-feedback.php';
+require JIANGQIE_OW_FREE_BASE_DIR . 'includes/class-jiangqie-ow-free.php';
+require JIANGQIE_OW_FREE_BASE_DIR . 'includes/jiangqie-function.php';
+require JIANGQIE_OW_FREE_BASE_DIR . 'includes/jiangqie-ow-free-dashboard.php';
+require JIANGQIE_OW_FREE_BASE_DIR . 'includes/jiangqie-ow-free-feedback.php';
 
 function run_jiangqie_ow_free()
 {
