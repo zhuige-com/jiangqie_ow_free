@@ -1,7 +1,7 @@
 {
     "id": "jiangqie-ow-free",
     "name": "酱茄企业官网Free（含后端）-WordPress新闻资讯博客多端小程序",
-    "version": "1.1.2",
+    "version": "1.1.6",
     "description": "酱茄企业官网小程序，酱茄专为中小企业开发的轻量级企业建站小程序",
     "keywords": [
         "官网",
@@ -74,7 +74,7 @@
                     "联盟": "u"
                 },
                 "Vue": {
-                    "vue2": "y",
+                    "vue2": "u",
                     "vue3": "u"
                 }
             }

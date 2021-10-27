@@ -162,10 +162,13 @@
 		left: 0rpx;
 		right: 0rpx;
 		background: #FFFFFF;
-		width: 100%;
+		width: 690rpx;
 		height: 100rpx;
-		padding-bottom: 30rpx;
-		border-top: 1rpx solid #E5E5E5;
+		// padding-bottom: 30rpx;
+		margin: 30rpx;
+		// border-top: 1rpx solid #E5E5E5;
+		border: 1rpx solid #E5E5E5;
+		border-radius: 50rpx;
 		z-index: 99;
 
 		.tabBar_list {
