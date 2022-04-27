@@ -89,6 +89,7 @@ swiper image {
 
 .jiangqie-scroll-view {
 	white-space: nowrap;
+	height: 300rpx;
 }
 
 .jiangqie-scroll-block .jiangqie-head {
@@ -146,6 +147,7 @@ swiper image {
 .jiangqie-scroll-cooperate .jiangqie-head {
 	padding-right: 30rpx;
 }
+
 .jiangqie-cooperate swan-scroll-view {
 	display: inline;
 }
@@ -192,13 +194,15 @@ swiper image {
 }
 
 .jiangqie-list-data {
+	display: flex;
+	justify-content: space-between;
 	font-size: 24rpx;
 	color: #777777;
 }
 
-.jiangqie-list-data text {
+/* .jiangqie-list-data text {
 	margin-right: 20rpx;
-}
+} */
 
 
 /* =========== 左侧列表 =========== */
@@ -321,14 +325,6 @@ swiper image {
 	margin: 10rpx auto;
 }
 
-.jiangqie-form-tips {
-	font-size: 24rpx;
-	color: #007AFF;
-	font-weight: 200;
-	height: 3rem;
-	line-height: 3rem;
-}
-
 /* =========== 文章 =========== */
 
 .jiangqie-detail-title {
@@ -403,6 +399,87 @@ swiper image {
 .jiangqie-simple {
 	font-weight: 400;
 }
+
 .jiangqie-head {
 	font-weight: 500;
+}
+
+
+.jiangqie-tab-nav *::-webkit-scrollbar {
+	display: none;
+}
+
+.jiangqie-tab-nav view {
+	height: 100rpx;
+	display: inline-flex;
+	justify-content: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+	line-height: 100rpx;
+	padding: 0 20rpx;
+	text-align: center;
+	min-width: 12%;
+}
+
+.jiangqie-tab-nav view view {
+	padding: 0;
+	justify-content: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+	display: flex;
+	line-height: 104rpx;
+	color: #333333;
+}
+
+.jiangqie-tab-on {
+	font-weight: 600;
+	font-size: 32rpx;
+}
+
+.jiangqie-tab-nav view.jiangqie-tab-on::after {
+	position: absolute;
+	content: "";
+	width: 30rpx;
+	height: 6rpx;
+	margin-top: 60rpx;
+	background: #FFFFFF;
+}
+
+.jiangqie-scroll-nav {
+	position: fixed;
+	top: var(--window-top);
+	white-space: nowrap;
+	width: 100%;
+	z-index: 399;
+	background-color: #FFFFFF;
+}
+
+.jiangqie-scroll-more {
+	position: absolute;
+	z-index: 9;
+	right: 0;
+	top: 0;
+	height: 100rpx;
+	line-height: 100rpx;
+	width: 100rpx;
+	background: #FFFFFF;
+	text-align: center;
+}
+
+.jiangqie-scroll-more image {
+	height: 100rpx;
+	width: 100rpx;
+}
+
+.jiangqie-tab-nav view.jiangqie-tab-on view {
+	color: #3465F0;
+}
+
+.jiangqie-tab-nav view.jiangqie-tab-on::after {
+	background: #3465F0;
+	/* margin-top: 32rpx; */
 }

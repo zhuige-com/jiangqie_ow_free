@@ -1,20 +1,20 @@
 <?php
 
 /*
- * 酱茄企业官网Free v1.0.0
+ * 酱茄企业官网Free
  * Author: 酱茄
  * Help document: https://www.jiangqie.com/owfree/7685.html
  * github: https://github.com/longwenjunjie/jiangqie_ow_free
  * gitee: https://gitee.com/longwenjunj/jiangqie_ow_free
  * License：GPL-2.0
- * Copyright © 2021 www.jiangqie.com All rights reserved.
+ * Copyright © 2021-2022 www.jiangqie.com All rights reserved.
  */
 
 // 基础设置
 CSF::createSection($prefix, array(
     'id'    => 'basic',
     'title' => '基础设置',
-    'icon'  => 'fas fa-plus-circle',
+    'icon'  => 'fas fa-cubes',
     'fields' => array(
 
         array(
@@ -22,6 +22,14 @@ CSF::createSection($prefix, array(
             'type'        => 'text',
             'title'       => '标题',
             'placeholder' => '标题'
+        ),
+
+        array(
+            'id'          => 'basic_keywords',
+            'type'        => 'text',
+            'title'       => '关键字',
+            'subtitle'    => '仅百度小程序使用',
+            'placeholder' => '关键字'
         ),
 
         array(

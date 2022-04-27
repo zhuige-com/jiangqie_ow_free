@@ -54,6 +54,11 @@ module.exports = {
 	 */
 	JQ_OW_FREE_SETTING_FEEDBACK: makeURL('setting', 'feedback'),
 	
+	/**
+	 * 新闻动态
+	 */
+	JQ_OW_FREE_SETTING_NEWS: makeURL('setting', 'news'),
+	
 	// ---------- 用户 ----------
 	
 	/**

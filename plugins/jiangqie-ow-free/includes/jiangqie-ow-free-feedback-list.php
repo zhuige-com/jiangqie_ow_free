@@ -1,13 +1,13 @@
 <?php
 
 /*
- * 酱茄企业官网Free v1.0.0
+ * 酱茄企业官网Free
  * Author: 酱茄
  * Help document: https://www.jiangqie.com/owfree/7685.html
  * github: https://github.com/longwenjunjie/jiangqie_ow_free
  * gitee: https://gitee.com/longwenjunj/jiangqie_ow_free
  * License：GPL-2.0
- * Copyright © 2021 www.jiangqie.com All rights reserved.
+ * Copyright © 2021-2022 www.jiangqie.com All rights reserved.
  */
 
 class JiangQieOwFreeFeedbackList extends WP_List_Table
@@ -74,7 +74,8 @@ class JiangQieOwFreeFeedbackList extends WP_List_Table
 		$sql = "SELECT * FROM " . $this->jq_table_name;
 
 		if ($search) {
-			$sql .= " WHERE (`username` LIKE '%$search%' OR  `phone` LIKE '%$search%' OR  `email` LIKE '%$search%') ";
+			$search = esc_sql($search);
+			$sql .= " WHERE (`username` LIKE '%$search%' OR `phone` LIKE '%$search%' OR `email` LIKE '%$search%') ";
 		}
 
 		if (!empty($_REQUEST['orderby'])) {
@@ -84,9 +85,9 @@ class JiangQieOwFreeFeedbackList extends WP_List_Table
 			$sql .= ' ORDER BY id ASC';
 		}
 
-		$sql .= " LIMIT $per_page";
-		$sql .= ' OFFSET ' . ($page_number - 1) * $per_page;
-
+		// $sql .= " LIMIT $per_page";
+		// $sql .= ' OFFSET ' . ($page_number - 1) * $per_page;
+		$sql .= $wpdb->prepare(" LIMIT %d OFFSET %d", $per_page, ($page_number - 1) * $per_page);
 
 		$result = $wpdb->get_results($sql, 'ARRAY_A');
 
@@ -197,7 +198,8 @@ class JiangQieOwFreeFeedbackList extends WP_List_Table
 		global $wpdb;
 		$sql = "SELECT COUNT(*) FROM " . $this->jq_table_name;
 		if ($search) {
-			$sql .= " WHERE (`username` LIKE '%$search%' OR  `phone` LIKE '%$search%' OR  `email` LIKE '%$search%') ";
+			$search = esc_sql($search);
+			$sql .= " WHERE (`username` LIKE '%$search%' OR `phone` LIKE '%$search%' OR `email` LIKE '%$search%') ";
 		}
 		return $wpdb->get_var($sql);
 	}

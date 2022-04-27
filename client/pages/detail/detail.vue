@@ -19,7 +19,7 @@
 			</view>
 		</view>
 
-		<view class="jiangqie-block jiangqie-brand">酱茄 JiangQie.com 提供技术支持</view>
+		<view class="jiangqie-block jiangqie-brand">追格 Zhuige.com 提供技术支持</view>
 
 		<!-- #ifdef MP-BAIDU -->
 		<view v-if="isShowPainter" isRenderImage style="position: fixed; top: 0;" @longpress="longTapPainter" @click="clickPainter()">
@@ -43,7 +43,7 @@
 	 * github: https://github.com/longwenjunjie/jiangqie_ow_free
 	 * gitee: https://gitee.com/longwenjunj/jiangqie_ow_free
 	 * License：GPL-2.0
-	 * Copyright © 2021 www.jiangqie.com All rights reserved.
+	 * Copyright © 2021-2022 www.jiangqie.com All rights reserved.
 	 */
 	
 	import Util from '@/utils/util';
@@ -90,6 +90,18 @@
 
 			this.loadPost();
 		},
+		
+		onShow() {
+			// #ifdef MP-BAIDU
+			if (this.post) {
+				swan.setPageInfo({
+					title: this.post.title,
+					description: this.post.excerpt,
+					keywords: this.post.keywords,
+				});
+			}
+			// #endif
+		},
 
 		onShareAppMessage() {
 			let params = {
@@ -117,6 +129,7 @@
 				query: 'post_id=' + this.post_id
 			};
 		},
+		
 		onAddToFavorites(res) {
 			return {
 				title: this.post.title,
@@ -127,6 +140,9 @@
 		// #endif
 
 		methods: {
+			/**
+			 * 加载文章详情
+			 */
 			loadPost() {
 				Rest.post(Api.JQ_OW_FREE_POST_DETAIL, {
 					post_id: this.post_id
@@ -135,13 +151,21 @@
 					uni.setNavigationBarTitle({
 						title: this.post.title
 					})
+					
+					// #ifdef MP-BAIDU
+					swan.setPageInfo({
+						title: this.post.title,
+						description: this.post.excerpt,
+						keywords: this.post.keywords,
+					});
+					// #endif
 				});
 			},
 
 			/**
 			 * 加载微信小程序码
 			 */
-			loadWxacode: function() {
+			loadWxacode() {
 				Rest.post(Api.JQ_OW_FREE_POST_WX_ACODE, {
 					post_id: this.post_id
 				}).then(res => {
@@ -154,7 +178,7 @@
 			/**
 			 * 加载QQ小程序码
 			 */
-			loadQqacode: function() {
+			loadQqacode() {
 				Rest.post(Api.JQ_OW_FREE_POST_QQ_ACODE, {
 					post_id: this.post_id
 				}).then(res => {
@@ -167,7 +191,7 @@
 			/**
 			 * 加载百度小程序码
 			 */
-			loadBdacode: function() {
+			loadBdacode() {
 				Rest.post(Api.JQ_OW_FREE_POST_BD_ACODE, {
 					post_id: this.post_id
 				}).then(res => {
@@ -183,6 +207,9 @@
 				this.isShowPainter = false;
 			},
 			
+			/**
+			 * 长按海报
+			 */
 			longTapPainter() {
 				uni.showActionSheet({
 					itemList: ['保存到相册'],
@@ -216,7 +243,9 @@
 			},
 			// #endif
 
-			//海报分享
+			/**
+			 * 海报分享
+			 */
 			clickPoster() {
 				// #ifndef MP-BAIDU
 				if (this.painterImage) {
@@ -292,7 +321,7 @@
 						},
 						{
 							type: 'text',
-							text: getApp().appName,
+							text: getApp().globalData.appName,
 							css: {
 								left: '30rpx',
 								top: '1170rpx',
@@ -306,7 +335,10 @@
 				}
 			},
 			
-			onPainterSuccess: function(e) {
+			/**
+			 * 打开海报
+			 */
+			onPainterSuccess(e) {
 				this.painterImage = e;
 				
 				// #ifndef MP-BAIDU
@@ -319,7 +351,7 @@
 	}
 </script>
 
-<style>
+<style lang="scss" scoped>
 	.jiangqie-block:first-of-type {
 		border: none;
 	}

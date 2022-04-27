@@ -1,11 +1,11 @@
 === JiangQie Official Website Mini Program ===
 Contributors: jiangqie
 Donate link: https://www.jiangqie.com/
-Tags: 官网,小程序,H5,微信,QQ,百度
-Requires at least: 5.4
-Tested up to: 5.8
-Stable tag: 1.1.5
-Requires PHP: 7.0
+Tags: 追格,官网,小程序,H5,微信,QQ,百度
+Requires at least: 5.6
+Tested up to: 5.9
+Stable tag: 1.3.1
+Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -45,6 +45,26 @@ gitee下载（优先更新）：https://gitee.com/longwenjunj/jiangqie_ow_free
 2. screenshot-2.png
 
 == Changelog ==
+= 1.3.1 =
+1. 新增：客户端支持打开视频号；
+2. 修复：过滤文章未考虑文章状态；
+
+= 1.3.0 =
+1. 优化：底部菜单样式问题；
+2. 优化：参数查询和数据效验（安全）问题；
+3. 优化：避免恶意测试时生成了一些垃圾图片；
+4. 优化：百度端产品服务显示不全的问题；
+
+= 1.2.1 =
+* 新增：资讯分类功能
+* 优化：后台管理图标
+
+= 1.2.0 =
+* 优化：支持百度小程序TDK
+* 优化：删除冗余二级菜单
+
+= 1.1.6 =
+* 优化：汉化后面配置页面
 
 = 1.1.5 =
 * 优化：避免重复调用同功能函数

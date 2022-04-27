@@ -43,13 +43,10 @@
 					<!-- 认证button -->
 					<view class="jiangqie-base-block jiangqie-form-btn">
 						<view class="jiangqie-button" @click="clickSubmit()">提交</view>
-						<!-- <view class="jiangqie-form-tips">
-							<text>提交成功</text>
-						</view> -->
 					</view>
 				</view>
 			</view>
-			<view @click="clickJiangQie" class="jiangqie-block jiangqie-brand">酱茄 JiangQie.com 提供技术支持</view>
+			<view @click="clickJiangQie" class="jiangqie-block jiangqie-brand">追格 Zhuige.com 提供技术支持</view>
 		</scroll-view>
 	</view>
 </template>
@@ -62,7 +59,7 @@
 	 * github: https://github.com/longwenjunjie/jiangqie_ow_free
 	 * gitee: https://gitee.com/longwenjunj/jiangqie_ow_free
 	 * License：GPL-2.0
-	 * Copyright © 2021 www.jiangqie.com All rights reserved.
+	 * Copyright © 2021-2022 www.jiangqie.com All rights reserved.
 	 */
 
 	import Util from '@/utils/util';
@@ -86,8 +83,6 @@
 		},
 		methods: {
 			jqOnLoad() {
-				console.log('jqOnLoad');
-
 				Rest.post(Api.JQ_OW_FREE_SETTING_FEEDBACK, {}).then(res => {
 					this.background = res.data.background;
 					this.title = res.data.title;
@@ -127,9 +122,9 @@
 	}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 	.main_box {
-		padding-bottom: 120rpx;
+		padding-bottom: 140rpx;
 	}
 	
 	.jiangqie-block {

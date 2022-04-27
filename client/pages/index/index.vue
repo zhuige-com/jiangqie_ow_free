@@ -36,7 +36,7 @@
 	 * github: https://github.com/longwenjunjie/jiangqie_ow_free
 	 * gitee: https://gitee.com/longwenjunj/jiangqie_ow_free
 	 * License：GPL-2.0
-	 * Copyright © 2021 www.jiangqie.com All rights reserved.
+	 * Copyright © 2021-2022 www.jiangqie.com All rights reserved.
 	 */
 	
 	import Util from '@/utils/util';
@@ -49,9 +49,9 @@
 
 	export default {
 		components: {
-			tabHome, //首页		0
-			tabDiscovery, //发现	1
-			tabGuestbook, //留言	2
+			tabHome, //首页 0
+			tabDiscovery, //发现	 1
+			tabGuestbook, //留言	 2
 		},
 
 		data() {
@@ -89,14 +89,26 @@
 				this.cut_index(2);
 			})
 		},
+		
+		onShow() {
+			// #ifdef MP-BAIDU
+			if (getApp().globalData.appName) {
+				swan.setPageInfo({
+					title: getApp().globalData.appName,
+					description: getApp().globalData.appDesc,
+					keywords: getApp().globalData.appKeyword,
+				});
+			}
+			// #endif
+		},
 
 		onShareAppMessage() {
 			let params = {
-				title: getApp().appName
+				title: getApp().globalData.appName
 			};
 			
-			if (getApp().appThumb) {
-				params.imageUrl = getApp().appThumb;
+			if (getApp().globalData.appThumb) {
+				params.imageUrl = getApp().globalData.appThumb;
 			}
 
 			// #ifdef MP-WEIXIN || MP-BAIDU
@@ -104,7 +116,7 @@
 			// #endif
 			
 			// #ifdef MP-BAIDU
-			params.content = getApp().appDesc;
+			params.content = getApp().globalData.appDesc;
 			// #endif
 
 			return params;
@@ -113,18 +125,21 @@
 		// #ifdef MP-WEIXIN
 		onShareTimeline() {
 			return {
-				title: getApp().appName
+				title: getApp().globalData.appName
 			};
 		},
+		
 		onAddToFavorites(res) {
 			return {
-				title: getApp().appName
+				title: getApp().globalData.appName
 			};
 		},
 		// #endif
 
 		methods: {
-			// 切换组件
+			/**
+			 * 切换组件
+			 */
 			cut_index(type) {
 				this.show_index = type
 				if (this.show_index == 0) {
@@ -152,24 +167,24 @@
 	}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 	.tabBar {
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		position: fixed;
-		bottom: 0rpx;
+		bottom: 20rpx;
 		left: 0rpx;
 		right: 0rpx;
 		background: #FFFFFF;
 		width: 690rpx;
-		height: 100rpx;
+		height: 120rpx;
 		// padding-bottom: 30rpx;
 		margin: 30rpx;
 		// border-top: 1rpx solid #E5E5E5;
-		border: 1rpx solid #E5E5E5;
-		border-radius: 50rpx;
+		border-radius: 60rpx;
 		z-index: 99;
+		box-shadow: 0 10rpx 32rpx -2rpx rgba(125,125,125,.4);
 
 		.tabBar_list {
 			width: 86%;

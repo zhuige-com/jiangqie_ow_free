@@ -1,13 +1,13 @@
 <?php
 
 /*
- * 酱茄企业官网Free v1.0.0
+ * 酱茄企业官网Free
  * Author: 酱茄
  * Help document: https://www.jiangqie.com/owfree/7685.html
  * github: https://github.com/longwenjunjie/jiangqie_ow_free
  * gitee: https://gitee.com/longwenjunj/jiangqie_ow_free
  * License：GPL-2.0
- * Copyright © 2021 www.jiangqie.com All rights reserved.
+ * Copyright © 2021-2022 www.jiangqie.com All rights reserved.
  */
 
 class Jiangqie_Ow_Free_Post_Controller extends Jiangqie_Ow_Free_Base_Controller
@@ -30,13 +30,19 @@ class Jiangqie_Ow_Free_Post_Controller extends Jiangqie_Ow_Free_Base_Controller
 	 */
 	public function get_last_posts($request)
 	{
-		$offset = $this->param_value($request, 'offset', 0);
+		$offset = (int)($this->param_value($request, 'offset', 0));
+		$cat_id = (int)($this->param_value($request, 'cat_id', 0));
 
 		$args = [
 			'posts_per_page' => Jiangqie_Ow_Free::POSTS_PER_PAGE,
 			'offset' => $offset,
 			'orderby' => 'date',
 		];
+
+		if ($cat_id) {
+			$args['cat'] = $cat_id;
+			$args['ignore_sticky_posts'] = 1;
+		}
 
 		$query = new WP_Query();
 		$result = $query->query($args);
@@ -56,7 +62,7 @@ class Jiangqie_Ow_Free_Post_Controller extends Jiangqie_Ow_Free_Base_Controller
 	 */
 	public function get_post_detail($request)
 	{
-		$post_id = $this->param_value($request, 'post_id');
+		$post_id = (int)($this->param_value($request, 'post_id'));
 		if (!$post_id) {
 			return $this->make_error('缺少参数');
 		}
@@ -84,6 +90,21 @@ class Jiangqie_Ow_Free_Post_Controller extends Jiangqie_Ow_Free_Base_Controller
 		//海报开关
 		$post['poster_switch'] = Jiangqie_Ow_Free::option_value('post_poster_switch') ? 1 : 0;
 
+		//百度关键字
+		$keywords = '';
+		$os = $this->param_value($request, 'os');
+		if ($os == 'bd') {
+			$tags = get_the_tags($post_id);
+			foreach ($tags  as $tag) {
+				$keywords .= $tag->name . ',';
+			}
+			foreach (get_the_category($post_id) as $category) {
+				$keywords .= $category->cat_name . ',';
+			}
+			$keywords = substr_replace($keywords, '', -1);
+		}
+		$post['keywords'] = $keywords;
+
 		return $this->make_success($post);
 	}
 
@@ -92,12 +113,15 @@ class Jiangqie_Ow_Free_Post_Controller extends Jiangqie_Ow_Free_Base_Controller
 	 */
 	public function get_wxacode($request)
 	{
-		$post_id = $this->param_value($request, 'post_id', 0);
+		$post_id = (int)($this->param_value($request, 'post_id', 0));
 		if (!$post_id) {
 			return $this->make_error('缺少参数');
 		}
 
 		$post_type = get_post_type($post_id);
+		if ($post_type != 'post') {
+			return $this->make_error('暂不支持');
+		}
 
 		$uploads = wp_upload_dir();
 		$qrcode_path = $uploads['basedir'] . '/jiangqie_wxacode/';
@@ -171,12 +195,15 @@ class Jiangqie_Ow_Free_Post_Controller extends Jiangqie_Ow_Free_Base_Controller
 	 */
 	public function get_qqacode($request)
 	{
-		$post_id = $this->param_value($request, 'post_id', 0);
+		$post_id = (int)($this->param_value($request, 'post_id', 0));
 		if (!$post_id) {
 			return $this->make_error('缺少参数');
 		}
 
 		$post_type = get_post_type($post_id);
+		if ($post_type != 'post') {
+			return $this->make_error('暂不支持');
+		}
 
 		$uploads = wp_upload_dir();
 		$qrcode_path = $uploads['basedir'] . '/jiangqie_qqacode/';
@@ -240,12 +267,15 @@ class Jiangqie_Ow_Free_Post_Controller extends Jiangqie_Ow_Free_Base_Controller
 	 */
 	public function get_bdacode($request)
 	{
-		$post_id = $this->param_value($request, 'post_id', 0);
+		$post_id = (int)($this->param_value($request, 'post_id', 0));
 		if (!$post_id) {
 			return $this->make_error('缺少参数');
 		}
 
 		$post_type = get_post_type($post_id);
+		if ($post_type != 'post') {
+			return $this->make_error('暂不支持');
+		}
 
 		$uploads = wp_upload_dir();
 		$qrcode_path = $uploads['basedir'] . '/jiangqie_bdacode/';

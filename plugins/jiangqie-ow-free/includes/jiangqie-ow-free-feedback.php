@@ -1,13 +1,13 @@
 <?php
 
 /*
- * 酱茄企业官网Free v1.0.0
+ * 酱茄企业官网Free
  * Author: 酱茄
  * Help document: https://www.jiangqie.com/owfree/7685.html
  * github: https://github.com/longwenjunjie/jiangqie_ow_free
  * gitee: https://gitee.com/longwenjunj/jiangqie_ow_free
  * License：GPL-2.0
- * Copyright © 2021 www.jiangqie.com All rights reserved.
+ * Copyright © 2021-2022 www.jiangqie.com All rights reserved.
  */
 
 if (!defined('ABSPATH')) {
@@ -45,7 +45,11 @@ function jiangqie_ow_free_render_feedback()
 		$feedback_id = (isset($_GET['id'])) ? sanitize_text_field(wp_unslash($_GET['id'])) : '';
 
 		if ($feedback_id) {
-			$feedback = $wpdb->get_row($wpdb->prepare("SELECT * FROM {$wpdb->prefix}jiangqie_ow_feedback WHERE id=%d", $feedback_id), ARRAY_A);
+			$feedback = $wpdb->get_row(
+				$wpdb->prepare(
+					"SELECT * FROM {$wpdb->prefix}jiangqie_ow_feedback WHERE id=%d", $feedback_id
+				), 
+			ARRAY_A);
 ?>
 			<h1>留言信息</h1>
 			<table class="form-table">

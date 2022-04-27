@@ -12,7 +12,7 @@
 	 * github: https://github.com/longwenjunjie/jiangqie_ow_free
 	 * gitee: https://gitee.com/longwenjunj/jiangqie_ow_free
 	 * License：GPL-2.0
-	 * Copyright © 2021 www.jiangqie.com All rights reserved.
+	 * Copyright © 2021-2022 www.jiangqie.com All rights reserved.
 	 */
 	
 	export default {
@@ -24,28 +24,28 @@
 
 		onLoad(options) {
 			if (options.src) {
-				this.src = options.src;
+				this.src = decodeURIComponent(options.src);
 			}
 			uni.setNavigationBarTitle({
-				title: getApp().appName
+				title: getApp().globalData.appName
 			})
 		},
 
 		onShareAppMessage() {
 			return {
-				title: getApp().appName,
-				path: 'pages/mix/webview/webview?src=' + this.src
+				title: getApp().globalData.appName,
+				path: 'pages/mix/webview/webview?src=' + encodeURIComponent(this.src)
 			};
 		},
 
 		onShareTimeline() {
 			return {
-				title: getApp().appName
+				title: getApp().globalData.appName
 			};
 		},
 	}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 </style>

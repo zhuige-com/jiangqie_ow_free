@@ -1,13 +1,13 @@
 <?php
 
 /*
- * 酱茄企业官网Free v1.0.0
+ * 酱茄企业官网Free
  * Author: 酱茄
  * Help document: https://www.jiangqie.com/owfree/7685.html
  * github: https://github.com/longwenjunjie/jiangqie_ow_free
  * gitee: https://gitee.com/longwenjunj/jiangqie_ow_free
  * License：GPL-2.0
- * Copyright © 2021 www.jiangqie.com All rights reserved.
+ * Copyright © 2021-2022 www.jiangqie.com All rights reserved.
  */
 
 class Jiangqie_Ow_Free_Setting_Controller extends Jiangqie_Ow_Free_Base_Controller
@@ -18,7 +18,7 @@ class Jiangqie_Ow_Free_Setting_Controller extends Jiangqie_Ow_Free_Base_Controll
 		$this->module = 'setting';
 		$this->routes = [
 			'home' => 'get_home',
-			'discover' => 'get_discover',
+			'news' => 'get_news',
 			'guestbook' => 'get_guestbook',
 			'detail' => 'get_detail',
 
@@ -33,6 +33,9 @@ class Jiangqie_Ow_Free_Setting_Controller extends Jiangqie_Ow_Free_Base_Controll
 	{
 		//小程序名称
 		$data['title'] = Jiangqie_Ow_Free::option_value('basic_title', '酱茄企业官网Free');
+
+		//关键字
+		$data['keywords'] = Jiangqie_Ow_Free::option_value('basic_keywords', '追格,酱茄');
 
 		//描述
 		$data['desc'] = Jiangqie_Ow_Free::option_value('basic_desc', '流水不争先,争的是滔滔不绝');
@@ -196,15 +199,40 @@ class Jiangqie_Ow_Free_Setting_Controller extends Jiangqie_Ow_Free_Base_Controll
 	}
 
 	/**
-	 * 首页 - 关注
+	 * 首页 - 动态
 	 */
-	public function get_discover($request)
+	public function get_news($request)
 	{
-		return $this->make_success([]);
+		//顶部分类
+		$cat_ids = Jiangqie_Ow_Free::option_value('news_top_cat');
+		$args = ['hide_empty' => 0];
+		if (!empty($cat_ids)) {
+			$args['include'] = implode(',', $cat_ids);
+		}
+
+		$result = get_categories($args);
+
+		$categories = [];
+		// $cat_ids = explode(',', $cat_ids);
+		foreach ($cat_ids as $cat_id) {
+			foreach ($result as $item) {
+				if ($cat_id == $item->term_id) {
+					$categories[] = [
+						'id' => $item->term_id,
+						'name' => $item->name,
+					];
+					break;
+				}
+			}
+		}
+
+		$data['top_nav'] = $categories;
+
+		return $this->make_success($data);
 	}
 
 	/**
-	 * 首页 - 圈子
+	 * 首页 - 意见反馈
 	 */
 	public function get_guestbook($request)
 	{

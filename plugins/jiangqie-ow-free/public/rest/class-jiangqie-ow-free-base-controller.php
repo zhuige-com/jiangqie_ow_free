@@ -1,13 +1,13 @@
 <?php
 
 /*
- * 酱茄企业官网Free v1.0.0
+ * 酱茄企业官网Free
  * Author: 酱茄
  * Help document: https://www.jiangqie.com/owfree/7685.html
  * github: https://github.com/longwenjunjie/jiangqie_ow_free
  * gitee: https://gitee.com/longwenjunj/jiangqie_ow_free
  * License：GPL-2.0
- * Copyright © 2021 www.jiangqie.com All rights reserved.
+ * Copyright © 2021-2022 www.jiangqie.com All rights reserved.
  */
 
 class Jiangqie_Ow_Free_Base_Controller extends WP_REST_Controller
@@ -78,7 +78,7 @@ class Jiangqie_Ow_Free_Base_Controller extends WP_REST_Controller
 	public function param_value($request, $param_name, $default_value = false)
 	{
 		if (isset($request[$param_name])) {
-			return $request[$param_name];
+			return sanitize_text_field(wp_unslash($request[$param_name]));
 		}
 
 		return $default_value;

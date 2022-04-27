@@ -1,23 +1,31 @@
 <script>
 	/*
-	 * 酱茄企业官网Free v1.1.6
+	 * 酱茄企业官网Free v1.3.2
 	 * Author: 酱茄
 	 * Help document: https://www.jiangqie.com/owfree/7685.html
 	 * github: https://github.com/longwenjunjie/jiangqie_ow_free
 	 * gitee: https://gitee.com/longwenjunj/jiangqie_ow_free
 	 * License：GPL-2.0
-	 * Copyright © 2021 www.jiangqie.com All rights reserved.
+	 * Copyright © 2021-2022 www.jiangqie.com All rights reserved.
 	 */
 	
 	export default {
-		onLaunch: function() {
-			console.log('App Launch')
+		globalData: {
+			appName: '',
+			appDesc: '',
+			appKeyword: '',
 		},
-		onShow: function() {
-			console.log('App Show')
+		
+		onLaunch () {
+			
 		},
-		onHide: function() {
-			console.log('App Hide')
+		
+		onShow () {
+			
+		},
+		
+		onHide () {
+			
 		}
 	}
 </script>

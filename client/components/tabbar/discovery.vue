@@ -1,25 +1,36 @@
 <template>
 	<view class="content">
+		
+		<view v-if="top_navs && top_navs.length>0" class="jiangqie-scroll-nav">
+			<scroll-view scroll-x scroll-with-animation scroll-left="scrollLeft" show-scrollbar="false"
+				class="jiangqie-tab-nav">
+				<view v-for="(item,index) in top_navs" @click="clickNavCat(item.id)" :key="index"
+					:class="{'jiangqie-tab-on':curCat==item.id}">
+					<view>{{item.name}}</view>
+				</view>
+			</scroll-view>
+		</view>
+		
 		<scroll-view class="main_box" scroll-y="true" @scrolltolower="lower">
-
-			<view v-for="(post, index) in posts" :key="post.id" class="jiangqie-block" @click="clickPost(post.id)">
-				<view class="jiangqie-list">
-					<view class="jiangqie-list-title">{{post.title}}</view>
-					<view class="jiangqie-list-img">
-						<image mode="aspectFill" :src="post.thumbnail"></image>
-					</view>
-					<view class="jiangqie-list-text">
-						<view class="jiangqie-list-data">
-							<text>浏览 {{post.views}}</text>
-							<text>{{post.time}}</text>
+			
+			<template v-if="posts.length>0">
+				<view v-for="(post, index) in posts" :key="post.id" class="jiangqie-block" @click="clickPost(post.id)">
+					<view class="jiangqie-list">
+						<view class="jiangqie-list-title">{{post.title}}</view>
+						<view class="jiangqie-list-img">
+							<image mode="aspectFill" :src="post.thumbnail"></image>
+						</view>
+						<view class="jiangqie-list-text">
+							<view class="jiangqie-list-data">
+								<text>浏览 {{post.views}}</text>
+								<text>{{post.time}}</text>
+							</view>
 						</view>
 					</view>
 				</view>
-			</view>
 
-			<uni-load-more :status="loadMore"></uni-load-more>
-
-			<view @click="clickJiangQie" class="jiangqie-block jiangqie-brand">酱茄 JiangQie.com 提供技术支持</view>
+				<uni-load-more :status="loadMore"></uni-load-more>
+			</template>
 
 		</scroll-view>
 	</view>
@@ -33,7 +44,7 @@
 	 * github: https://github.com/longwenjunjie/jiangqie_ow_free
 	 * gitee: https://gitee.com/longwenjunj/jiangqie_ow_free
 	 * License：GPL-2.0
-	 * Copyright © 2021 www.jiangqie.com All rights reserved.
+	 * Copyright © 2021-2022 www.jiangqie.com All rights reserved.
 	 */
 
 	import Util from '@/utils/util';
@@ -44,13 +55,18 @@
 		data() {
 			return {
 				load: false,
+				
+				top_navs: [],
+				curCat: 0,
 
 				posts: [],
 				loadMore: 'more'
 			}
 		},
+		
 		methods: {
 			jqOnLoad() {
+				this.loadSetting();
 				this.loadPost();
 			},
 
@@ -74,6 +90,28 @@
 			clickJiangQie() {
 				Util.jiangqie();
 			},
+			
+			clickNavCat(cat_id) {
+				this.curCat = cat_id;
+			
+				this.loadMore = 'more';
+				this.loaded = false;
+				this.posts = [];
+			
+				this.loadPost();
+			},
+			
+			loadSetting() {
+				Rest.post(Api.JQ_OW_FREE_SETTING_NEWS, {}).then(res => {
+					this.top_navs = [{
+						id: 0,
+						name: '全部'
+					}];
+					this.top_navs = this.top_navs.concat(res.data.top_nav);
+				}, err => {
+					console.log(err)
+				});
+			},
 
 			loadPost() {
 				if (this.loadMore == 'loading') {
@@ -82,7 +120,8 @@
 				this.loadMore = 'loading';
 
 				Rest.post(Api.JQ_OW_FREE_POSTS_LAST, {
-					offset: this.posts.length
+					offset: this.posts.length,
+					cat_id: this.curCat,
 				}).then(res => {
 					this.posts = this.posts.concat(res.data.posts);
 					this.loadMore = res.data.more;
@@ -92,15 +131,17 @@
 	}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 	.main_box {
 		width: 100vw;
 		height: 100vh;
-		padding-bottom: 120rpx;
+		margin-top: 100rpx;
+		padding-bottom: 160rpx;
 		box-sizing: border-box;
 	}
 
 	.jiangqie-block:first-of-type {
 		border: none;
+		border-top: 16rpx solid #F3F3F3;
 	}
 </style>

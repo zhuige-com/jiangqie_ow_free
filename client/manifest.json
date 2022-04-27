@@ -2,7 +2,7 @@
     "name" : "jiangqie_ow_free",
     "appid" : "",
     "description" : "酱茄企业官网Free",
-    "versionName" : "1.1.6",
+    "versionName" : "1.3.2",
     "versionCode" : "100",
     "transformPx" : false,
     /* 5+App特有相关 */
@@ -79,7 +79,7 @@
     "quickapp" : {},
     /* 小程序特有相关 */
     "mp-weixin" : {
-        "appid" : "wxa2dc0dd2ae67198a",
+        "appid" : "",
         "setting" : {
             "urlCheck" : false
         },
@@ -98,10 +98,10 @@
         "setting" : {
             "urlCheck" : false
         },
-        "appid" : "24106648"
+        "appid" : ""
     },
     "mp-qq" : {
-        "appid" : "1111804134",
+        "appid" : "",
         "setting" : {
             "urlCheck" : false
         }
