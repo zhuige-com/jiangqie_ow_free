@@ -29,8 +29,6 @@ function request(url, data = {}, method = "GET") {
 			data: data,
 			method: method,
 			success: function(res) {
-				uni.hideLoading();
-
 				if (res.statusCode != 200) {
 					reject(res.errMsg);
 					return;
@@ -39,8 +37,10 @@ function request(url, data = {}, method = "GET") {
 				resolve(res.data);
 			},
 			fail: function(err) {
-				uni.hideLoading();
 				reject(err);
+			},
+			complete: () => {
+				uni.hideLoading();
 			}
 		});
 	});

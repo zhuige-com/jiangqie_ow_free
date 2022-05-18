@@ -57,9 +57,9 @@ PS：下载包中含前后端源代码！
 
 官网下载：[www.jiangqie.com](https://www.jiangqie.com/)
 
-gitee下载（优先更新）：https://gitee.com/longwenjunj/jiangqie_ow_free
+gitee下载（优先更新）：https://gitee.com/zhuige_com/jiangqie_ow_free
 
-github下载：https://github.com/longwenjunjie/jiangqie_ow_free
+github下载：https://github.com/zhuige-com/jiangqie_ow_free
 
 ![酱茄源码系列](https://ow.jiangqie.com/img/jiangqie.png) 
 

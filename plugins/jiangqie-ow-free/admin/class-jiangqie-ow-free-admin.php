@@ -3,9 +3,9 @@
 /*
  * 酱茄企业官网Free
  * Author: 酱茄
- * Help document: https://www.jiangqie.com/owfree/7685.html
- * github: https://github.com/longwenjunjie/jiangqie_ow_free
- * gitee: https://gitee.com/longwenjunj/jiangqie_ow_free
+ * Help document: https://www.zhuige.com/docs/gwfree.html
+ * github: https://github.com/zhuige-com/jiangqie_ow_free
+ * gitee: https://gitee.com/zhuige_com/jiangqie_ow_free
  * License：GPL-2.0
  * Copyright © 2021-2022 www.jiangqie.com All rights reserved.
  */
@@ -44,6 +44,7 @@ class Jiangqie_Ow_Free_Admin
 			'show_bar_menu' => false,
             'show_sub_menu' => false,
 			'footer_credit' => 'Thank you for creating with <a href="https://www.jiangqie.com/" target="_blank">酱茄</a>',
+			'menu_icon' => 'dashicons-layout',
 		));
 
 		$base_dir = plugin_dir_path(__FILE__);
@@ -118,7 +119,7 @@ class Jiangqie_Ow_Free_Admin
 		}
 
 		if ('jiangqie_ow_free_upgrade' === $_GET['page']) {
-			wp_redirect('https://www.jiangqie.com/owfree/7685.html');
+			wp_redirect('https://www.zhuige.com/docs/gwfree.html');
 			die;
 		}
 	}

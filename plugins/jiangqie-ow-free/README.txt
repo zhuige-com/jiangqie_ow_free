@@ -35,9 +35,9 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 官网下载：[www.jiangqie.com](https://www.jiangqie.com/)
 
-github下载：https://github.com/longwenjunjie/jiangqie_ow_free
+github下载：https://github.com/zhuige-com/jiangqie_ow_free
 
-gitee下载（优先更新）：https://gitee.com/longwenjunj/jiangqie_ow_free
+gitee下载（优先更新）：https://gitee.com/zhuige_com/jiangqie_ow_free
 
 == Screenshots ==
 
