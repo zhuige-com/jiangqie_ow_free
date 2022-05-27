@@ -1,10 +1,10 @@
 === JiangQie Official Website Mini Program ===
-Contributors: jiangqie
-Donate link: https://www.jiangqie.com/
+Contributors: zhuige
+Donate link: https://www.zhuige.com/
 Tags: 追格,官网,小程序,H5,微信,QQ,百度
 Requires at least: 5.6
 Tested up to: 5.9
-Stable tag: 1.3.1
+Stable tag: 1.3.3
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -33,11 +33,13 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 = 前端代码从哪里获取 =
 
-官网下载：[www.jiangqie.com](https://www.jiangqie.com/)
+官网下载：https://www.zhuige.com/product/gwfree.html
+
+gitee下载：https://gitee.com/zhuige_com/jiangqie_ow_free
 
 github下载：https://github.com/zhuige-com/jiangqie_ow_free
 
-gitee下载（优先更新）：https://gitee.com/zhuige_com/jiangqie_ow_free
+使用文档：https://www.zhuige.com/docs/gwfree.html
 
 == Screenshots ==
 
@@ -45,6 +47,13 @@ gitee下载（优先更新）：https://gitee.com/zhuige_com/jiangqie_ow_free
 2. screenshot-2.png
 
 == Changelog ==
+## 1.3.3（2022-05-27）
+1. 更新帮助文档
+2. 适配字节小程序
+
+## 1.3.2（2022-04-27）
+1. 代码整理，UI细节调整
+
 = 1.3.1 =
 1. 新增：客户端支持打开视频号；
 2. 修复：过滤文章未考虑文章状态；

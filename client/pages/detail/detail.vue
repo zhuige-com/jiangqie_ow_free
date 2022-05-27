@@ -12,12 +12,14 @@
 			</view>
 		</view>
 
+		<!-- #ifdef MP-WEIXIN || MP-QQ || MP-BAIDU || H5 -->
 		<view v-if="post && post.poster_switch==1" class="jiangqie-block jiangqie-detail-opt">
 			<view @click="clickPoster()">
 				<text>分享海报</text>
 				<image mode="aspectFill" src="../../static/share.png"></image>
 			</view>
 		</view>
+		<!-- #endif -->
 
 		<view class="jiangqie-block jiangqie-brand">追格 Zhuige.com 提供技术支持</view>
 
@@ -38,12 +40,12 @@
 <script>
 	/*
 	 * 酱茄企业官网Free
-	 * Author: 酱茄
-	 * Help document: https://www.zhuige.com/docs/gwfree.html
+	 * 作者: 追格
+	 * 文档: https://www.zhuige.com/docs/gwfree.html
 	 * github: https://github.com/zhuige-com/jiangqie_ow_free
 	 * gitee: https://gitee.com/zhuige_com/jiangqie_ow_free
 	 * License：GPL-2.0
-	 * Copyright © 2021-2022 www.jiangqie.com All rights reserved.
+	 * Copyright © 2021-2022 www.zhuige.com All rights reserved.
 	 */
 	
 	import Util from '@/utils/util';

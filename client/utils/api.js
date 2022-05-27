@@ -1,11 +1,7 @@
 const Config = require("@/utils/config");
 
 function makeURL(module, action) {
-	if (Config.JQ_DEBUG) {
-		return `http://test.wp.com/wp-json/jq-ow-free/${module}/${action}`;
-	} else {
-		return `https://${Config.JQ_DOMAIN}/wp-json/jq-ow-free/${module}/${action}`;
-	}
+	return `https://${Config.JQ_DOMAIN}/wp-json/jq-ow-free/${module}/${action}`;
 }
 
 module.exports = {

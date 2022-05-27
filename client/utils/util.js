@@ -165,7 +165,7 @@ function jiangqie() {
 	// #endif
 
 	if (!os) {
-		openLink('https://www.jiangqie.com');
+		openLink('https://www.zhuige.com');
 	}
 }
 
