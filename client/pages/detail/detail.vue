@@ -55,11 +55,11 @@
 
 	export default {
 		data() {
+			this.post_id = undefined;
+			this.acode = undefined;
+			
 			return {
-				post_id: undefined,
 				post: undefined,
-
-				acode: undefined,
 
 				isShowPainter: false,
 				painterImage: '',

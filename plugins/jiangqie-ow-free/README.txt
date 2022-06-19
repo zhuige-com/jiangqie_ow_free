@@ -3,8 +3,8 @@ Contributors: zhuige
 Donate link: https://www.zhuige.com/
 Tags: 追格,官网,小程序,H5,微信,QQ,百度
 Requires at least: 5.6
-Tested up to: 5.9
-Stable tag: 1.3.3
+Tested up to: 6.0
+Stable tag: 1.3.5
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -47,6 +47,10 @@ github下载：https://github.com/zhuige-com/jiangqie_ow_free
 2. screenshot-2.png
 
 == Changelog ==
+
+## 1.3.5（2022-06-19）
+1. 减少不必要的数据绑定
+
 ## 1.3.3（2022-05-27）
 1. 更新帮助文档
 2. 适配字节小程序

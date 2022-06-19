@@ -151,9 +151,9 @@
 	
 	export default {
 		data() {
+			this.load = false;
+			
 			return {
-				load: false,
-				
 				slides: [],
 				icon_navs: [],
 				about: undefined,

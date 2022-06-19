@@ -69,9 +69,9 @@
 
 	export default {
 		data() {
+			this.load = false;
+			
 			return {
-				load: false,
-
 				background: undefined,
 				title: '',
 

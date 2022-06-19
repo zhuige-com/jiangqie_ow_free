@@ -53,9 +53,9 @@
 
 	export default {
 		data() {
+			this.load = false;
+			
 			return {
-				load: false,
-				
 				top_navs: [],
 				curCat: 0,
 
