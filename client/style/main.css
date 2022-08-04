@@ -80,7 +80,7 @@ swiper image {
 
 /* =========== 滑动块 =========== */
 .jiangqie-scroll-block {
-	background-color: #F3F3F3;
+	/* background-color: #F3F3F3; */
 	padding-right: 0;
 	overflow: hidden;
 	display: inline-block;

@@ -60,6 +60,10 @@
 		},
 
 		onLoad(options) {
+			if (options.cat_id) {
+				this.curCat = options.cat_id;
+			}
+			
 			this.loadSetting();
 			this.loadPost();
 		},

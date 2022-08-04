@@ -55,18 +55,19 @@ PS：下载包中含前后端源代码！
 (client为uniapp开发的前端；jiangqie-ow-free为后端，是一个wordpress插件)
 
 
-官网下载：[www.jiangqie.com](https://www.jiangqie.com/)
+官网下载：https://www.zhuige.com/product/gwfree.html
 
-gitee下载（优先更新）：https://gitee.com/zhuige_com/jiangqie_ow_free
+gitee下载：https://gitee.com/zhuige_com/jiangqie_ow_free
 
 github下载：https://github.com/zhuige-com/jiangqie_ow_free
+
 
 ![酱茄源码系列](https://ow.jiangqie.com/img/jiangqie.png) 
 
 
 ### 安装文档/常见问题
 
-安装文档/常见问题：[www.jiangqie.com/owfree/7713.html](https://www.jiangqie.com/owfree/7713.html)
+安装文档/常见问题：[www.zhuige.com/docs/gwfree.html](https://www.zhuige.com/docs/gwfree.html)
 
 
 ### 更新日志

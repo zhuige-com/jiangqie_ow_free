@@ -1,7 +1,7 @@
 {
     "id": "jiangqie-ow-free",
     "name": "酱茄企业官网Free（含后端）-WordPress新闻资讯博客多端小程序",
-    "version": "1.3.5",
+    "version": "1.3.7",
     "description": "酱茄企业官网小程序，酱茄专为中小企业开发的轻量级企业建站小程序",
     "keywords": [
         "官网",
@@ -13,13 +13,9 @@
     "displayName": "酱茄企业官网Free（含后端）-WordPress新闻资讯博客多端小程序",
     "repository": "https://gitee.com/zhuige_com/jiangqie_ow_free",
     "engines": {
-        "HBuilderX": "^3.1.22"
+        "HBuilderX": "^3.2.16"
     },
     "dcloudext": {
-        "category": [
-            "前端页面模板",
-            "uni-app前端项目模板"
-        ],
         "sale": {
             "regular": {
                 "price": "0.00"
@@ -36,7 +32,8 @@
             "data": "无",
             "permissions": "无"
         },
-        "npmurl": ""
+        "npmurl": "",
+        "type": "uniapp-template-project"
     },
     "uni_modules": {
         "platforms": {
