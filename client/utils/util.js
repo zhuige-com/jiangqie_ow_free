@@ -146,7 +146,7 @@ function jiangqie() {
 	// #ifdef MP-WEIXIN
 	os = 'weixin';
 	uni.navigateToMiniProgram({
-		appId: 'wxb0b82c1a4e82a353'
+		appId: 'wx589dff586a7c9b4f'
 	})
 	// #endif
 

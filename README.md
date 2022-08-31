@@ -1,15 +1,17 @@
 
-![酱茄企业官网Free](https://ow.jiangqie.com/img/banner.png) 
+![酱茄企业官网Free](https://www.zhuige.com/uploads/20211104/b33e64d2fa76e0a46a6d7ae444f5ff7c.png) 
 
 ### 小程序介绍
 
-酱茄企业官网小程序，酱茄（[www.jiangqie.com](https://www.jiangqie.com/)）专为中小企业开发的轻量级企业建站小程序（基于uni-app + wordpress），后台操作简单，维护方便，无需过多配置就能搭建一个企业小程序。
+追格企业官网小程序Free（又称酱茄企业官网free）www.zhuige.com，专为中小企业开发的轻量级企业建站小程序（基于uni-app+WordPress），后台操作简单，维护方便，无需过多配置就能搭建一个企业小程序。
 
-#### 微信：**jianbing2011**（加微信，进微信群交流）
+### 微信：**jianbing2011**（加微信，进微信群交流）
 
 <img src="https://www.zhuige.com/uploads/20210828/2830bbe86eb2379d2f629dd125c6f9d7.jpg" alt="扫码加微信" width="300" height="300" />
 
-#### 追格（酱茄）开源产品：
+
+
+### 追格（酱茄）开源产品：
 
 1. 追格资讯小程序Free：[https://www.zhuige.com/product/zxfree.html](https://www.zhuige.com/product/zxfree.html)
 
@@ -33,19 +35,26 @@
 更多功能和特性，欢迎使用专业版
 
 
-#### 专业版
+### 专业版
 
-企业官网小程序专业版-通用行业：[https://www.zhuige.com/product/gw.html](https://www.zhuige.com/product/gw.html)
+1、企业官网小程序专业版-IT软件：[https://www.zhuige.com/product/it.html](https://www.zhuige.com/product/it.html)
 
-![企业官网小程序专业版-通用行业](https://ow.jiangqie.com/img/common.png) 
+![企业官网小程序专业版-通用行业](https://www.zhuige.com/uploads/20220404/db14cc6a4aedd27efa4da628e1dbd473.jpg) 
 
-企业官网小程序专业版-婚纱摄影：[https://www.zhuige.com/news/13.html](https://www.zhuige.com/news/13.html)
 
-![企业官网小程序专业版-婚纱摄影](https://ow.jiangqie.com/img/photo.png) 
+2、企业官网小程序专业版-通用行业：[https://www.zhuige.com/product/gw.html](https://www.zhuige.com/product/gw.html)
 
-企业官网小程序专业版-机械工业：[https://www.zhuige.com/news/29.html](https://www.zhuige.com/news/29.html)
+![企业官网小程序专业版-通用行业](https://www.zhuige.com/uploads/20210923/1df6256e09edb7fbaf43e7817e1d2146.png) 
 
-![企业官网小程序专业版-机械工业](https://ow.jiangqie.com/img/machine.png) 
+
+3、企业官网小程序专业版-婚纱摄影：[https://www.zhuige.com/news/13.html](https://www.zhuige.com/news/13.html)
+
+![企业官网小程序专业版-婚纱摄影](https://www.zhuige.com/uploads/20211104/9cbcfd2f1a41f2ef4b96a9c301d8987a.png) 
+
+
+4、企业官网小程序专业版-机械工业：[https://www.zhuige.com/news/29.html](https://www.zhuige.com/news/29.html)
+
+![企业官网小程序专业版-机械工业](https://www.zhuige.com/uploads/20211104/8c7c859a7240f0190dca657ab46495b9.png) 
 
 
 ### 源码下载
@@ -62,8 +71,6 @@ gitee下载：https://gitee.com/zhuige_com/jiangqie_ow_free
 github下载：https://github.com/zhuige-com/jiangqie_ow_free
 
 
-![酱茄源码系列](https://ow.jiangqie.com/img/jiangqie.png) 
-
 
 ### 安装文档/常见问题
 
@@ -72,12 +79,7 @@ github下载：https://github.com/zhuige-com/jiangqie_ow_free
 
 ### 更新日志
 
-[www.jiangqie.com/owfree/7715.html](https://www.jiangqie.com/owfree/7715.html)
-
-
-### 二次开发/页面路径
-
-[www.jiangqie.com/owfree/7718.html](https://www.jiangqie.com/owfree/7718.html)
+[https://www.zhuige.com/bbs/76.html](https://www.zhuige.com/bbs/76.html)
 
 
 ### 开源协议
@@ -87,7 +89,7 @@ github下载：https://github.com/zhuige-com/jiangqie_ow_free
 
 ### 免责声明
 
-用户在接受酱茄服务之前，请务必仔细阅读本条款（www.jiangqie.com/mzsm）并同意本声明
+用户在接受酱茄或追格服务之前，请务必仔细阅读本条款（https://www.zhuige.com/about/5.html）并同意本声明
 
 
 ### 特别声明

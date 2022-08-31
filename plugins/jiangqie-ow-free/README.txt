@@ -4,7 +4,7 @@ Donate link: https://www.zhuige.com/
 Tags: 追格,官网,小程序,H5,微信,QQ,百度
 Requires at least: 5.6
 Tested up to: 6.0
-Stable tag: 1.3.7
+Stable tag: 1.4.0
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -47,6 +47,13 @@ github下载：https://github.com/zhuige-com/jiangqie_ow_free
 2. screenshot-2.png
 
 == Changelog ==
+
+## 1.4.0（2022-08-25）
+1. 优化：幻灯片高度问题；
+2. 优化：首页新闻动态日期显示错乱问题；
+3. 优化：首页产品服务标题信息高度异常；
+4. 优化：底部菜单样式调整；
+5. 优化：其他已知细节优化。
 
 ## 1.3.7（2022-08-04）
 1. 资讯列表页支持传入文章分类ID

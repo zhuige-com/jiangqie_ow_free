@@ -17,8 +17,8 @@
 }
 
 .jiangqie-head text {
-	font-size: 24rpx;
-	font-weight: 200;
+	font-size: 26rpx;
+	font-weight: 400;
 	float: right;
 }
 
@@ -34,12 +34,12 @@ swiper image {
 
 .jiangqie-swiper {
 	width: 100%;
-	height: 360rpx;
+	height: 420rpx;
 }
 
 .jiangqie-swiper swiper,
 .jiangqie-swiper swiper image {
-	height: 360rpx;
+	height: 420rpx;
 }
 
 
@@ -121,9 +121,10 @@ swiper image {
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	z-index: 12;
-	font-size: 24rpx;
-	height: 70rpx;
-	line-height: 70rpx;
+	font-size: 26rpx;
+	font-weight: 400;
+	height: 90rpx;
+	line-height: 90rpx;
 	padding: 0 10rpx;
 	border-radius: 0 0 6rpx 6rpx;
 	background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
@@ -172,7 +173,7 @@ swiper image {
 .jiangqie-list {}
 
 .jiangqie-list-img image {
-	border-radius: 4rpx;
+	border-radius: 6rpx;
 }
 
 .jiangqie-list-title+.jiangqie-list-img image {
@@ -195,20 +196,20 @@ swiper image {
 
 .jiangqie-list-data {
 	display: flex;
-	justify-content: space-between;
 	font-size: 24rpx;
 	color: #777777;
 }
 
-/* .jiangqie-list-data text {
+.jiangqie-list-data text {
 	margin-right: 20rpx;
-} */
+}
 
 
 /* =========== 左侧列表 =========== */
 .jiangqie-list-side {
 	display: flex;
 	padding: 20rpx 0;
+	align-items: center;
 	border-bottom: 1rpx solid #EEEEEE;
 }
 
@@ -261,6 +262,7 @@ swiper image {
 	font-size: 22rpx;
 	color: #FFFFFF;
 	background-color: #88B9E8;
+	box-shadow: 0 4rpx 10rpx -1rpx rgba(125,125,125,.2);
 }
 
 /* =========== 表单 =========== */

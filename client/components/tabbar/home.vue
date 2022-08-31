@@ -270,7 +270,7 @@
 
 <style lang="scss" scoped>
 	.main_box {
-		padding-bottom: 120rpx;
+		padding-bottom: 160rpx;
 	}
 	
 	.jiangqie-float-block {

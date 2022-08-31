@@ -173,16 +173,16 @@
 		align-items: center;
 		justify-content: center;
 		position: fixed;
-		bottom: 20rpx;
+		bottom: 0rpx;
 		left: 0rpx;
 		right: 0rpx;
 		background: #FFFFFF;
-		width: 690rpx;
-		height: 120rpx;
-		// padding-bottom: 30rpx;
-		margin: 30rpx;
+		width: 760rpx;
+		height: 140rpx;
+		padding-bottom: 30rpx;
+		// margin: 30rpx;
 		// border-top: 1rpx solid #E5E5E5;
-		border-radius: 60rpx;
+		// border-radius: 60rpx;
 		z-index: 99;
 		box-shadow: 0 10rpx 32rpx -2rpx rgba(125,125,125,.4);
 

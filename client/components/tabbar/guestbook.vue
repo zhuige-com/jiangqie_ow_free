@@ -124,7 +124,7 @@
 
 <style lang="scss" scoped>
 	.main_box {
-		padding-bottom: 140rpx;
+		padding-bottom: 160rpx;
 	}
 	
 	.jiangqie-block {
