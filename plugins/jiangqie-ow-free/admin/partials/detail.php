@@ -24,27 +24,6 @@ CSF::createSection($prefix, array(
             'subtitle' => '停用/启用',
             'default' => '1'
         ),
-
-        // array(
-        //     'id'    => 'post_author_switch',
-        //     'type'  => 'switcher',
-        //     'title' => '作者信息是否显示',
-        //     'subtitle' => '停用/启用',
-        //     'default' => '1'
-        // ),
-
-        // array(
-        //     'id'    => 'post_recs_switch',
-        //     'type'  => 'switcher',
-        //     'title' => '是否启用推荐文章',
-        //     'subtitle' => '停用/启用',
-        //     'default' => '1'
-        // ),
-
-        // array(
-        //     'id'          => 'post_copyright',
-        //     'type'        => 'text',
-        //     'title'       => '文章底部版权',
-        // ),
+        
     )
 ));

@@ -85,8 +85,6 @@ class JiangQieOwFreeFeedbackList extends WP_List_Table
 			$sql .= ' ORDER BY id ASC';
 		}
 
-		// $sql .= " LIMIT $per_page";
-		// $sql .= ' OFFSET ' . ($page_number - 1) * $per_page;
 		$sql .= $wpdb->prepare(" LIMIT %d OFFSET %d", $per_page, ($page_number - 1) * $per_page);
 
 		$result = $wpdb->get_results($sql, 'ARRAY_A');

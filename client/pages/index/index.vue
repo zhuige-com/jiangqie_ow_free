@@ -60,18 +60,18 @@
 				tab_nav_list: [{
 					id: 0,
 					name: '首页',
-					icon: '../../static/tabbar/index.png',
-					icon_p: '../../static/tabbar/index_p.png',
+					icon: '/static/tabbar/index.png',
+					icon_p: '/static/tabbar/index_p.png',
 				}, {
 					id: 1,
 					name: '动态',
-					icon: '../../static/tabbar/discover.png',
-					icon_p: '../../static/tabbar/discover_p.png',
+					icon: '/static/tabbar/discover.png',
+					icon_p: '/static/tabbar/discover_p.png',
 				}, {
 					id: 2,
 					name: '留言',
-					icon: '../../static/tabbar/mine.png',
-					icon_p: '../../static/tabbar/mine_p.png',
+					icon: '/static/tabbar/mine.png',
+					icon_p: '/static/tabbar/mine_p.png',
 				}],
 			}
 		},
@@ -159,9 +159,6 @@
 				// setTimeout(function() {
 				// 	uni.stopPullDownRefresh()
 				// }, 2000)
-
-				// console.log('下拉刷新四个组件公用的下拉刷新方法,根据在哪个页面下拉执行哪个页面的刷新方方法即可')
-				// console.log('如果想要自定义刷新的话，插件市场就有一个   非常好用也非常容易入手')
 			}
 		}
 	}
