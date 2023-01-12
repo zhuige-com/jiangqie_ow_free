@@ -24,16 +24,17 @@
 		<view class="jiangqie-block jiangqie-brand">追格 Zhuige.com 提供技术支持</view>
 
 		<!-- #ifdef MP-BAIDU -->
-		<view v-if="isShowPainter" isRenderImage style="position: fixed; top: 0;" @longpress="longTapPainter" @click="clickPainter()">
+		<view v-if="isShowPainter" isRenderImage style="position: fixed; top: 0;" @longpress="longTapPainter"
+			@click="clickPainter()">
 			<l-painter isRenderImage :board="base" @success="onPainterSuccess" />
 		</view>
 		<!-- #endif -->
-		
+
 		<!-- #ifdef MP-WEIXIN || MP-QQ || H5 -->
 		<l-painter v-if="isShowPainter" isRenderImage custom-style="position: fixed; left: 200%;" :board="base"
 			@success="onPainterSuccess" />
 		<!-- #endif -->
-		
+
 	</view>
 </template>
 
@@ -45,9 +46,9 @@
 	 * github: https://github.com/zhuige-com/jiangqie_ow_free
 	 * gitee: https://gitee.com/zhuige_com/jiangqie_ow_free
 	 * License：GPL-2.0
-	 * Copyright © 2021-2022 www.zhuige.com All rights reserved.
+	 * Copyright © 2021-2023 www.zhuige.com All rights reserved.
 	 */
-	
+
 	import Util from '@/utils/util';
 	import Api from '@/utils/api';
 	import Rest from '@/utils/rest';
@@ -57,7 +58,7 @@
 		data() {
 			this.post_id = undefined;
 			this.acode = undefined;
-			
+
 			return {
 				post: undefined,
 
@@ -85,14 +86,14 @@
 			// #ifdef MP-QQ
 			this.loadQqacode();
 			// #endif
-			
+
 			// #ifdef MP-BAIDU || H5
 			this.loadBdacode();
 			// #endif
 
 			this.loadPost();
 		},
-		
+
 		onShow() {
 			// #ifdef MP-BAIDU
 			if (this.post) {
@@ -111,15 +112,15 @@
 				imageUrl: this.post.thumbnail,
 				content: this.post.excerpt
 			};
-			
+
 			// #ifdef MP-WEIXIN || MP-BAIDU
 			params.path = 'pages/detail/detail?post_id=' + this.post_id;
 			// #endif
-			
+
 			// #ifdef MP-BAIDU
 			params.content = this.post.excerpt;
 			// #endif
-			
+
 			return params;
 		},
 
@@ -131,7 +132,7 @@
 				query: 'post_id=' + this.post_id
 			};
 		},
-		
+
 		onAddToFavorites(res) {
 			return {
 				title: this.post.title,
@@ -153,7 +154,7 @@
 					uni.setNavigationBarTitle({
 						title: this.post.title
 					})
-					
+
 					// #ifdef MP-BAIDU
 					swan.setPageInfo({
 						title: this.post.title,
@@ -208,7 +209,7 @@
 			clickPainter() {
 				this.isShowPainter = false;
 			},
-			
+
 			/**
 			 * 长按海报
 			 */
@@ -226,12 +227,12 @@
 								}
 								clearInterval(save2album)
 								uni.hideLoading();
-			
+
 								uni.saveImageToPhotosAlbum({
 									filePath: this.painterImage,
 									success() {
 										uni.showToast({
-											title:'已保存'
+											title: '已保存'
 										})
 									}
 								})
@@ -336,13 +337,13 @@
 					]
 				}
 			},
-			
+
 			/**
 			 * 打开海报
 			 */
 			onPainterSuccess(e) {
 				this.painterImage = e;
-				
+
 				// #ifndef MP-BAIDU
 				uni.previewImage({
 					urls: [e]

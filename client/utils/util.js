@@ -3,7 +3,7 @@ import Alert from '@/utils/alert';
 function navigateBack() {
 	uni.navigateBack({
 		delta: 1,
-		fail: function (res) {
+		fail: function(res) {
 			uni.switchTab({
 				url: '/pages/index/index'
 			});
@@ -117,14 +117,14 @@ function openLink(link) {
 					});
 				}
 			};
-			
+
 			if (feedId != '') {
 				params.feedId = feedId;
 				wx.openChannelsActivity(params);
 			} else {
 				wx.openChannelsUserProfile(params);
 			}
-			
+
 			return;
 		}
 		// #endif

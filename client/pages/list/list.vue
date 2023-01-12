@@ -41,7 +41,7 @@
 	 * github: https://github.com/zhuige-com/jiangqie_ow_free
 	 * gitee: https://gitee.com/zhuige_com/jiangqie_ow_free
 	 * License：GPL-2.0
-	 * Copyright © 2021-2022 www.zhuige.com All rights reserved.
+	 * Copyright © 2021-2023 www.zhuige.com All rights reserved.
 	 */
 
 	import Util from '@/utils/util';
@@ -53,7 +53,7 @@
 			return {
 				top_navs: [],
 				curCat: 0,
-				
+
 				posts: [],
 				loadMore: 'more'
 			}
@@ -63,7 +63,7 @@
 			if (options.cat_id) {
 				this.curCat = options.cat_id;
 			}
-			
+
 			this.loadSetting();
 			this.loadPost();
 		},
@@ -122,14 +122,14 @@
 			 */
 			clickNavCat(cat_id) {
 				this.curCat = cat_id;
-			
+
 				this.loadMore = 'more';
 				this.loaded = false;
 				this.posts = [];
-			
+
 				this.loadPost();
 			},
-			
+
 			/**
 			 * 加载配置
 			 */
@@ -144,7 +144,7 @@
 					console.log(err)
 				});
 			},
-			
+
 			/**
 			 * 加载文章
 			 */

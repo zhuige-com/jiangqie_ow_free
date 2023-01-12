@@ -12,9 +12,9 @@
 	 * github: https://github.com/zhuige-com/jiangqie_ow_free
 	 * gitee: https://gitee.com/zhuige_com/jiangqie_ow_free
 	 * License：GPL-2.0
-	 * Copyright © 2021-2022 www.zhuige.com All rights reserved.
+	 * Copyright © 2021-2023 www.zhuige.com All rights reserved.
 	 */
-	
+
 	export default {
 		data() {
 			return {

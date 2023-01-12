@@ -4,17 +4,17 @@
 		<view :style="{'display':show_index == 0 ?'block':'none'}">
 			<tab-home ref="home"></tab-home>
 		</view>
-		
+
 		<!-- 发现 -->
 		<view :style="{'display':show_index == 1 ?'block':'none'}">
 			<tab-discovery ref="discovery"></tab-discovery>
 		</view>
-		
+
 		<!-- 数据 -->
 		<view :style="{'display':show_index == 2? 'block':'none'}">
 			<tab-guestbook ref="guestbook"></tab-guestbook>
 		</view>
-		
+
 		<view class="tabBar">
 			<view class="tabBar_list">
 				<view v-for="(item) in tab_nav_list" :key="item.id" class="tabBar_item" @tap="cut_index(item.id)">
@@ -36,9 +36,9 @@
 	 * github: https://github.com/zhuige-com/jiangqie_ow_free
 	 * gitee: https://gitee.com/zhuige_com/jiangqie_ow_free
 	 * License：GPL-2.0
-	 * Copyright © 2021-2022 www.zhuige.com All rights reserved.
+	 * Copyright © 2021-2023 www.zhuige.com All rights reserved.
 	 */
-	
+
 	import Util from '@/utils/util';
 	import Api from '@/utils/api';
 	import Rest from '@/utils/rest';
@@ -89,7 +89,7 @@
 				this.cut_index(2);
 			})
 		},
-		
+
 		onShow() {
 			// #ifdef MP-BAIDU
 			if (getApp().globalData.appName) {
@@ -106,15 +106,15 @@
 			let params = {
 				title: getApp().globalData.appName
 			};
-			
+
 			if (getApp().globalData.appThumb) {
 				params.imageUrl = getApp().globalData.appThumb;
 			}
 
 			// #ifdef MP-WEIXIN || MP-BAIDU
-				params.path = 'pages/index/index';
+			params.path = 'pages/index/index';
 			// #endif
-			
+
 			// #ifdef MP-BAIDU
 			params.content = getApp().globalData.appDesc;
 			// #endif
@@ -128,7 +128,7 @@
 				title: getApp().globalData.appName
 			};
 		},
-		
+
 		onAddToFavorites(res) {
 			return {
 				title: getApp().globalData.appName
@@ -181,7 +181,7 @@
 		// border-top: 1rpx solid #E5E5E5;
 		// border-radius: 60rpx;
 		z-index: 99;
-		box-shadow: 0 10rpx 32rpx -2rpx rgba(125,125,125,.4);
+		box-shadow: 0 10rpx 32rpx -2rpx rgba(125, 125, 125, .4);
 
 		.tabBar_list {
 			width: 86%;

@@ -11,19 +11,19 @@ function request(url, data = {}, method = "GET") {
 			data.t = new Date().getTime();
 			data.r = Math.floor(Math.random() * 10000);
 		}
-		
+
 		// #ifdef MP-WEIXIN
 		data.os = 'wx';
 		// #endif
-		
+
 		// #ifdef MP-BAIDU
 		data.os = 'bd';
 		// #endif
-		
+
 		// #ifdef MP-QQ
 		data.os = 'qq';
 		// #endif
-		
+
 		uni.request({
 			url: url,
 			data: data,
@@ -33,7 +33,7 @@ function request(url, data = {}, method = "GET") {
 					reject(res.errMsg);
 					return;
 				}
-				
+
 				resolve(res.data);
 			},
 			fail: function(err) {
