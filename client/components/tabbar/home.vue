@@ -175,6 +175,9 @@
 		},
 		
 		methods: {
+			/**
+			 * 组件加载
+			 */
 			jqOnLoad() {
 				Rest.post(Api.JQ_OW_FREE_SETTING_HOME, {}).then(res => {
 					getApp().globalData.appName = res.data.title;
@@ -213,6 +216,9 @@
 				});
 			},
 			
+			/**
+			 * 组件显示
+			 */
 			jqOnShow() {
 				if (!this.load) {
 					this.load = true;
@@ -220,18 +226,30 @@
 				}
 			},
 			
+			/**
+			 * 点击打开链接
+			 */
 			clickLink(link) {
 				Util.openLink(link);
 			},
 			
+			/**
+			 * 点击打开文章
+			 */
 			clickPost(post_id) {
 				Util.openLink('/pages/detail/detail?post_id=' + post_id);
 			},
 			
+			/**
+			 * 点击打开文章列表
+			 */
 			clickNewsMore() {
 				Util.openLink('/pages/list/list');
 			},
 			
+			/**
+			 * 提交留言
+			 */
 			clickSubmit() {
 				Rest.post(Api.JQ_OW_FREE_USER_FEEDBACK, {
 					username: this.username,
@@ -251,16 +269,25 @@
 				});
 			},
 			
+			/**
+			 * 点击拨打电话
+			 */
 			clickPhone() {
 				uni.makePhoneCall({
 				    phoneNumber: this.phone_number
 				});
 			},
 			
+			/**
+			 * 跳转到 意见反馈页面
+			 */
 			clickFeedback() {
 				uni.$emit('feedback', {})
 			},
 			
+			/**
+			 * 点击版权
+			 */
 			clickJiangQie() {
 				Util.jiangqie();
 			}

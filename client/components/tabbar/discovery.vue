@@ -65,11 +65,17 @@
 		},
 		
 		methods: {
+			/**
+			 * 组件加载
+			 */
 			jqOnLoad() {
 				this.loadSetting();
 				this.loadPost();
 			},
 
+			/**
+			 * 组件显示
+			 */
 			jqOnShow() {
 				if (!this.load) {
 					this.load = true;
@@ -77,20 +83,32 @@
 				}
 			},
 
+			/**
+			 * 上拉 加载更多
+			 */
 			lower() {
 				if (this.loadMore == 'more') {
 					this.loadPost();
 				}
 			},
 
+			/**
+			 * 点击打开文章
+			 */
 			clickPost(post_id) {
 				Util.openLink('/pages/detail/detail?post_id=' + post_id);
 			},
 			
+			/**
+			 * 点击版权
+			 */
 			clickJiangQie() {
 				Util.jiangqie();
 			},
 			
+			/**
+			 * 点击切换分类
+			 */
 			clickNavCat(cat_id) {
 				this.curCat = cat_id;
 			
@@ -101,6 +119,9 @@
 				this.loadPost();
 			},
 			
+			/**
+			 * 加载配置
+			 */
 			loadSetting() {
 				Rest.post(Api.JQ_OW_FREE_SETTING_NEWS, {}).then(res => {
 					this.top_navs = [{
@@ -113,6 +134,9 @@
 				});
 			},
 
+			/**
+			 * 加载最新文章
+			 */
 			loadPost() {
 				if (this.loadMore == 'loading') {
 					return;

@@ -82,6 +82,9 @@
 			}
 		},
 		methods: {
+			/**
+			 * 组件加载
+			 */
 			jqOnLoad() {
 				Rest.post(Api.JQ_OW_FREE_SETTING_FEEDBACK, {}).then(res => {
 					this.background = res.data.background;
@@ -89,6 +92,9 @@
 				});
 			},
 
+			/**
+			 * 组件显示
+			 */
 			jqOnShow() {
 				if (!this.load) {
 					this.load = true;
@@ -96,6 +102,9 @@
 				}
 			},
 
+			/**
+			 * 点击提交反馈
+			 */
 			clickSubmit() {
 				Rest.post(Api.JQ_OW_FREE_USER_FEEDBACK, {
 					username: this.username,
@@ -115,6 +124,9 @@
 				});
 			},
 			
+			/**
+			 * 点击版权
+			 */
 			clickJiangQie() {
 				Util.jiangqie();
 			}

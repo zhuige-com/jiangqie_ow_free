@@ -77,7 +77,6 @@
 		},
 
 		onLoad() {
-			// this.is_lhp = this.$is_bang
 			this.$nextTick(() => {
 				// 一定要等视图更新完再调用方法   -----------++++++++++++++++重要
 				setTimeout(() => {
@@ -150,16 +149,6 @@
 					this.$refs.guestbook.jqOnShow()
 				}
 			},
-
-			onPullDownRefresh() {
-				// uni.showToast({
-				// 	title: `第${this.show_index+1}个页面的刷新`
-				// })
-
-				// setTimeout(function() {
-				// 	uni.stopPullDownRefresh()
-				// }, 2000)
-			}
 		}
 	}
 </script>
