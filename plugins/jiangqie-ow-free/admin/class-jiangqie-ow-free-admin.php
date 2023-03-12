@@ -2,12 +2,12 @@
 
 /*
  * 酱茄企业官网Free
- * Author: 酱茄
+ * Author: 追格
  * Help document: https://www.zhuige.com/docs/gwfree.html
  * github: https://github.com/zhuige-com/jiangqie_ow_free
  * gitee: https://gitee.com/zhuige_com/jiangqie_ow_free
  * License：GPL-2.0
- * Copyright © 2021-2022 www.jiangqie.com All rights reserved.
+ * Copyright © 2021-2023 www.zhuige.com All rights reserved.
  */
 
 class Jiangqie_Ow_Free_Admin
@@ -37,13 +37,13 @@ class Jiangqie_Ow_Free_Admin
 		$prefix = 'jiangqie-ow-free';
 
 		CSF::createOptions($prefix, array(
-			'framework_title' => '酱茄企业官网Free <small>by <a href="https://www.jiangqie.com" target="_blank" title="酱茄企业官网Free">www.jiangqie.com</a></small>',
+			'framework_title' => '酱茄企业官网Free <small>by <a href="https://www.zhuige.com" target="_blank" title="追格">www.zhuige.com</a></small>',
 			'menu_title' => '酱茄企业官网Free',
 			'menu_slug'  => 'jiangqie-ow-free',
 			'menu_position' => 2,
 			'show_bar_menu' => false,
             'show_sub_menu' => false,
-			'footer_credit' => 'Thank you for creating with <a href="https://www.jiangqie.com/" target="_blank">酱茄</a>',
+			'footer_credit' => 'Thank you for creating with <a href="https://www.zhuige.com/" target="_blank">追格</a>',
 			'menu_icon' => 'dashicons-layout',
 		));
 
@@ -114,12 +114,12 @@ class Jiangqie_Ow_Free_Admin
 		}
 
 		if ('jiangqie_ow_free_setup' === $_GET['page']) {
-			wp_redirect('https://www.jiangqie.com/owfree/7713.html');
+			wp_redirect('https://www.zhuige.com/docs/gwfree.html');
 			die;
 		}
 
 		if ('jiangqie_ow_free_upgrade' === $_GET['page']) {
-			wp_redirect('https://www.zhuige.com/docs/gwfree.html');
+			wp_redirect('https://www.zhuige.com/product/gwfree.html');
 			die;
 		}
 	}

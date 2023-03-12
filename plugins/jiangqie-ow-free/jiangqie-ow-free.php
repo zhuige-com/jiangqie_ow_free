@@ -4,8 +4,8 @@
  * Plugin Name:		酱茄企业官网Free
  * Plugin URI:		https://www.zhuige.com/docs/gwfree.html
  * Description:		让Wordpress快速变身企业官网小程序。
- * Version:			1.4.4
- * Author:			酱茄
+ * Version:			1.4.5
+ * Author:			追格
  * Author URI:		https://www.zhuige.com/
  * License:			GPLv2 or later
  * License URI:		http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
