@@ -219,6 +219,11 @@ class Jiangqie_Ow_Free
 		require_once JIANGQIE_OW_FREE_BASE_DIR . 'public/rest/class-jiangqie-ow-free-user-controller.php';
 
 		/**
+		 * AJAX
+		 */
+		require_once JIANGQIE_OW_FREE_BASE_DIR . 'includes/class-jiangqie-ow-free-ajax.php';
+
+		/**
 		 * 后台管理
 		 */
 		require_once JIANGQIE_OW_FREE_BASE_DIR . 'admin/codestar-framework/codestar-framework.php';

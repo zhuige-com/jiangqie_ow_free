@@ -105,6 +105,28 @@ class Jiangqie_Ow_Free_Post_Controller extends Jiangqie_Ow_Free_Base_Controller
 		}
 		$post['keywords'] = $keywords;
 
+		// 尾部推荐
+		// 根据分类获取
+		$categorys = get_the_category($post_id);
+		$cat_ids = [];
+		foreach ($categorys as $category) {
+			$cat_ids[] = $category->cat_ID;
+		}
+		$args = [
+			'posts_per_page' => 4,
+			'offset' => 0,
+			'orderby' => 'date',
+			'category__in' => $cat_ids,
+			'post__not_in' => [$post_id]
+		];
+		$query = new WP_Query();
+		$result = $query->query($args);
+		$posts = [];
+		foreach ($result as $p) {
+			$posts[] = $this->_formatPost($p);
+		}
+		$post['recs'] = $posts;
+
 		return $this->make_success($post);
 	}
 

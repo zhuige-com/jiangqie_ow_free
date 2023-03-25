@@ -20,6 +20,23 @@
 			</view>
 		</view>
 		<!-- #endif -->
+		
+		<view v-if="post && post.recs.length>0" class="jiangqie-block">
+			<view class="jiangqie-head">相关推荐</view>
+			<!-- 列表内容块 - 左图 -->
+			<view v-for="(item, index) in post.recs" :key="index" class="jiangqie-list-side" @click="clickPost(item.id)">
+				<view class="jiangqie-list-img">
+					<image mode="aspectFill" :src="item.thumbnail"></image>
+				</view>
+				<view class="jiangqie-list-text">
+					<view class="jiangqie-list-title">{{item.title}}</view>
+					<view class="jiangqie-list-data">
+						<text>浏览 {{item.views}}</text>
+						<text>{{item.time}}</text>
+					</view>
+				</view>
+			</view>
+		</view>
 
 		<view class="jiangqie-block jiangqie-brand">追格 Zhuige.com 提供技术支持</view>
 
@@ -349,6 +366,13 @@
 					urls: [e]
 				});
 				// #endif
+			},
+			
+			/**
+			 * 点击打开文章
+			 */
+			clickPost(post_id) {
+				Util.openLink('/pages/detail/detail?post_id=' + post_id);
 			},
 		}
 	}

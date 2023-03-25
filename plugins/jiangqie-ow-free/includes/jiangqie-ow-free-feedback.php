@@ -30,7 +30,7 @@ function jiangqie_ow_free_add_menu_items_feedback()
 		'activate_plugins',					// Capability.
 		'jiangqie_ow_free_feedback',				// Menu slug.
 		'jiangqie_ow_free_render_feedback',		// Callback function.
-		'',
+		'dashicons-feedback',
 		3
 	);
 }
