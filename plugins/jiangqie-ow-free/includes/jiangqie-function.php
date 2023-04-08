@@ -14,8 +14,8 @@ if (!function_exists('jiangqie_ow_free_import_image2attachment')) {
     //把图片添加到媒体库
     function jiangqie_ow_free_import_image2attachment($file, $post_id = 0, $import_date = 'current')
     {
-        if (class_exists('Jiangqie_Ow_Free') && Jiangqie_Ow_Free::option_value('jiangqie_xcx_img2attachment') == 'no') {
-            return new WP_Error('upload_error', '');
+        if (!Jiangqie_Ow_Free::option_value('jiangqie_xcx_img2attachment')) {
+            return new WP_Error('jiangqie', 'jiangqie');
         }
 
         set_time_limit(0);

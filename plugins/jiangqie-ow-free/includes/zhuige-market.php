@@ -102,7 +102,7 @@ if (!defined('ZHUIGE_MARKET')) {
 	//加载js - 插件市场
 	function enqueue_script_zhuige_market()
 	{
-		wp_register_script('lib-layer', JIANGQIE_OW_FREE_BASE_URL . 'admin/js/layer/layer.js', ['jquery'], '1.0', false);
+		wp_enqueue_script('lib-layer', JIANGQIE_OW_FREE_BASE_URL . 'admin/js/layer/layer.js', ['jquery'], '1.0', false);
 		wp_enqueue_script('zhuige-market-js', JIANGQIE_OW_FREE_BASE_URL . 'admin/js/zhuige-market.js', array('jquery', 'lib-layer'), '1.0.', true);
 	}
 

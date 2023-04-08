@@ -100,5 +100,12 @@ CSF::createSection($prefix, array(
             'library' => 'image',
         ),
         
+        array(
+            'id'    => 'jiangqie_xcx_img2attachment',
+            'type'  => 'switcher',
+            'title' => '小程序码导入媒体库',
+            'subtitle' => '使用七牛/阿里/腾讯OSS的需要开启',
+            'default' => ''
+        ),
     )
 ));
