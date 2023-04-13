@@ -77,13 +77,17 @@ class Jiangqie_Ow_Free
 	 */
 	public static function get_wx_token()
 	{
-		$path_token = JIANGQIE_OW_FREE_BASE_DIR . 'wx_access_token.data';
-		if (file_exists($path_token)) {
-			$str_token = file_get_contents($path_token);
-			$access_token = json_decode($str_token, TRUE);
-			if ($access_token['expires_in'] > time()) {
-				return $access_token;
-			}
+		// $path_token = JIANGQIE_OW_FREE_BASE_DIR . 'wx_access_token.data';
+		// if (file_exists($path_token)) {
+		// 	$str_token = file_get_contents($path_token);
+		// 	$access_token = json_decode($str_token, TRUE);
+		// 	if ($access_token['expires_in'] > time()) {
+		// 		return $access_token;
+		// 	}
+		// }
+		$access_token = get_option('jiangqie-ow-free-wx-access-token');
+		if ($access_token && isset($access_token['expires_in']) && $access_token['expires_in'] > time()) {
+			return $access_token;
 		}
 
 		$wechat = Jiangqie_Ow_Free::option_value('basic_wechat');
@@ -106,7 +110,8 @@ class Jiangqie_Ow_Free
 		$access_token = json_decode($body['body'], TRUE);
 
 		$access_token['expires_in'] = $access_token['expires_in'] + time() - 200;
-		file_put_contents($path_token, json_encode($access_token));
+		// file_put_contents($path_token, json_encode($access_token));
+		update_option('jiangqie-ow-free-wx-access-token', $access_token);
 
 		return $access_token;
 	}
@@ -116,13 +121,17 @@ class Jiangqie_Ow_Free
 	 */
 	public static function get_qq_token()
 	{
-		$path_token = JIANGQIE_OW_FREE_BASE_DIR . 'qq_access_token.data';
-		if (file_exists($path_token)) {
-			$str_token = file_get_contents($path_token);
-			$access_token = json_decode($str_token, TRUE);
-			if ($access_token['expires_in'] > time()) {
-				return $access_token;
-			}
+		// $path_token = JIANGQIE_OW_FREE_BASE_DIR . 'qq_access_token.data';
+		// if (file_exists($path_token)) {
+		// 	$str_token = file_get_contents($path_token);
+		// 	$access_token = json_decode($str_token, TRUE);
+		// 	if ($access_token['expires_in'] > time()) {
+		// 		return $access_token;
+		// 	}
+		// }
+		$access_token = get_option('jiangqie-ow-free-qq-access-token');
+		if ($access_token && isset($access_token['expires_in']) && $access_token['expires_in'] > time()) {
+			return $access_token;
 		}
 
 		$qq = Jiangqie_Ow_Free::option_value('basic_qq');
@@ -145,7 +154,8 @@ class Jiangqie_Ow_Free
 		$access_token = json_decode($body['body'], TRUE);
 
 		$access_token['expires_in'] = $access_token['expires_in'] + time() - 200;
-		file_put_contents($path_token, json_encode($access_token));
+		// file_put_contents($path_token, json_encode($access_token));
+		update_option('jiangqie-ow-free-qq-access-token', $access_token);
 
 		return $access_token;
 	}
@@ -155,13 +165,17 @@ class Jiangqie_Ow_Free
 	 */
 	public static function get_bd_token()
 	{
-		$path_token = JIANGQIE_OW_FREE_BASE_DIR . 'bd_access_token.data';
-		if (file_exists($path_token)) {
-			$str_token = file_get_contents($path_token);
-			$access_token = json_decode($str_token, TRUE);
-			if ($access_token['expires_in'] > time()) {
-				return $access_token;
-			}
+		// $path_token = JIANGQIE_OW_FREE_BASE_DIR . 'bd_access_token.data';
+		// if (file_exists($path_token)) {
+		// 	$str_token = file_get_contents($path_token);
+		// 	$access_token = json_decode($str_token, TRUE);
+		// 	if ($access_token['expires_in'] > time()) {
+		// 		return $access_token;
+		// 	}
+		// }
+		$access_token = get_option('jiangqie-ow-free-bd-access-token');
+		if ($access_token && isset($access_token['expires_in']) && $access_token['expires_in'] > time()) {
+			return $access_token;
 		}
 
 		$baidu = Jiangqie_Ow_Free::option_value('basic_baidu');
@@ -185,7 +199,8 @@ class Jiangqie_Ow_Free
 		$access_token = json_decode($body['body'], TRUE);
 
 		$access_token['expires_in'] = $access_token['expires_in'] + time() - 200;
-		file_put_contents($path_token, json_encode($access_token));
+		// file_put_contents($path_token, json_encode($access_token));
+		update_option('jiangqie-ow-free-bd-access-token', $access_token);
 
 		return $access_token;
 	}
