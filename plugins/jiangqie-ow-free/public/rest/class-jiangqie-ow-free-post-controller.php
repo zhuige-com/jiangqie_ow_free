@@ -204,7 +204,7 @@ class Jiangqie_Ow_Free_Post_Controller extends Jiangqie_Ow_Free_Base_Controller
 		file_put_contents($qrcode, $content);
 
 		//同步到媒体库
-		$res = jiangqie_ow_free_import_image2attachment($qrcode);
+		$res = jiangqie_ow_free_import_image2attachment($qrcode, $post_id);
 		if (!is_wp_error($res)) {
 			$qrcode_link = $uploads['baseurl'] . '/jiangqie_wxacode/' . $res;
 		}
@@ -276,7 +276,7 @@ class Jiangqie_Ow_Free_Post_Controller extends Jiangqie_Ow_Free_Base_Controller
 		file_put_contents($qrcode, $content);
 
 		//同步到媒体库
-		$res = jiangqie_ow_free_import_image2attachment($qrcode);
+		$res = jiangqie_ow_free_import_image2attachment($qrcode, $post_id);
 		if (!is_wp_error($res)) {
 			$qrcode_link = $uploads['baseurl'] . '/jiangqie_qqacode/' . $res;
 		}
@@ -346,7 +346,7 @@ class Jiangqie_Ow_Free_Post_Controller extends Jiangqie_Ow_Free_Base_Controller
 		file_put_contents($qrcode, $content);
 
 		//同步到媒体库
-		$res = jiangqie_ow_free_import_image2attachment($qrcode);
+		$res = jiangqie_ow_free_import_image2attachment($qrcode, $post_id);
 		if (!is_wp_error($res)) {
 			$qrcode_link = $uploads['baseurl'] . '/jiangqie_bdacode/' . $res;
 		}
