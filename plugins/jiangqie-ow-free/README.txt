@@ -3,8 +3,8 @@ Contributors: zhuige
 Donate link: https://www.zhuige.com/
 Tags: 追格,官网,小程序,H5,微信,QQ,百度
 Requires at least: 5.6
-Tested up to: 6.0
-Stable tag: 1.5.0
+Tested up to: 6.2
+Stable tag: 1.5.2
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -47,6 +47,9 @@ github下载：https://github.com/zhuige-com/jiangqie_ow_free
 2. screenshot-2.png
 
 == Changelog ==
+
+## 1.5.2（2023-04-27）
+1. 修复iOS上webview兼容性问题
 
 ## 1.5.1（2023-04-08）
 1. 增加小程序是否导入媒体库的配置
