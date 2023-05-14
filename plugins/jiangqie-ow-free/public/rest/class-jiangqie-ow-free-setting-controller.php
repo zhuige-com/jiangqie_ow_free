@@ -166,11 +166,13 @@ class Jiangqie_Ow_Free_Setting_Controller extends Jiangqie_Ow_Free_Base_Controll
 			$data['feedback'] = $feedback;
 		}
 
+		// 分享标题
+		$data['share_title'] = Jiangqie_Ow_Free::option_value('home_title');
 
 		//分享缩略图
 		$home_thumb = Jiangqie_Ow_Free::option_value('home_thumb');
 		if ($home_thumb && $home_thumb['url']) {
-			$data['thumb'] = $home_thumb['url'];
+			$data['share_thumb'] = $home_thumb['url'];
 		}
 
 

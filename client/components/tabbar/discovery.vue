@@ -30,6 +30,8 @@
 				</view>
 
 				<uni-load-more :status="loadMore"></uni-load-more>
+				
+				<view class="jiangqie-placeholder"></view>
 			</template>
 
 		</scroll-view>
@@ -167,5 +169,9 @@
 	.jiangqie-block:first-of-type {
 		border: none;
 		border-top: 16rpx solid #F3F3F3;
+	}
+	
+	.jiangqie-placeholder {
+		height: 50rpx;
 	}
 </style>

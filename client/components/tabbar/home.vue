@@ -191,8 +191,12 @@
 					});
 					// #endif
 					
-					if (res.data.thumb) {
-						getApp().globalData.appThumb = res.data.thumb;
+					if (res.data.share_title) {
+						getApp().globalData.shareTitle = res.data.share_title;
+					}
+					
+					if (res.data.share_thumb) {
+						getApp().globalData.shareThumb = res.data.share_thumb;
 					}
 					
 					uni.setNavigationBarTitle({

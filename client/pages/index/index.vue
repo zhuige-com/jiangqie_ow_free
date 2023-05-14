@@ -105,9 +105,13 @@
 			let params = {
 				title: getApp().globalData.appName
 			};
+			
+			if (getApp().globalData.shareTitle) {
+				params.title = getApp().globalData.shareTitle;
+			}
 
-			if (getApp().globalData.appThumb) {
-				params.imageUrl = getApp().globalData.appThumb;
+			if (getApp().globalData.shareThumb) {
+				params.imageUrl = getApp().globalData.shareThumb;
 			}
 
 			// #ifdef MP-WEIXIN || MP-BAIDU
