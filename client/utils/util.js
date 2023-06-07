@@ -88,9 +88,6 @@ function openLink(link) {
 			let params = {
 				appId: appid,
 				fail: res => {
-					// uni.setClipboardData({
-					// 	data: link
-					// });
 					if (res.errMsg && res.errMsg.indexOf('cancel') < 0) {
 						Alert.toast(res.errMsg)
 					}
@@ -115,9 +112,6 @@ function openLink(link) {
 			let params = {
 				finderUserName: finder,
 				fail: res => {
-					// uni.setClipboardData({
-					// 	data: link
-					// });
 					if (res.errMsg && res.errMsg.indexOf('cancel') < 0) {
 						Alert.toast(res.errMsg)
 					}
