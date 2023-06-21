@@ -13,7 +13,7 @@
 							<text>姓名:</text>
 						</view>
 						<view>
-							<input type="text" v-model="username" />
+							<input type="nickname" @blur="onUsernameBlur" v-model="username" />
 						</view>
 					</view>
 					<view class="jiangqie-form-line">
@@ -100,6 +100,13 @@
 					this.load = true;
 					this.jqOnLoad();
 				}
+			},
+			
+			/**
+			 * 设置用户名
+			 */
+			onUsernameBlur(e) {
+				this.username = e.detail.value;
 			},
 
 			/**
