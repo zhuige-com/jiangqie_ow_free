@@ -105,7 +105,7 @@
 			let params = {
 				title: getApp().globalData.appName
 			};
-			
+
 			if (getApp().globalData.shareTitle) {
 				params.title = getApp().globalData.shareTitle;
 			}
@@ -170,9 +170,6 @@
 		width: 760rpx;
 		height: 140rpx;
 		padding-bottom: 30rpx;
-		// margin: 30rpx;
-		// border-top: 1rpx solid #E5E5E5;
-		// border-radius: 60rpx;
 		z-index: 99;
 		box-shadow: 0 10rpx 32rpx -2rpx rgba(125, 125, 125, .4);
 

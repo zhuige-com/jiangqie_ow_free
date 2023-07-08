@@ -47,9 +47,11 @@ function jiangqie_ow_free_render_feedback()
 		if ($feedback_id) {
 			$feedback = $wpdb->get_row(
 				$wpdb->prepare(
-					"SELECT * FROM {$wpdb->prefix}jiangqie_ow_feedback WHERE id=%d", $feedback_id
-				), 
-			ARRAY_A);
+					"SELECT * FROM {$wpdb->prefix}jiangqie_ow_feedback WHERE id=%d",
+					$feedback_id
+				),
+				ARRAY_A
+			);
 ?>
 			<h1>留言信息</h1>
 			<table class="form-table">

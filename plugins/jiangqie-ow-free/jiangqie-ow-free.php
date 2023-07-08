@@ -4,7 +4,7 @@
  * Plugin Name:		酱茄企业官网Free
  * Plugin URI:		https://www.zhuige.com/docs/gwfree.html
  * Description:		让Wordpress快速变身企业官网小程序。
- * Version:			1.5.5
+ * Version:			1.5.6
  * Author:			追格
  * Author URI:		https://www.zhuige.com/
  * License:			GPLv2 or later
@@ -16,7 +16,7 @@ if (!defined('WPINC')) {
 	die;
 }
 
-define('JIANGQIE_OW_FREE_VERSION', '1.5.5');
+define('JIANGQIE_OW_FREE_VERSION', '1.5.6');
 define('JIANGQIE_OW_FREE_BASE_DIR', plugin_dir_path(__FILE__));
 define('JIANGQIE_OW_FREE_BASE_NAME', plugin_basename(__FILE__));
 define('JIANGQIE_OW_FREE_BASE_URL', plugin_dir_url(__FILE__));
@@ -40,7 +40,7 @@ function jiangqie_ow_free_action_links($actions)
 {
 	$actions[] = '<a href="admin.php?page=jiangqie-ow-free">设置</a>';
 	$actions[] = '<a href="https://www.zhuige.com/docs/gwfree.html" target="_blank">技术支持</a>';
-    return $actions;
+	return $actions;
 }
 add_filter('plugin_action_links_' . JIANGQIE_OW_FREE_BASE_NAME, 'jiangqie_ow_free_action_links');
 

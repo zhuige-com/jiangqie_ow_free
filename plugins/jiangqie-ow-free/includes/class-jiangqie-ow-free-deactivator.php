@@ -10,10 +10,10 @@
  * Copyright © 2021-2023 www.zhuige.com All rights reserved.
  */
 
-class Jiangqie_Ow_Free_Deactivator {
+class Jiangqie_Ow_Free_Deactivator
+{
 
-	public static function deactivate() {
-
+	public static function deactivate()
+	{
 	}
-
 }

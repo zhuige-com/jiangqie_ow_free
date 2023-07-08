@@ -89,7 +89,7 @@ CSF::createSection($prefix, array(
                     'id'    => 'content',
                     'type'  => 'wp_editor',
                     'title' => '内容',
-                  ),
+                ),
                 array(
                     'id'    => 'switch',
                     'type'  => 'switcher',
@@ -163,7 +163,7 @@ CSF::createSection($prefix, array(
                     'id'      => 'background',
                     'type'    => 'media',
                     'title'   => '背景',
-                    'subtitle'=> '独立页面显示',
+                    'subtitle' => '独立页面显示',
                     'library' => 'image',
                 ),
                 array(

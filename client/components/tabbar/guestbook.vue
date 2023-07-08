@@ -70,7 +70,7 @@
 	export default {
 		data() {
 			this.load = false;
-			
+
 			return {
 				background: undefined,
 				title: '',
@@ -101,7 +101,7 @@
 					this.jqOnLoad();
 				}
 			},
-			
+
 			/**
 			 * 设置用户名
 			 */
@@ -130,7 +130,7 @@
 					}
 				});
 			},
-			
+
 			/**
 			 * 点击版权
 			 */
@@ -145,7 +145,7 @@
 	.main_box {
 		padding-bottom: 160rpx;
 	}
-	
+
 	.jiangqie-block {
 		border: none;
 	}

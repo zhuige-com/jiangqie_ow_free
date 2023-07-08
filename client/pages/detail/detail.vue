@@ -20,11 +20,12 @@
 			</view>
 		</view>
 		<!-- #endif -->
-		
+
 		<view v-if="post && post.recs.length>0" class="jiangqie-block">
 			<view class="jiangqie-head">相关推荐</view>
 			<!-- 列表内容块 - 左图 -->
-			<view v-for="(item, index) in post.recs" :key="index" class="jiangqie-list-side" @click="clickPost(item.id)">
+			<view v-for="(item, index) in post.recs" :key="index" class="jiangqie-list-side"
+				@click="clickPost(item.id)">
 				<view class="jiangqie-list-img">
 					<image mode="aspectFill" :src="item.thumbnail"></image>
 				</view>
@@ -367,7 +368,7 @@
 				});
 				// #endif
 			},
-			
+
 			/**
 			 * 点击打开文章
 			 */

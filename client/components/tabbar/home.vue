@@ -11,10 +11,11 @@
 					</swiper-item>
 				</swiper>
 			</view>
-			
+
 			<!-- 自定义图标 -->
 			<view v-if="icon_navs.length>0" class="jiangqie-icon-block">
-				<view v-for="(item, index) in icon_navs" :key="index" class="jiangqie-custom-icon" @click="clickLink(item.link)">
+				<view v-for="(item, index) in icon_navs" :key="index" class="jiangqie-custom-icon"
+					@click="clickLink(item.link)">
 					<image mode="aspectFill" :src="item.image"></image>
 					<text>{{item.title}}</text>
 				</view>
@@ -48,7 +49,8 @@
 					<text @click="clickNewsMore()">查看更多</text>
 				</view>
 				<!-- 列表内容块 - 左图 -->
-				<view v-for="(item, index) in news_list.list" :key="index" class="jiangqie-list-side" @click="clickPost(item.id)">
+				<view v-for="(item, index) in news_list.list" :key="index" class="jiangqie-list-side"
+					@click="clickPost(item.id)">
 					<view class="jiangqie-list-img">
 						<image mode="aspectFill" :src="item.thumbnail"></image>
 					</view>
@@ -122,7 +124,9 @@
 			<view class="jiangqie-float-block">
 				<view v-if="phone_switch" @click="clickPhone()">电话</view>
 				<!-- #ifdef MP-WEIXIN -->
-					<button class="button" v-if="contact_switch" open-type="contact"><view>客服</view></button>
+				<button class="button" v-if="contact_switch" open-type="contact">
+					<view>客服</view>
+				</button>
 				<!-- #endif -->
 				<view v-if="feedback_switch" @click="clickFeedback()">反馈</view>
 			</view>
@@ -143,16 +147,16 @@
 	 * License：GPL-2.0
 	 * Copyright © 2021-2023 www.zhuige.com All rights reserved.
 	 */
-	
+
 	import Util from '@/utils/util';
 	import Alert from '@/utils/alert';
 	import Api from '@/utils/api';
 	import Rest from '@/utils/rest';
-	
+
 	export default {
 		data() {
 			this.load = false;
-			
+
 			return {
 				slides: [],
 				icon_navs: [],
@@ -161,19 +165,19 @@
 				news_list: undefined,
 				feedback: undefined,
 				friends: [],
-				
+
 				username: '',
 				phone: '',
 				email: '',
 				content: '',
-				
+
 				phone_switch: 0,
 				phone_number: '',
 				contact_switch: 0,
 				feedback_switch: 0,
 			}
 		},
-		
+
 		methods: {
 			/**
 			 * 组件加载
@@ -190,19 +194,19 @@
 						keywords: getApp().globalData.appKeyword,
 					});
 					// #endif
-					
+
 					if (res.data.share_title) {
 						getApp().globalData.shareTitle = res.data.share_title;
 					}
-					
+
 					if (res.data.share_thumb) {
 						getApp().globalData.shareThumb = res.data.share_thumb;
 					}
-					
+
 					uni.setNavigationBarTitle({
 						title: getApp().globalData.appName
 					})
-					
+
 					this.slides = res.data.slides;
 					this.icon_navs = res.data.icon_navs;
 					this.about = res.data.about;
@@ -210,7 +214,7 @@
 					this.news_list = res.data.news_list;
 					this.feedback = res.data.feedback;
 					this.friends = res.data.friends;
-					
+
 					this.phone_switch = res.data.phone_switch;
 					this.phone_number = res.data.phone_number;
 					this.contact_switch = res.data.contact_switch;
@@ -219,7 +223,7 @@
 					console.log(err)
 				});
 			},
-			
+
 			/**
 			 * 组件显示
 			 */
@@ -229,28 +233,28 @@
 					this.jqOnLoad();
 				}
 			},
-			
+
 			/**
 			 * 点击打开链接
 			 */
 			clickLink(link) {
 				Util.openLink(link);
 			},
-			
+
 			/**
 			 * 点击打开文章
 			 */
 			clickPost(post_id) {
 				Util.openLink('/pages/detail/detail?post_id=' + post_id);
 			},
-			
+
 			/**
 			 * 点击打开文章列表
 			 */
 			clickNewsMore() {
 				Util.openLink('/pages/list/list');
 			},
-			
+
 			/**
 			 * 提交留言
 			 */
@@ -272,23 +276,23 @@
 					}
 				});
 			},
-			
+
 			/**
 			 * 点击拨打电话
 			 */
 			clickPhone() {
 				uni.makePhoneCall({
-				    phoneNumber: this.phone_number
+					phoneNumber: this.phone_number
 				});
 			},
-			
+
 			/**
 			 * 跳转到 意见反馈页面
 			 */
 			clickFeedback() {
 				uni.$emit('feedback', {})
 			},
-			
+
 			/**
 			 * 点击版权
 			 */
@@ -303,13 +307,13 @@
 	.main_box {
 		padding-bottom: 160rpx;
 	}
-	
+
 	.jiangqie-float-block {
 		.button {
 			display: inline;
 			margin: 0;
 			padding: 0;
 			background-color: rgba(255, 255, 255, 0);
-		}	
+		}
 	}
 </style>

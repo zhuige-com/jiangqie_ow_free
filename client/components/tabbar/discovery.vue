@@ -1,6 +1,6 @@
 <template>
 	<view class="content">
-		
+
 		<view v-if="top_navs && top_navs.length>0" class="jiangqie-scroll-nav">
 			<scroll-view scroll-x scroll-with-animation scroll-left="scrollLeft" show-scrollbar="false"
 				class="jiangqie-tab-nav">
@@ -10,9 +10,9 @@
 				</view>
 			</scroll-view>
 		</view>
-		
+
 		<scroll-view class="main_box" scroll-y="true" @scrolltolower="lower">
-			
+
 			<template v-if="posts.length>0">
 				<view v-for="(post, index) in posts" :key="post.id" class="jiangqie-block" @click="clickPost(post.id)">
 					<view class="jiangqie-list">
@@ -30,7 +30,7 @@
 				</view>
 
 				<uni-load-more :status="loadMore"></uni-load-more>
-				
+
 				<view class="jiangqie-placeholder"></view>
 			</template>
 
@@ -56,7 +56,7 @@
 	export default {
 		data() {
 			this.load = false;
-			
+
 			return {
 				top_navs: [],
 				curCat: 0,
@@ -65,7 +65,7 @@
 				loadMore: 'more'
 			}
 		},
-		
+
 		methods: {
 			/**
 			 * 组件加载
@@ -100,27 +100,27 @@
 			clickPost(post_id) {
 				Util.openLink('/pages/detail/detail?post_id=' + post_id);
 			},
-			
+
 			/**
 			 * 点击版权
 			 */
 			clickJiangQie() {
 				Util.jiangqie();
 			},
-			
+
 			/**
 			 * 点击切换分类
 			 */
 			clickNavCat(cat_id) {
 				this.curCat = cat_id;
-			
+
 				this.loadMore = 'more';
 				this.loaded = false;
 				this.posts = [];
-			
+
 				this.loadPost();
 			},
-			
+
 			/**
 			 * 加载配置
 			 */
@@ -170,7 +170,7 @@
 		border: none;
 		border-top: 16rpx solid #F3F3F3;
 	}
-	
+
 	.jiangqie-placeholder {
 		height: 50rpx;
 	}

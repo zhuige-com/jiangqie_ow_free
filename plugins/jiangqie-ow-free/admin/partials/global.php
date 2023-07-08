@@ -105,7 +105,7 @@ CSF::createSection($prefix, array(
             'title'   => '首页分享图',
             'library' => 'image',
         ),
-        
+
         array(
             'id'    => 'jiangqie_xcx_img2attachment',
             'type'  => 'switcher',

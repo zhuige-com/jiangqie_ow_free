@@ -24,6 +24,6 @@ CSF::createSection($prefix, array(
             'subtitle' => '停用/启用',
             'default' => '1'
         ),
-        
+
     )
 ));

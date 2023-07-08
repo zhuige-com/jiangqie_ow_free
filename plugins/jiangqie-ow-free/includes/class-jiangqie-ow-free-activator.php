@@ -39,6 +39,5 @@ class Jiangqie_Ow_Free_Activator
           PRIMARY KEY (`id`)
         ) $charset_collate;";
         dbDelta($sql);
-        
     }
 }

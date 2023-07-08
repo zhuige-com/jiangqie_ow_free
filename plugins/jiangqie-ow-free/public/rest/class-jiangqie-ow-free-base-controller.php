@@ -143,7 +143,7 @@ class Jiangqie_Ow_Free_Base_Controller extends WP_REST_Controller
 	/**
 	 * 获取缩略图
 	 */
-	public function get_post_thumbnails($post_id, $default=true)
+	public function get_post_thumbnails($post_id, $default = true)
 	{
 		$thumbnails = [];
 		if (has_post_thumbnail($post_id)) {
@@ -187,7 +187,7 @@ class Jiangqie_Ow_Free_Base_Controller extends WP_REST_Controller
 	/**
 	 * 获取一个缩略图
 	 */
-	public function get_one_post_thumbnail($post_id, $default=true)
+	public function get_one_post_thumbnail($post_id, $default = true)
 	{
 		if (has_post_thumbnail($post_id)) {
 			$thumbnail_id = get_post_thumbnail_id($post_id);
@@ -230,7 +230,7 @@ class Jiangqie_Ow_Free_Base_Controller extends WP_REST_Controller
 		if (!isset($_REQUEST['os']) || (isset($_REQUEST['os']) && $_REQUEST['os'] != 'wx')) {
 			return true;
 		}
-		
+
 		$wx_session = Jiangqie_Ow_Free::get_wx_token();
 		$access_token = $wx_session['access_token'];
 		if (empty($access_token)) {

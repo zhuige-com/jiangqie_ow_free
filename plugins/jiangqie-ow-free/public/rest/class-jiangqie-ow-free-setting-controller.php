@@ -40,10 +40,6 @@ class Jiangqie_Ow_Free_Setting_Controller extends Jiangqie_Ow_Free_Base_Controll
 		//描述
 		$data['desc'] = Jiangqie_Ow_Free::option_value('basic_desc', '流水不争先,争的是滔滔不绝');
 
-		// LOGO
-		// $basic_logo = Jiangqie_Ow_Free::option_value('basic_logo');
-		// $data['logo'] = Jiangqie_Ow_Free::option_image_url($basic_logo, 'logo_f.png');
-
 		// 幻灯片
 		$slides_org = Jiangqie_Ow_Free::option_value('home_slide');
 		$slides = [];
@@ -215,7 +211,6 @@ class Jiangqie_Ow_Free_Setting_Controller extends Jiangqie_Ow_Free_Base_Controll
 		$result = get_categories($args);
 
 		$categories = [];
-		// $cat_ids = explode(',', $cat_ids);
 		foreach ($cat_ids as $cat_id) {
 			foreach ($result as $item) {
 				if ($cat_id == $item->term_id) {

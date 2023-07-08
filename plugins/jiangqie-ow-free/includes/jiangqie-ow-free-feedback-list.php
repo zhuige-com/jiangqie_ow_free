@@ -173,7 +173,7 @@ class JiangQieOwFreeFeedbackList extends WP_List_Table
 
 		if ('bulk_delete' == $action) {
 			$cat_ids = (isset($_GET['ids'])) ? wp_unslash($_GET['ids']) : '';
-			if (is_array($cat_ids ) && !empty($cat_ids)) {
+			if (is_array($cat_ids) && !empty($cat_ids)) {
 				global $wpdb;
 				$table_ow_feedback = $wpdb->prefix . 'jiangqie_ow_feedback';
 				$cat_ids = esc_sql(implode(',', $cat_ids));
