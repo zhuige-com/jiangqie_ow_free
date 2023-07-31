@@ -73,7 +73,7 @@
 							<text>姓名:</text>
 						</view>
 						<view>
-							<input type="text" v-model="username" />
+							<input type="nickname" @blur="onUsernameBlur" v-model="username" placeholder="请输入姓名" />
 						</view>
 					</view>
 					<view class="jiangqie-form-line">
@@ -81,7 +81,7 @@
 							<text>电话:</text>
 						</view>
 						<view>
-							<input type="text" v-model="phone" />
+							<input type="text" v-model="phone" placeholder="请输入联系电话" />
 						</view>
 					</view>
 					<view class="jiangqie-form-line">
@@ -89,15 +89,15 @@
 							<text>E-mail:</text>
 						</view>
 						<view>
-							<input type="text" v-model="email" />
+							<input type="text" v-model="email" placeholder="请输入Email" />
 						</view>
 					</view>
 					<view class="jiangqie-form-hightline">
 						<view>
-							<text>请输入留言内容:</text>
+							<text>留言内容:</text>
 						</view>
 						<view>
-							<textarea auto-height="" v-model="content"></textarea>
+							<textarea auto-height="" v-model="content" placeholder="您的留言对我们很重要"></textarea>
 						</view>
 					</view>
 					<view class="jiangqie-base-block jiangqie-form-btn">
@@ -254,6 +254,13 @@
 			clickNewsMore() {
 				Util.openLink('/pages/list/list');
 			},
+			
+			/**
+			 * 设置用户名
+			 */
+			onUsernameBlur(e) {
+				this.username = e.detail.value;
+			},
 
 			/**
 			 * 提交留言
@@ -315,5 +322,9 @@
 			padding: 0;
 			background-color: rgba(255, 255, 255, 0);
 		}
+	}
+	
+	textarea {
+		line-height: normal;
 	}
 </style>

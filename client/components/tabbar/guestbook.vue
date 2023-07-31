@@ -13,7 +13,7 @@
 							<text>姓名:</text>
 						</view>
 						<view>
-							<input type="nickname" @blur="onUsernameBlur" v-model="username" />
+							<input type="nickname" @blur="onUsernameBlur" v-model="username" placeholder="请输入姓名" />
 						</view>
 					</view>
 					<view class="jiangqie-form-line">
@@ -21,7 +21,7 @@
 							<text>电话:</text>
 						</view>
 						<view>
-							<input type="text" v-model="phone" />
+							<input type="text" v-model="phone" placeholder="请输入联系电话" />
 						</view>
 					</view>
 					<view class="jiangqie-form-line">
@@ -29,15 +29,15 @@
 							<text>E-mail:</text>
 						</view>
 						<view>
-							<input type="text" v-model="email" />
+							<input type="text" v-model="email" placeholder="请输入Email" />
 						</view>
 					</view>
 					<view class="jiangqie-form-hightline">
 						<view>
-							<text>请输入留言内容:</text>
+							<text>留言内容:</text>
 						</view>
 						<view>
-							<textarea auto-height="" v-model="content"></textarea>
+							<textarea auto-height="" v-model="content" placeholder="您的留言对我们很重要"></textarea>
 						</view>
 					</view>
 					<!-- 认证button -->
@@ -154,5 +154,9 @@
 	.jiangqie-gust-img .image {
 		height: 360rpx;
 		width: 100%;
+	}
+	
+	textarea {
+		line-height: normal;
 	}
 </style>
