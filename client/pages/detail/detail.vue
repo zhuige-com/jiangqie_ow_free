@@ -13,11 +13,15 @@
 		</view>
 
 		<!-- #ifdef MP-WEIXIN || MP-QQ || MP-BAIDU || H5 -->
-		<view v-if="post && post.poster_switch==1" class="jiangqie-block jiangqie-detail-opt">
-			<view @click="clickPoster()">
+		<view v-if="post && (post.poster_switch==1 || post.contact_switch==1)" class="jiangqie-block jiangqie-detail-opt">
+			<view v-if="post.poster_switch==1" @click="clickPoster()">
 				<text>分享海报</text>
-				<image mode="aspectFill" src="../../static/share.png"></image>
+				<image mode="aspectFill" src="/static/share.png"></image>
 			</view>
+			<button v-if="post.contact_switch==1" class="button" open-type="contact">
+				<text>在线客服</text>
+				<image mode="aspectFill" src="/static/contact.png"></image>
+			</button>
 		</view>
 		<!-- #endif -->
 
@@ -383,4 +387,31 @@
 	.jiangqie-block:first-of-type {
 		border: none;
 	}
+	
+	.jiangqie-detail-opt {
+		display: flex;
+		
+		.button {
+			box-sizing: content-box;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			-webkit-align-items: center;
+			-webkit-box-align: center;
+			background-color:#FFF;
+			padding: 6rpx 30rpx;
+			width: 150rpx;
+			margin: 0 auto;
+			border: 1rpx solid #CCC;
+			border-radius: 40rpx;
+			text-align: center;
+			line-height: 1;
+		}
+		
+		.button::after {
+			border: none;
+		}
+	}
+	
+	
 </style>

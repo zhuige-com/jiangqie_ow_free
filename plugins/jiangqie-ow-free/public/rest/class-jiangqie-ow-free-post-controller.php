@@ -87,8 +87,11 @@ class Jiangqie_Ow_Free_Post_Controller extends Jiangqie_Ow_Free_Base_Controller
 		}
 		$post['views'] = $post_views + 1;
 
-		//海报开关
+		// 海报开关
 		$post['poster_switch'] = Jiangqie_Ow_Free::option_value('post_poster_switch') ? 1 : 0;
+
+		// 客服开关
+		$post['contact_switch'] = Jiangqie_Ow_Free::option_value('post_contact_switch') ? 1 : 0;
 
 		//百度关键字
 		$keywords = '';

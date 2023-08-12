@@ -25,5 +25,13 @@ CSF::createSection($prefix, array(
             'default' => '1'
         ),
 
+        array(
+            'id'    => 'post_contact_switch',
+            'type'  => 'switcher',
+            'title' => '在线客服是否显示',
+            'subtitle' => '停用/启用',
+            'default' => '1'
+        ),
+
     )
 ));
