@@ -43,7 +43,14 @@
 			</view>
 		</view>
 
-		<view class="jiangqie-block jiangqie-brand">追格 Zhuige.com 提供技术支持</view>
+		<view class="jiangqie-block jiangqie-brand">本小程序基于追格（zhuige.com）搭建</view>
+		
+		<!-- 备案信息 -->
+		<view class="jiangqie-recordinfo" v-if="post && post.beian_icp" @click="clickLink(post.beian_icp.link)">
+			<text>
+				{{post.beian_icp.sn}}
+			</text>
+		</view>
 
 		<!-- #ifdef MP-BAIDU -->
 		<view v-if="isShowPainter" isRenderImage style="position: fixed; top: 0;" @longpress="longTapPainter"
@@ -173,6 +180,7 @@
 					post_id: this.post_id
 				}).then(res => {
 					this.post = res.data;
+					
 					uni.setNavigationBarTitle({
 						title: this.post.title
 					})
@@ -379,6 +387,13 @@
 			clickPost(post_id) {
 				Util.openLink('/pages/detail/detail?post_id=' + post_id);
 			},
+			
+			/**
+			 * 点击打开链接
+			 */
+			clickLink(link) {
+				Util.openLink(link);
+			},
 		}
 	}
 </script>
@@ -413,5 +428,11 @@
 		}
 	}
 	
-	
+	.jiangqie-recordinfo {
+		margin-bottom: 0;
+		
+		text {
+			padding: 10rpx 0 60rpx 0;
+		}
+	}
 </style>

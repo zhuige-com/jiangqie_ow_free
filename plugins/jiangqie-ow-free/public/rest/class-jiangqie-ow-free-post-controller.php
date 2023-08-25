@@ -130,6 +130,15 @@ class Jiangqie_Ow_Free_Post_Controller extends Jiangqie_Ow_Free_Base_Controller
 		}
 		$post['recs'] = $posts;
 
+		// 备案信息
+		$beian_icp = Jiangqie_Ow_Free::option_value('beian_icp');
+		if ($beian_icp && $beian_icp['switch']) {
+			$post['beian_icp'] = [
+				'sn' => $beian_icp['sn'],
+				'link' => $beian_icp['link'],
+			];
+		}
+
 		return $this->make_success($post);
 	}
 

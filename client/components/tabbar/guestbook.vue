@@ -46,7 +46,16 @@
 					</view>
 				</view>
 			</view>
-			<view @click="clickJiangQie" class="jiangqie-block jiangqie-brand">追格 Zhuige.com 提供技术支持</view>
+			
+			<view @click="clickJiangQie" class="jiangqie-block jiangqie-brand">本小程序基于追格（zhuige.com）搭建</view>
+			
+			<!-- 备案信息 -->
+			<view class="jiangqie-recordinfo" v-if="beian_icp" @click="clickLink(beian_icp.link)">
+				<text>
+					{{beian_icp.sn}}
+				</text>
+			</view>
+			
 		</scroll-view>
 	</view>
 </template>
@@ -79,6 +88,8 @@
 				phone: '',
 				email: '',
 				content: '',
+				
+				beian_icp: undefined,
 			}
 		},
 		methods: {
@@ -89,6 +100,10 @@
 				Rest.post(Api.JQ_OW_FREE_SETTING_FEEDBACK, {}).then(res => {
 					this.background = res.data.background;
 					this.title = res.data.title;
+					
+					if (res.data.beian_icp) {
+						this.beian_icp = res.data.beian_icp;
+					}
 				});
 			},
 
@@ -136,6 +151,13 @@
 			 */
 			clickJiangQie() {
 				Util.jiangqie();
+			},
+			
+			/**
+			 * 点击打开链接
+			 */
+			clickLink(link) {
+				Util.openLink(link);
 			}
 		}
 	}

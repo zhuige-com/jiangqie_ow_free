@@ -3,8 +3,8 @@ Contributors: zhuige
 Donate link: https://www.zhuige.com/
 Tags: 追格,官网,小程序,H5,微信,QQ,百度
 Requires at least: 5.6
-Tested up to: 6.2
-Stable tag: 1.5.8
+Tested up to: 6.3
+Stable tag: 1.6.0
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -47,6 +47,11 @@ github下载：https://github.com/zhuige-com/jiangqie_ow_free
 2. screenshot-2.png
 
 == Changelog ==
+
+## 1.6.0（2023-08-25）
+1. 首页/动态/留言/动态详情 底部增加：备案号信息
+2. 动态页面，顶部标题改成：公司动态
+3. 留言页面，顶部标题改成：留言反馈
 
 ## 1.5.8（2023-08-12）
 1. 详情页新增在线客服

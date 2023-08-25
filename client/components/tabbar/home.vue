@@ -131,7 +131,14 @@
 				<view v-if="feedback_switch" @click="clickFeedback()">反馈</view>
 			</view>
 
-			<view @click="clickJiangQie" class="jiangqie-block jiangqie-brand">追格 Zhuige.com 提供技术支持</view>
+			<view @click="clickJiangQie" class="jiangqie-block jiangqie-brand">本小程序基于追格（zhuige.com）搭建</view>
+
+			<!-- 备案信息 -->
+			<view class="jiangqie-recordinfo" v-if="beian_icp" @click="clickLink(beian_icp.link)">
+				<text>
+					{{beian_icp.sn}}
+				</text>
+			</view>
 
 		</scroll-view>
 	</view>
@@ -175,6 +182,8 @@
 				phone_number: '',
 				contact_switch: 0,
 				feedback_switch: 0,
+
+				beian_icp: undefined,
 			}
 		},
 
@@ -219,6 +228,10 @@
 					this.phone_number = res.data.phone_number;
 					this.contact_switch = res.data.contact_switch;
 					this.feedback_switch = res.data.feedback_switch;
+
+					if (res.data.beian_icp) {
+						this.beian_icp = res.data.beian_icp;
+					}
 				}, err => {
 					console.log(err)
 				});
@@ -254,7 +267,7 @@
 			clickNewsMore() {
 				Util.openLink('/pages/list/list');
 			},
-			
+
 			/**
 			 * 设置用户名
 			 */
@@ -323,7 +336,7 @@
 			background-color: rgba(255, 255, 255, 0);
 		}
 	}
-	
+
 	textarea {
 		line-height: normal;
 	}

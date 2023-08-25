@@ -193,6 +193,15 @@ class Jiangqie_Ow_Free_Setting_Controller extends Jiangqie_Ow_Free_Base_Controll
 		$data['contact_switch'] = Jiangqie_Ow_Free::option_value('other_contact_switch') ? 1 : 0;
 		$data['feedback_switch'] = Jiangqie_Ow_Free::option_value('other_feedback_switch') ? 1 : 0;
 
+		// 备案信息
+		$beian_icp = Jiangqie_Ow_Free::option_value('beian_icp');
+		if ($beian_icp && $beian_icp['switch']) {
+			$data['beian_icp'] = [
+				'sn' => $beian_icp['sn'],
+				'link' => $beian_icp['link'],
+			];
+		}
+
 		return $this->make_success($data);
 	}
 
@@ -262,6 +271,15 @@ class Jiangqie_Ow_Free_Setting_Controller extends Jiangqie_Ow_Free_Base_Controll
 			}
 		} else {
 			$feedback = ['title' => '留言反馈'];
+		}
+
+		// 备案信息
+		$beian_icp = Jiangqie_Ow_Free::option_value('beian_icp');
+		if ($beian_icp && $beian_icp['switch']) {
+			$feedback['beian_icp'] = [
+				'sn' => $beian_icp['sn'],
+				'link' => $beian_icp['link'],
+			];
 		}
 
 		return $this->make_success($feedback);
