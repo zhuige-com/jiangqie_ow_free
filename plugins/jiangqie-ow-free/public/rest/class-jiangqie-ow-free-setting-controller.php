@@ -152,14 +152,14 @@ class Jiangqie_Ow_Free_Setting_Controller extends Jiangqie_Ow_Free_Base_Controll
 		//留言反馈
 		$feedback = Jiangqie_Ow_Free::option_value('feedback');
 		if ($feedback && $feedback['switch']) {
-			if (empty($feedback['title'])) {
-				$feedback['title'] = '留言反馈';
-			}
+			// if (empty($feedback['title'])) {
+			// 	$feedback['title'] = '留言反馈';
+			// }
 
-			if ($feedback['background']['url']) {
-				$feedback['background'] = $feedback['background']['url'];
-			}
-			$data['feedback'] = $feedback;
+			// if ($feedback['background']['url']) {
+			// 	$feedback['background'] = $feedback['background']['url'];
+			// }
+			$data['feedback'] = ['title' => (empty($feedback['title']) ? '留言反馈' : $feedback['title'])];
 		}
 
 		// 分享标题
@@ -260,18 +260,27 @@ class Jiangqie_Ow_Free_Setting_Controller extends Jiangqie_Ow_Free_Base_Controll
 	 */
 	public function feedback($request)
 	{
-		$feedback = Jiangqie_Ow_Free::option_value('feedback');
-		if ($feedback) {
-			if (empty($feedback['title'])) {
-				$feedback['title'] = '留言反馈';
-			}
+		// $feedback = Jiangqie_Ow_Free::option_value('feedback');
+		// if ($feedback) {
+		// 	if (empty($feedback['title'])) {
+		// 		$feedback['title'] = '留言反馈';
+		// 	}
 
-			if ($feedback['background']['url']) {
-				$feedback['background'] = $feedback['background']['url'];
-			}
+		// 	if ($feedback['background']['url']) {
+		// 		$feedback['background'] = $feedback['background']['url'];
+		// 	}
+		// } else {
+		// 	$feedback = ['title' => '留言反馈'];
+		// }
+
+		$feedback = [];
+		$feedback_background = Jiangqie_Ow_Free::option_value('feedback_background');
+		if ($feedback_background && $feedback_background['url']) {
+			$feedback['background'] = $feedback_background['url'];
 		} else {
-			$feedback = ['title' => '留言反馈'];
+			$feedback['background'] = plugins_url('images/default_thumb.png', dirname(__FILE__));
 		}
+		$feedback['link'] = Jiangqie_Ow_Free::option_value('feedback_link');
 
 		// 备案信息
 		$beian_icp = Jiangqie_Ow_Free::option_value('beian_icp');

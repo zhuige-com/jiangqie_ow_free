@@ -53,8 +53,9 @@ class Jiangqie_Ow_Free_Admin
 		require_once $base_dir . 'partials/global.php';
 		require_once $base_dir . 'partials/home.php';
 		require_once $base_dir . 'partials/news.php';
-		require_once $base_dir . 'partials/other.php';
+		require_once $base_dir . 'partials/feedback.php';
 		require_once $base_dir . 'partials/detail.php';
+		require_once $base_dir . 'partials/other.php';
 
 		//
         // 备份

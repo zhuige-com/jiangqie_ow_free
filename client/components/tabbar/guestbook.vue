@@ -2,7 +2,7 @@
 	<view class="content">
 		<scroll-view class="main_box" scroll-y="true">
 			<!-- 留言表单 -->
-			<view v-if="background" class="jiangqie-gust-img">
+			<view v-if="background" class="jiangqie-gust-img" @click="clickLink(link)">
 				<image class="image" mode="aspectFill" :src="background"></image>
 			</view>
 			<view class="jiangqie-block">
@@ -82,6 +82,7 @@
 
 			return {
 				background: undefined,
+				link: '',
 				title: '',
 
 				username: '',
@@ -99,6 +100,7 @@
 			jqOnLoad() {
 				Rest.post(Api.JQ_OW_FREE_SETTING_FEEDBACK, {}).then(res => {
 					this.background = res.data.background;
+					this.link = res.data.link;
 					this.title = res.data.title;
 					
 					if (res.data.beian_icp) {

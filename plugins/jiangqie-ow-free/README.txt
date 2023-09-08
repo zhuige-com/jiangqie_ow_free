@@ -4,7 +4,7 @@ Donate link: https://www.zhuige.com/
 Tags: 追格,官网,小程序,H5,微信,QQ,百度
 Requires at least: 5.6
 Tested up to: 6.3
-Stable tag: 1.6.0
+Stable tag: 1.6.1
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -47,6 +47,9 @@ github下载：https://github.com/zhuige-com/jiangqie_ow_free
 2. screenshot-2.png
 
 == Changelog ==
+
+## 1.6.1（2023-09-08）
+1. 优化意见反馈
 
 ## 1.6.0（2023-08-25）
 1. 首页/动态/留言/动态详情 底部增加：备案号信息
