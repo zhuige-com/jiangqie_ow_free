@@ -43,15 +43,15 @@
 	import Api from '@/utils/api';
 	import Rest from '@/utils/rest';
 
-	import tabHome from '@/components/tabbar/home.vue'
-	import tabDiscovery from '@/components/tabbar/discovery.vue'
-	import tabGuestbook from '@/components/tabbar/guestbook.vue'
+	import tabHome from '@/components/tabbar/home.vue';
+	import tabDiscovery from '@/components/tabbar/discovery.vue';
+	import tabGuestbook from '@/components/tabbar/guestbook.vue';
 
 	export default {
 		components: {
 			tabHome, //首页 0
 			tabDiscovery, //发现	 1
-			tabGuestbook, //留言	 2
+			tabGuestbook //留言	 2
 		},
 
 		data() {

@@ -63,7 +63,6 @@
 		<l-painter v-if="isShowPainter" isRenderImage custom-style="position: fixed; left: 200%;" :board="base"
 			@success="onPainterSuccess" />
 		<!-- #endif -->
-
 	</view>
 </template>
 
@@ -81,9 +80,13 @@
 	import Util from '@/utils/util';
 	import Api from '@/utils/api';
 	import Rest from '@/utils/rest';
-	import lPainter from '@/uni_modules/lime-painter/components/lime-painter/'
+	import lPainter from '@/uni_modules/lime-painter/components/lime-painter/';
 
 	export default {
+		components: {
+			lPainter
+		},
+		
 		data() {
 			this.post_id = undefined;
 			this.acode = undefined;
@@ -95,10 +98,6 @@
 				painterImage: '',
 				base: undefined,
 			}
-		},
-
-		components: {
-			lPainter,
 		},
 
 		onLoad(options) {

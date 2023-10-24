@@ -29,7 +29,6 @@
 
 			<uni-load-more :status="loadMore"></uni-load-more>
 		</view>
-
 	</view>
 </template>
 
@@ -49,6 +48,10 @@
 	import Rest from '@/utils/rest';
 
 	export default {
+		components: {
+			
+		},
+		
 		data() {
 			return {
 				top_navs: [],
