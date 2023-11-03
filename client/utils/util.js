@@ -169,8 +169,30 @@ function jiangqie() {
 	}
 }
 
+/**
+ * 是否弹窗
+ */
+function getPopAd(pop_ad, key) {
+	if (!pop_ad) {
+		return false;
+	}
+
+	let lastTime = wx.getStorageSync(key);
+	if (!lastTime) {
+		lastTime = 0;
+	}
+
+	let now = new Date().getTime();
+	if ((now - lastTime) > pop_ad.interval * 3600000) {
+		return pop_ad;
+	}
+
+	return false;
+}
+
 module.exports = {
 	navigateBack,
 	openLink,
 	jiangqie,
+	getPopAd
 };

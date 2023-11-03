@@ -1,6 +1,6 @@
 <script>
 	/*
-	 * 酱茄企业官网Free v1.6.3
+	 * 酱茄企业官网Free v1.6.4
 	 * 作者: 追格
 	 * 文档: https://www.zhuige.com/docs/gwfree.html
 	 * github: https://github.com/zhuige-com/jiangqie_ow_free

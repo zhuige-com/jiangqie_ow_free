@@ -202,6 +202,16 @@ class Jiangqie_Ow_Free_Setting_Controller extends Jiangqie_Ow_Free_Base_Controll
 			];
 		}
 
+		//弹框广告
+		$home_ad_pop = Jiangqie_Ow_Free::option_value('home_ad_pop');
+		if ($home_ad_pop && $home_ad_pop['switch'] && $home_ad_pop['image'] && $home_ad_pop['image']['url']) {
+			$data['pop_ad'] = [
+				'image' => $home_ad_pop['image']['url'],
+				'link' => $home_ad_pop['link'],
+				'interval' => $home_ad_pop['interval'],
+			];
+		}
+
 		return $this->make_success($data);
 	}
 

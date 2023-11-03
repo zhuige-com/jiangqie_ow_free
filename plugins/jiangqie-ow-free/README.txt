@@ -4,7 +4,7 @@ Donate link: https://www.zhuige.com/
 Tags: 追格,官网,小程序,H5,微信,QQ,百度
 Requires at least: 5.6
 Tested up to: 6.3
-Stable tag: 1.6.3
+Stable tag: 1.6.4
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -48,7 +48,11 @@ github下载：https://github.com/zhuige-com/jiangqie_ow_free
 
 == Changelog ==
 
-## 1.6.3（2023-10-24）
+## 1.6.4（2023-11-03）
+1. 新增首页弹框功能
+2. 追格11.11折上折
+
+## 1.6.4（2023-10-24）
 1. 删除自定义隐私弹框，改用官方隐私弹框
 
 ## 1.6.2（2023-09-14）
