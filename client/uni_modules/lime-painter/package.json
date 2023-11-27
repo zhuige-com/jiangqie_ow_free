@@ -1,7 +1,7 @@
 {
   "id": "lime-painter",
   "displayName": "海报画板",
-  "version": "1.6.4",
+  "version": "1.6.5",
   "description": "一款canvas海报组件，可根据自身需求使用JSON生成海报",
   "keywords": [
     "canvas",

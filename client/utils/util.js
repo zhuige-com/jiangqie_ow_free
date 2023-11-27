@@ -55,6 +55,19 @@ function openLink(link) {
 	if (!link) {
 		return;
 	}
+	
+	if (link == 'wx82e6ae1175f264fa') {
+		var plugin = requirePlugin("wxacommentplugin");
+		plugin.openComment({
+			success: (res) => {
+				console.log('plugin.openComment success', res)
+			},
+			fail: (res) => {
+				console.log('plugin.openComment fail', res)
+			}
+		})
+		return;
+	}
 
 	if (link.startsWith('/pages/')) {
 		link = htmlRestore(link);
