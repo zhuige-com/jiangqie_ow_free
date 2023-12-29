@@ -4,7 +4,7 @@ Donate link: https://www.zhuige.com/
 Tags: 追格,官网,小程序,H5,微信,QQ,百度
 Requires at least: 5.6
 Tested up to: 6.3
-Stable tag: 1.6.7
+Stable tag: 1.6.8
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -47,6 +47,10 @@ github下载：https://github.com/zhuige-com/jiangqie_ow_free
 2. screenshot-2.png
 
 == Changelog ==
+
+## 1.6.8（2023-12-29）
+1. 默认关闭评价打分功能，如有需要请自行开启
+2. 修复了已知的bug
 
 ## 1.6.7（2023-12-20）
 1. 新增海报生成提示

@@ -148,7 +148,12 @@ function openLink(link) {
 
 		// #ifndef H5
 		uni.setClipboardData({
-			data: link
+			data: link,
+			fail: res => {
+				if (res.errMsg && res.errMsg.indexOf('cancel') < 0) {
+					Alert.toast(res.errMsg)
+				}
+			}
 		});
 		// #endif
 	}

@@ -13,7 +13,8 @@
 		</view>
 
 		<!-- #ifdef MP-WEIXIN || MP-QQ || MP-BAIDU || H5 -->
-		<view v-if="post && (post.poster_switch==1 || post.contact_switch==1)" class="jiangqie-block jiangqie-detail-opt">
+		<view v-if="post && (post.poster_switch==1 || post.contact_switch==1)"
+			class="jiangqie-block jiangqie-detail-opt">
 			<view v-if="post.poster_switch==1" @click="clickPoster()">
 				<text>分享海报</text>
 				<image mode="aspectFill" src="/static/share.png"></image>
@@ -44,7 +45,7 @@
 		</view>
 
 		<view class="jiangqie-block jiangqie-brand">本小程序基于追格（zhuige.com）搭建</view>
-		
+
 		<!-- 备案信息 -->
 		<view class="jiangqie-recordinfo" v-if="post && post.beian_icp" @click="clickLink(post.beian_icp.link)">
 			<text>
@@ -86,7 +87,7 @@
 		components: {
 			lPainter
 		},
-		
+
 		data() {
 			this.post_id = undefined;
 			this.acode = undefined;
@@ -179,7 +180,7 @@
 					post_id: this.post_id
 				}).then(res => {
 					this.post = res.data;
-					
+
 					uni.setNavigationBarTitle({
 						title: this.post.title
 					})
@@ -259,10 +260,18 @@
 
 								uni.saveImageToPhotosAlbum({
 									filePath: this.painterImage,
-									success() {
+									success: () => {
 										uni.showToast({
 											title: '已保存'
 										})
+									},
+									fail: res => {
+										if (res.errMsg && res.errMsg.indexOf('cancel') < 0) {
+											uni.showToast({
+												icon: 'none',
+												title: res.errMsg
+											});
+										}
 									}
 								})
 							}, 500);
@@ -292,9 +301,9 @@
 				uni.showLoading({
 					title: '海报生成中……'
 				});
-				
+
 				this.isShowPainter = true;
-				
+
 				this.base = {
 					width: '750rpx',
 					height: '1334rpx',
@@ -383,7 +392,7 @@
 					urls: [e]
 				});
 				// #endif
-				
+
 				uni.hideLoading();
 			},
 
@@ -393,7 +402,7 @@
 			clickPost(post_id) {
 				Util.openLink('/pages/detail/detail?post_id=' + post_id);
 			},
-			
+
 			/**
 			 * 点击打开链接
 			 */
@@ -408,10 +417,10 @@
 	.jiangqie-block:first-of-type {
 		border: none;
 	}
-	
+
 	.jiangqie-detail-opt {
 		display: flex;
-		
+
 		.button {
 			box-sizing: content-box;
 			display: flex;
@@ -419,7 +428,7 @@
 			align-items: center;
 			-webkit-align-items: center;
 			-webkit-box-align: center;
-			background-color:#FFF;
+			background-color: #FFF;
 			padding: 6rpx 30rpx;
 			width: 150rpx;
 			margin: 0 auto;
@@ -428,15 +437,15 @@
 			text-align: center;
 			line-height: 1;
 		}
-		
+
 		.button::after {
 			border: none;
 		}
 	}
-	
+
 	.jiangqie-recordinfo {
 		margin-bottom: 0;
-		
+
 		text {
 			padding: 10rpx 0 60rpx 0;
 		}
