@@ -20,10 +20,6 @@ function request(url, data = {}, method = "GET") {
 		data.os = 'bd';
 		// #endif
 
-		// #ifdef MP-QQ
-		data.os = 'qq';
-		// #endif
-
 		uni.request({
 			url: url,
 			data: data,

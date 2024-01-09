@@ -7,7 +7,7 @@
  * github: https://github.com/zhuige-com/jiangqie_ow_free
  * gitee: https://gitee.com/zhuige_com/jiangqie_ow_free
  * License：GPL-2.0
- * Copyright © 2021-2023 www.zhuige.com All rights reserved.
+ * Copyright © 2021-2024 www.zhuige.com All rights reserved.
  */
 
 class Jiangqie_Ow_Free
@@ -103,41 +103,6 @@ class Jiangqie_Ow_Free
 
 		$access_token['expires_in'] = $access_token['expires_in'] + time() - 200;
 		update_option('jiangqie-ow-free-wx-access-token', $access_token);
-
-		return $access_token;
-	}
-
-	/**
-	 * QQ token
-	 */
-	public static function get_qq_token()
-	{
-		$access_token = get_option('jiangqie-ow-free-qq-access-token');
-		if ($access_token && isset($access_token['expires_in']) && $access_token['expires_in'] > time()) {
-			return $access_token;
-		}
-
-		$qq = Jiangqie_Ow_Free::option_value('basic_qq');
-		$app_id = '';
-		$app_secret = '';
-		if ($qq) {
-			$app_id = $qq['appid'];
-			$app_secret = $qq['secret'];
-		}
-
-		if (empty($app_id) || empty($app_secret)) {
-			return false;
-		}
-
-		$url = "https://api.q.qq.com/api/getToken?grant_type=client_credential&appid=$app_id&secret=$app_secret";
-		$body = wp_remote_get($url);
-		if (!is_array($body) || is_wp_error($body) || $body['response']['code'] != '200') {
-			return false;
-		}
-		$access_token = json_decode($body['body'], TRUE);
-
-		$access_token['expires_in'] = $access_token['expires_in'] + time() - 200;
-		update_option('jiangqie-ow-free-qq-access-token', $access_token);
 
 		return $access_token;
 	}

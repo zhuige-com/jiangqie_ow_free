@@ -12,7 +12,7 @@
 			</view>
 		</view>
 
-		<!-- #ifdef MP-WEIXIN || MP-QQ || MP-BAIDU || H5 -->
+		<!-- #ifdef MP-WEIXIN || MP-BAIDU || H5 -->
 		<view v-if="post && (post.poster_switch==1 || post.contact_switch==1)"
 			class="jiangqie-block jiangqie-detail-opt">
 			<view v-if="post.poster_switch==1" @click="clickPoster()">
@@ -60,7 +60,7 @@
 		</view>
 		<!-- #endif -->
 
-		<!-- #ifdef MP-WEIXIN || MP-QQ || H5 -->
+		<!-- #ifdef MP-WEIXIN || H5 -->
 		<l-painter v-if="isShowPainter" isRenderImage custom-style="position: fixed; left: 200%;" :board="base"
 			@success="onPainterSuccess" />
 		<!-- #endif -->
@@ -75,7 +75,7 @@
 	 * github: https://github.com/zhuige-com/jiangqie_ow_free
 	 * gitee: https://gitee.com/zhuige_com/jiangqie_ow_free
 	 * License：GPL-2.0
-	 * Copyright © 2021-2023 www.zhuige.com All rights reserved.
+	 * Copyright © 2021-2024 www.zhuige.com All rights reserved.
 	 */
 
 	import Util from '@/utils/util';
@@ -110,10 +110,6 @@
 
 			// #ifdef MP-WEIXIN
 			this.loadWxacode();
-			// #endif
-
-			// #ifdef MP-QQ
-			this.loadQqacode();
 			// #endif
 
 			// #ifdef MP-BAIDU || H5
@@ -200,19 +196,6 @@
 			 */
 			loadWxacode() {
 				Rest.post(Api.JQ_OW_FREE_POST_WX_ACODE, {
-					post_id: this.post_id
-				}).then(res => {
-					this.acode = res.data;
-				}, err => {
-					console.log(err);
-				});
-			},
-
-			/**
-			 * 加载QQ小程序码
-			 */
-			loadQqacode() {
-				Rest.post(Api.JQ_OW_FREE_POST_QQ_ACODE, {
 					post_id: this.post_id
 				}).then(res => {
 					this.acode = res.data;

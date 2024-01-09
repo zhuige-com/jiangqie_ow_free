@@ -7,7 +7,7 @@
  * github: https://github.com/zhuige-com/jiangqie_ow_free
  * gitee: https://gitee.com/zhuige_com/jiangqie_ow_free
  * License：GPL-2.0
- * Copyright © 2021-2023 www.zhuige.com All rights reserved.
+ * Copyright © 2021-2024 www.zhuige.com All rights reserved.
  */
 
 class Jiangqie_Ow_Free_Post_Controller extends Jiangqie_Ow_Free_Base_Controller
@@ -20,7 +20,6 @@ class Jiangqie_Ow_Free_Post_Controller extends Jiangqie_Ow_Free_Base_Controller
 			'last' => 'get_last_posts',
 			'detail' => 'get_post_detail',
 			'wxacode' => 'get_wxacode',
-			'qqacode' => 'get_qqacode',
 			'bdacode' => 'get_bdacode',
 		];
 	}
@@ -219,78 +218,6 @@ class Jiangqie_Ow_Free_Post_Controller extends Jiangqie_Ow_Free_Base_Controller
 		$res = jiangqie_ow_free_import_image2attachment($qrcode, $post_id);
 		if (!is_wp_error($res)) {
 			$qrcode_link = $uploads['baseurl'] . '/jiangqie_wxacode/' . $res;
-		}
-
-		return $this->make_success($qrcode_link);
-	}
-
-	/**
-	 * 获取QQ小程序码
-	 */
-	public function get_qqacode($request)
-	{
-		$post_id = (int)($this->param_value($request, 'post_id', 0));
-		if (!$post_id) {
-			return $this->make_error('缺少参数');
-		}
-
-		$post_type = get_post_type($post_id);
-		if ($post_type != 'post') {
-			return $this->make_error('暂不支持');
-		}
-
-		$uploads = wp_upload_dir();
-		$qrcode_path = $uploads['basedir'] . '/jiangqie_qqacode/';
-		if (!is_dir($qrcode_path)) {
-			mkdir($qrcode_path, 0755);
-		}
-
-		$qrcode = $qrcode_path . $post_type . '-' . $post_id . '.png';
-		$qrcode_link = $uploads['baseurl'] . '/jiangqie_qqacode/' . $post_type . '-' . $post_id . '.png';
-		if (is_file($qrcode)) {
-			return $this->make_success($qrcode_link);
-		}
-
-		$qq_session = Jiangqie_Ow_Free::get_qq_token();
-		$access_token = $qq_session['access_token'];
-		if (empty($access_token)) {
-			return $this->make_error('获取二维码失败');
-		}
-
-		$api = 'https://api.q.qq.com/api/json/qqa/CreateMiniCode?access_token=' . $access_token;
-
-		$qq = Jiangqie_Ow_Free::option_value('basic_qq');
-		$data = array(
-			'appid' => $qq ? $qq['appid'] : '',
-			'path' => 'pages/detail/detail?post_id=' . $post_id,
-		);
-
-		$args = array(
-			'method'  => 'POST',
-			'body' 	  => wp_json_encode($data),
-			'headers' => array(
-				'Content-Type' => 'application/json'
-			),
-			'cookies' => array()
-		);
-
-		$remote = wp_remote_post($api, $args);
-		if (is_wp_error($remote)) {
-			return $this->make_error('系统异常');
-		}
-
-		$content = wp_remote_retrieve_body($remote);
-		if (strstr($content, 'errcode') !== false || strstr($content, 'errmsg') !== false) {
-			return $this->make_success(plugins_url('images/qqacode.jpg', dirname(__FILE__)));
-		}
-
-		//输出二维码
-		file_put_contents($qrcode, $content);
-
-		//同步到媒体库
-		$res = jiangqie_ow_free_import_image2attachment($qrcode, $post_id);
-		if (!is_wp_error($res)) {
-			$qrcode_link = $uploads['baseurl'] . '/jiangqie_qqacode/' . $res;
 		}
 
 		return $this->make_success($qrcode_link);

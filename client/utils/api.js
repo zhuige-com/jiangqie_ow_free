@@ -24,11 +24,6 @@ module.exports = {
 	JQ_OW_FREE_POST_WX_ACODE: makeURL('posts', 'wxacode'),
 
 	/**
-	 * 获取QQ二维码
-	 */
-	JQ_OW_FREE_POST_QQ_ACODE: makeURL('posts', 'qqacode'),
-
-	/**
 	 * 获取百度二维码
 	 */
 	JQ_OW_FREE_POST_BD_ACODE: makeURL('posts', 'bdacode'),

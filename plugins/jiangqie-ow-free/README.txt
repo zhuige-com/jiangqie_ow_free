@@ -1,10 +1,10 @@
 === JiangQie Official Website Mini Program ===
 Contributors: zhuige
 Donate link: https://www.zhuige.com/
-Tags: 追格,官网,小程序,H5,微信,QQ,百度
+Tags: 追格,官网,小程序,H5,微信,百度
 Requires at least: 5.6
 Tested up to: 6.3
-Stable tag: 1.6.8
+Stable tag: 1.6.9
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -15,7 +15,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 ## 功能与特点
 
-特点：多端（微信、QQ、百度、H5）、免费开源、功能后台配置
+特点：多端（微信、百度、H5）、免费开源、功能后台配置
 
 模块：留言反馈、产品服务、新闻动态、合作伙伴、关于我们等
 
@@ -27,7 +27,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 2. 在后台插件列表中启用"酱茄企业官网Free"
 
-3. 设置微信/QQ/百度小程序的appid，及其他配置信息
+3. 设置微信/百度小程序的appid，及其他配置信息
 
 == Frequently Asked Questions ==
 
@@ -47,6 +47,10 @@ github下载：https://github.com/zhuige-com/jiangqie_ow_free
 2. screenshot-2.png
 
 == Changelog ==
+
+## 1.6.9（2024-01-09）
+1. 不再支持QQ小程序
+2. 一路前行，感恩有你！
 
 ## 1.6.8（2023-12-29）
 1. 默认关闭评价打分功能，如有需要请自行开启

@@ -7,7 +7,7 @@
  * github: https://github.com/zhuige-com/jiangqie_ow_free
  * gitee: https://gitee.com/zhuige_com/jiangqie_ow_free
  * License：GPL-2.0
- * Copyright © 2021-2023 www.zhuige.com All rights reserved.
+ * Copyright © 2021-2024 www.zhuige.com All rights reserved.
  */
 
 class Jiangqie_Ow_Free_Activator

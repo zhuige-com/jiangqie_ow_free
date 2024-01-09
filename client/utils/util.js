@@ -175,13 +175,6 @@ function jiangqie() {
 	})
 	// #endif
 
-	// #ifdef MP-QQ
-	os = 'qq';
-	uni.navigateToMiniProgram({
-		appId: '1111804134'
-	})
-	// #endif
-
 	if (!os) {
 		openLink('https://www.zhuige.com');
 	}
