@@ -2,7 +2,7 @@
 	"name": "jiangqie_ow_free",
 	"appid": "",
 	"description": "酱茄企业官网Free",
-	"versionName": "1.6.9",
+	"versionName": "1.7.0",
 	"versionCode": "100",
 	"transformPx": false,
 	/* 5+App特有相关 */
@@ -81,9 +81,10 @@
 	"mp-weixin": {
 		"appid": "",
 		"setting": {
-			"urlCheck": false,
-			"ignoreDevUnusedFiles": false,
-			"ignoreUploadUnusedFiles": false
+			"urlCheck" : false,
+			"postcss" : true,
+			"minified" : true,
+			"es6" : true
 		},
 		"usingComponents": true,
 		"plugins": {
@@ -91,7 +92,9 @@
 			// 	"version": "latest",
 			// 	"provider": "wx82e6ae1175f264fa"
 			// }
-		}
+		},
+		"lazyCodeLoading": "requiredComponents",
+		"libVersion": "latest"
 	},
 	"h5": {
 		"template": "template.h5.html",
