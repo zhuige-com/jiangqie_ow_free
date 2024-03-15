@@ -3,9 +3,9 @@ Contributors: zhuige
 Donate link: https://www.zhuige.com/
 Tags: 追格,官网,小程序,H5,微信,百度
 Requires at least: 5.6
-Tested up to: 6.3
-Stable tag: 1.7.0
-Requires PHP: 7.2
+Tested up to: 6.4
+Stable tag: 1.7.1
+Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -47,6 +47,10 @@ github下载：https://github.com/zhuige-com/jiangqie_ow_free
 2. screenshot-2.png
 
 == Changelog ==
+
+## 1.7.1（2024-03-15）
+1. 支持PHP8
+2. 修复了已知的bug
 
 ## 1.7.0（2024-02-19）
 1. 修复了已知的bug
