@@ -159,13 +159,6 @@ CSF::createSection($prefix, array(
                     'type'  => 'text',
                     'title' => '标题',
                 ),
-                // array(
-                //     'id'      => 'background',
-                //     'type'    => 'media',
-                //     'title'   => '背景',
-                //     'subtitle' => '独立页面显示',
-                //     'library' => 'image',
-                // ),
                 array(
                     'id'    => 'switch',
                     'type'  => 'switcher',

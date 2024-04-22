@@ -15,6 +15,7 @@
 			<tab-guestbook ref="guestbook"></tab-guestbook>
 		</view>
 
+		<!-- 底部导航栏 -->
 		<view class="tabBar">
 			<view class="tabBar_list">
 				<view v-for="(item) in tab_nav_list" :key="item.id" class="tabBar_item" @tap="cut_index(item.id)">

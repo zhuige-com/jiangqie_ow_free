@@ -152,13 +152,6 @@ class Jiangqie_Ow_Free_Setting_Controller extends Jiangqie_Ow_Free_Base_Controll
 		//留言反馈
 		$feedback = Jiangqie_Ow_Free::option_value('feedback');
 		if ($feedback && $feedback['switch']) {
-			// if (empty($feedback['title'])) {
-			// 	$feedback['title'] = '留言反馈';
-			// }
-
-			// if ($feedback['background']['url']) {
-			// 	$feedback['background'] = $feedback['background']['url'];
-			// }
 			$data['feedback'] = ['title' => (empty($feedback['title']) ? '留言反馈' : $feedback['title'])];
 		}
 
@@ -270,19 +263,6 @@ class Jiangqie_Ow_Free_Setting_Controller extends Jiangqie_Ow_Free_Base_Controll
 	 */
 	public function feedback($request)
 	{
-		// $feedback = Jiangqie_Ow_Free::option_value('feedback');
-		// if ($feedback) {
-		// 	if (empty($feedback['title'])) {
-		// 		$feedback['title'] = '留言反馈';
-		// 	}
-
-		// 	if ($feedback['background']['url']) {
-		// 		$feedback['background'] = $feedback['background']['url'];
-		// 	}
-		// } else {
-		// 	$feedback = ['title' => '留言反馈'];
-		// }
-
 		$feedback = [];
 		$feedback_background = Jiangqie_Ow_Free::option_value('feedback_background');
 		if ($feedback_background && $feedback_background['url']) {

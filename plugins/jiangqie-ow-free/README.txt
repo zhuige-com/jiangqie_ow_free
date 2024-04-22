@@ -3,8 +3,8 @@ Contributors: zhuige
 Donate link: https://www.zhuige.com/
 Tags: 追格,官网,小程序,H5,微信,百度
 Requires at least: 5.6
-Tested up to: 6.4
-Stable tag: 1.7.2
+Tested up to: 6.5
+Stable tag: 1.7.3
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -47,6 +47,9 @@ github下载：https://github.com/zhuige-com/jiangqie_ow_free
 2. screenshot-2.png
 
 == Changelog ==
+
+## 1.7.3（2024-04-22）
+1. 代码整理
 
 ## 1.7.2（2024-03-29）
 1. 优化评价打分功能
