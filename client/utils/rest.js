@@ -56,7 +56,7 @@ function post(url, data = {}) {
 	return request(url, data, 'POST');
 }
 
-module.exports = {
+export default {
 	get,
 	post,
 };

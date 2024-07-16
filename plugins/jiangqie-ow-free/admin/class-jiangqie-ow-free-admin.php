@@ -1,7 +1,7 @@
 <?php
 
 /*
- * 酱茄企业官网Free
+ * 追格企业官网Free
  * Author: 追格
  * Help document: https://www.zhuige.com/docs/gwfree.html
  * github: https://github.com/zhuige-com/jiangqie_ow_free
@@ -37,8 +37,8 @@ class Jiangqie_Ow_Free_Admin
 		$prefix = 'jiangqie-ow-free';
 
 		CSF::createOptions($prefix, array(
-			'framework_title' => '酱茄企业官网Free <small>by <a href="https://www.zhuige.com" target="_blank" title="追格">www.zhuige.com</a></small>',
-			'menu_title' => '酱茄企业官网Free',
+			'framework_title' => '追格企业官网Free <small>by <a href="https://www.zhuige.com" target="_blank" title="追格">www.zhuige.com</a></small>',
+			'menu_title' => '追格企业官网Free',
 			'menu_slug'  => 'jiangqie-ow-free',
 			'menu_position' => 2,
 			'show_bar_menu' => false,

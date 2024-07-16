@@ -1,22 +1,20 @@
 {
   "id": "lime-painter",
   "displayName": "海报画板",
-  "version": "1.6.5",
-  "description": "一款canvas海报组件，可根据自身需求使用JSON生成海报",
+  "version": "1.9.6.5",
+  "description": "一款canvas海报组件，更优雅的海报生成方案，有限的支持富文本",
   "keywords": [
-    "canvas",
+    "海报",
+    "富文本",
     "生成海报",
-    "生成二维码"
+    "生成二维码",
+    "JSON"
 ],
   "repository": "https://gitee.com/liangei/lime-painter", 
   "engines": {
-    "HBuilderX": "^3.1.0"
+    "HBuilderX": "^3.4.14"
   },
-  "dcloudext": {
-    "category": [
-      "前端组件",
-      "通用组件"
-    ],
+"dcloudext": {
     "sale": {
       "regular": {
         "price": "0.00"
@@ -33,7 +31,8 @@
       "data": "无",
       "permissions": "无"
     },
-    "npmurl": ""
+    "npmurl": "",
+    "type": "component-vue"
   },
   "uni_modules": {
     "dependencies": [],
@@ -41,12 +40,13 @@
     "platforms": {
       "cloud": {
         "tcb": "y",
-        "aliyun": "y"
+        "aliyun": "y",
+        "alipay": "n"
       },
       "client": {
         "App": {
           "app-vue": "y",
-          "app-nvue": "n"
+          "app-nvue": "y"
         },
         "H5-mobile": {
           "Safari": "y",
@@ -66,11 +66,19 @@
           "阿里": "y",
           "百度": "y",
           "字节跳动": "y",
-          "QQ": "y"
+        "QQ": "y",
+        "钉钉": "u",
+        "快手": "u",
+        "飞书": "u",
+        "京东": "u"
         },
         "快应用": {
           "华为": "u",
           "联盟": "u"
+        },
+        "Vue": {
+            "vue2": "y",
+            "vue3": "y"
         }
       }
     }

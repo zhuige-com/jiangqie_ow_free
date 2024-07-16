@@ -1,7 +1,7 @@
 <?php
 
 /*
- * 酱茄企业官网Free
+ * 追格企业官网Free
  * Author: 追格
  * Help document: https://www.zhuige.com/docs/gwfree.html
  * github: https://github.com/zhuige-com/jiangqie_ow_free
@@ -32,10 +32,10 @@ class Jiangqie_Ow_Free_Setting_Controller extends Jiangqie_Ow_Free_Base_Controll
 	public function get_home($request)
 	{
 		//小程序名称
-		$data['title'] = Jiangqie_Ow_Free::option_value('basic_title', '酱茄企业官网Free');
+		$data['title'] = Jiangqie_Ow_Free::option_value('basic_title', '追格企业官网Free');
 
 		//关键字
-		$data['keywords'] = Jiangqie_Ow_Free::option_value('basic_keywords', '追格,酱茄');
+		$data['keywords'] = Jiangqie_Ow_Free::option_value('basic_keywords', '追格,官网');
 
 		//描述
 		$data['desc'] = Jiangqie_Ow_Free::option_value('basic_desc', '流水不争先,争的是滔滔不绝');

@@ -54,14 +54,14 @@
 		</view>
 
 		<!-- #ifdef MP-BAIDU -->
-		<view v-if="isShowPainter" isRenderImage style="position: fixed; top: 0;" @longpress="longTapPainter"
+		<view v-if="isShowPainter" style="position: fixed; top: 0;" @longpress="longTapPainter"
 			@click="clickPainter()">
-			<l-painter isRenderImage :board="base" @success="onPainterSuccess" />
+			<l-painter isCanvasToTempFilePath :board="base" @success="onPainterSuccess" />
 		</view>
 		<!-- #endif -->
 
 		<!-- #ifdef MP-WEIXIN || H5 -->
-		<l-painter v-if="isShowPainter" isRenderImage custom-style="position: fixed; left: 200%;" :board="base"
+		<l-painter v-if="isShowPainter" isCanvasToTempFilePath custom-style="position: fixed; left: 200%;" :board="base"
 			@success="onPainterSuccess" />
 		<!-- #endif -->
 	</view>
@@ -69,7 +69,7 @@
 
 <script>
 	/*
-	 * 酱茄企业官网Free
+	 * 追格企业官网Free
 	 * 作者: 追格
 	 * 文档: https://www.zhuige.com/docs/gwfree.html
 	 * github: https://github.com/zhuige-com/jiangqie_ow_free
@@ -81,11 +81,10 @@
 	import Util from '@/utils/util';
 	import Api from '@/utils/api';
 	import Rest from '@/utils/rest';
-	import lPainter from '@/uni_modules/lime-painter/components/lime-painter/';
 
 	export default {
 		components: {
-			lPainter
+
 		},
 
 		data() {
@@ -249,7 +248,8 @@
 										})
 									},
 									fail: res => {
-										if (res.errMsg && res.errMsg.indexOf('cancel') < 0) {
+										if (res.errMsg && res.errMsg.indexOf('cancel') <
+											0) {
 											uni.showToast({
 												icon: 'none',
 												title: res.errMsg
@@ -288,12 +288,15 @@
 				this.isShowPainter = true;
 
 				this.base = {
-					width: '750rpx',
-					height: '1334rpx',
-					backgroundColor: '#007AFF',
+					css: {
+						width: '750rpx',
+						height: '1334rpx',
+						backgroundColor: '#007AFF',
+					},
 					views: [{
 							type: 'view',
 							css: {
+								position: 'absolute',
 								left: '30rpx',
 								top: '234rpx',
 								width: '690rpx',
@@ -305,13 +308,14 @@
 							type: 'text',
 							text: this.post.title,
 							css: {
+								position: 'absolute',
 								left: '30rpx',
-								top: '120rpx',
+								top: '60rpx',
 								width: '690rpx',
 								color: '#FFFFFF',
 								fontSize: '38rpx',
 								textAlign: 'center',
-								maxLines: 1,
+								lineClamp: 1,
 							}
 						},
 						{
@@ -319,6 +323,7 @@
 							src: this.post.thumbnail,
 							mode: 'center',
 							css: {
+								position: 'absolute',
 								left: '30rpx',
 								top: '200rpx',
 								width: '690rpx',
@@ -329,12 +334,13 @@
 							type: 'text',
 							text: this.post.excerpt,
 							css: {
+								position: 'absolute',
 								left: '70rpx',
 								top: '740rpx',
 								width: '610rpx',
 								color: '#000000',
 								fontSize: '28rpx',
-								maxLines: 3,
+								lineClamp: 3,
 							}
 						},
 						{
@@ -342,6 +348,7 @@
 							src: this.acode,
 							mode: 'aspectFill',
 							css: {
+								position: 'absolute',
 								left: '275rpx',
 								top: '920rpx',
 								width: '200rpx',
@@ -352,6 +359,7 @@
 							type: 'text',
 							text: getApp().globalData.appName,
 							css: {
+								position: 'absolute',
 								left: '30rpx',
 								top: '1170rpx',
 								width: '690rpx',

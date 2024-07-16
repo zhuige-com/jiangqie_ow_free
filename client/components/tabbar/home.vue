@@ -143,7 +143,7 @@
 		</scroll-view>
 		
 		<view v-if="pop_ad" class="zhugie-pop-cover">
-			<view class="" @click="clickPopAd" class="zhuige-pop-box">
+			<view @click="clickPopAd" class="zhuige-pop-box">
 				<image mode="aspectFit" :src="pop_ad.image"></image>
 				<view>
 					<uni-icons @click="clickPopAdClose" type="close" size="32" color="#FFFFFF"></uni-icons>
@@ -155,7 +155,7 @@
 
 <script>
 	/*
-	 * 酱茄企业官网Free
+	 * 追格企业官网Free
 	 * 作者: 追格
 	 * 文档: https://www.zhuige.com/docs/gwfree.html
 	 * github: https://github.com/zhuige-com/jiangqie_ow_free

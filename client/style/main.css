@@ -407,7 +407,7 @@ swiper image {
 }
 
 
-.jiangqie-tab-nav *::-webkit-scrollbar {
+.jiangqie-tab-nav ::-webkit-scrollbar {
 	display: none;
 }
 

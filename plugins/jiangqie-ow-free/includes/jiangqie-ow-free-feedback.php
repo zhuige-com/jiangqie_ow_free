@@ -1,7 +1,7 @@
 <?php
 
 /*
- * 酱茄企业官网Free
+ * 追格企业官网Free
  * Author: 追格
  * Help document: https://www.zhuige.com/docs/gwfree.html
  * github: https://github.com/zhuige-com/jiangqie_ow_free
@@ -25,8 +25,8 @@ add_action('admin_menu', 'jiangqie_ow_free_add_menu_items_feedback');
 function jiangqie_ow_free_add_menu_items_feedback()
 {
 	add_menu_page(
-		'酱茄留言反馈', 					// Page title.
-		'酱茄留言反馈',						// Menu title.
+		'追格留言反馈', 					// Page title.
+		'追格留言反馈',						// Menu title.
 		'activate_plugins',					// Capability.
 		'jiangqie_ow_free_feedback',				// Menu slug.
 		'jiangqie_ow_free_render_feedback',		// Callback function.

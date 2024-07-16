@@ -1,8 +1,8 @@
 {
 	"id": "jiangqie-ow-free",
-	"name": "酱茄企业官网Free（含后端）-WordPress新闻资讯博客多端小程序",
-	"version": "1.7.3",
-	"description": "酱茄企业官网小程序，酱茄专为中小企业开发的轻量级企业建站小程序",
+	"name": "追格企业官网Free（含后端）-WordPress新闻资讯博客多端小程序",
+	"version": "1.8.2",
+	"description": "追格企业官网小程序，追格专为中小企业开发的轻量级企业建站小程序",
 	"keywords": [
         "官网",
         "企业站",
@@ -10,10 +10,10 @@
         "资讯",
         "留言"
     ],
-	"displayName": "酱茄企业官网Free（含后端）-WordPress新闻资讯博客多端小程序",
+	"displayName": "追格企业官网Free（含后端）-WordPress新闻资讯博客多端小程序",
 	"repository": "https://gitee.com/zhuige_com/jiangqie_ow_free",
 	"engines": {
-		"HBuilderX": "^3.7.13"
+		"HBuilderX": "^3.91"
 	},
 	"dcloudext": {
 		"sale": {

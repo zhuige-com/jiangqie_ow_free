@@ -2,7 +2,7 @@
   <view id="_root" :class="(selectable?'_select ':'')+'_root'" :style="containerStyle">
     <slot v-if="!nodes[0]" />
     <!-- #ifndef APP-PLUS-NVUE -->
-    <node v-else :childs="nodes" :opts="[lazyLoad,loadingImg,errorImg,showImgMenu]" name="span" />
+    <node v-else :childs="nodes" :opts="[lazyLoad,loadingImg,errorImg,showImgMenu,selectable]" name="span" />
     <!-- #endif -->
     <!-- #ifdef APP-PLUS-NVUE -->
     <web-view ref="web" src="/uni_modules/mp-html/static/app-plus/mp-html/local.html" :style="'margin-top:-2px;height:' + height + 'px'" @onPostMessage="_onMessage" />
@@ -12,7 +12,7 @@
 
 <script>
 /**
- * mp-html v2.1.2
+ * mp-html v2.5.0
  * @description 富文本组件
  * @tutorial https://github.com/jin-yufeng/mp-html
  * @property {String} container-style 容器的样式
@@ -32,15 +32,16 @@
  * @property {Boolean | Number} use-anchor 是否使用锚点链接
  * @event {Function} load dom 结构加载完毕时触发
  * @event {Function} ready 所有图片加载完毕时触发
- * @event {Function} imgTap 图片被点击时触发
- * @event {Function} linkTap 链接被点击时触发
+ * @event {Function} imgtap 图片被点击时触发
+ * @event {Function} linktap 链接被点击时触发
+ * @event {Function} play 音视频播放时触发
  * @event {Function} error 媒体加载出错时触发
  */
 // #ifndef APP-PLUS-NVUE
 import node from './node/node'
 // #endif
+import Parser from './parser'
 const plugins=[]
-const Parser = require('./parser')
 // #ifdef APP-PLUS-NVUE
 const dom = weex.requireModule('dom')
 // #endif
@@ -59,7 +60,10 @@ export default {
       type: String,
       default: ''
     },
-    content: String,
+    content: {
+      type: String,
+      default: ''
+    },
     copyLink: {
       type: [Boolean, String],
       default: true
@@ -98,6 +102,9 @@ export default {
     tagStyle: Object,
     useAnchor: [Boolean, Number]
   },
+  // #ifdef VUE3
+  emits: ['load', 'ready', 'imgtap', 'linktap', 'play', 'error'],
+  // #endif
   // #ifndef APP-PLUS-NVUE
   components: {
     node
@@ -121,7 +128,6 @@ export default {
   },
   beforeDestroy () {
     this._hook('onDetached')
-    clearInterval(this._timer)
   },
   methods: {
     /**
@@ -258,6 +264,48 @@ export default {
     },
 
     /**
+     * @description 暂停播放媒体
+     */
+    pauseMedia () {
+      for (let i = (this._videos || []).length; i--;) {
+        this._videos[i].pause()
+      }
+      // #ifdef APP-PLUS
+      const command = 'for(var e=document.getElementsByTagName("video"),i=e.length;i--;)e[i].pause()'
+      // #ifndef APP-PLUS-NVUE
+      let page = this.$parent
+      while (!page.$scope) page = page.$parent
+      page.$scope.$getAppWebview().evalJS(command)
+      // #endif
+      // #ifdef APP-PLUS-NVUE
+      this.$refs.web.evalJs(command)
+      // #endif
+      // #endif
+    },
+
+    /**
+     * @description 设置媒体播放速率
+     * @param {Number} rate 播放速率
+     */
+    setPlaybackRate (rate) {
+      this.playbackRate = rate
+      for (let i = (this._videos || []).length; i--;) {
+        this._videos[i].playbackRate(rate)
+      }
+      // #ifdef APP-PLUS
+      const command = 'for(var e=document.getElementsByTagName("video"),i=e.length;i--;)e[i].playbackRate=' + rate
+      // #ifndef APP-PLUS-NVUE
+      let page = this.$parent
+      while (!page.$scope) page = page.$parent
+      page.$scope.$getAppWebview().evalJS(command)
+      // #endif
+      // #ifdef APP-PLUS-NVUE
+      this.$refs.web.evalJs(command)
+      // #endif
+      // #endif
+    },
+
+    /**
      * @description 设置内容
      * @param {String} content html 内容
      * @param {Boolean} append 是否在尾部追加
@@ -281,19 +329,32 @@ export default {
         this.$emit('load')
       })
 
-      // 等待图片加载完毕
-      let height
-      clearInterval(this._timer)
-      this._timer = setInterval(() => {
-        this.getRect().then(rect => {
+      if (this.lazyLoad || this.imgList._unloadimgs < this.imgList.length / 2) {
+        // 设置懒加载，每 350ms 获取高度，不变则认为加载完毕
+        let height = 0
+        const callback = rect => {
+          if (!rect || !rect.height) rect = {}
           // 350ms 总高度无变化就触发 ready 事件
           if (rect.height === height) {
             this.$emit('ready', rect)
-            clearInterval(this._timer)
+          } else {
+            height = rect.height
+            setTimeout(() => {
+              this.getRect().then(callback).catch(callback)
+            }, 350)
           }
-          height = rect.height
-        }).catch(() => { })
-      }, 350)
+        }
+        this.getRect().then(callback).catch(callback)
+      } else {
+        // 未设置懒加载，等待所有图片加载完毕
+        if (!this.imgList._unloadimgs) {
+          this.getRect().then(rect => {
+            this.$emit('ready', rect)
+          }).catch(() => {
+            this.$emit('ready', {})
+          })
+        }
+      }
       // #endif
     },
 
@@ -313,7 +374,7 @@ export default {
      * @description 设置内容
      */
     _set (nodes, append) {
-      this.$refs.web.evalJs('setContent(' + JSON.stringify(nodes) + ',' + JSON.stringify([this.containerStyle.replace(/(?:margin|padding)[^;]+/g, ''), this.errorImg, this.loadingImg, this.pauseVideo, this.scrollTable, this.selectable]) + ',' + append + ')')
+      this.$refs.web.evalJs('setContent(' + JSON.stringify(nodes).replace(/%22/g, '') + ',' + JSON.stringify([this.containerStyle.replace(/(?:margin|padding)[^;]+/g, ''), this.errorImg, this.loadingImg, this.pauseVideo, this.scrollTable, this.selectable]) + ',' + append + ')')
     },
 
     /**
@@ -339,7 +400,9 @@ export default {
         case 'onReady':
           this.getRect().then(res => {
             this.$emit('ready', res)
-          }).catch(() => { })
+          }).catch(() => {
+            this.$emit('ready', {})
+          })
           break
         // 总高度发生变化
         case 'onHeightChange':
@@ -385,6 +448,9 @@ export default {
           }
           break
         }
+        case 'onPlay':
+          this.$emit('play')
+          break
         // 获取到锚点的偏移量
         case 'getOffset':
           if (typeof message.offset === 'number') {
@@ -399,6 +465,7 @@ export default {
         // 点击
         case 'onClick':
           this.$emit('tap')
+          this.$emit('click')
           break
         // 出错
         case 'onError':

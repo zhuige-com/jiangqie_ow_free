@@ -19,7 +19,7 @@ function success(msg) {
 	});
 }
 
-module.exports = {
+export default {
 	toast,
 	error,
 	success

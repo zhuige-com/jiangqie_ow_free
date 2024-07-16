@@ -1,15 +1,15 @@
-=== JiangQie Official Website Mini Program ===
+=== ZhuiGe Official Website Mini Program ===
 Contributors: zhuige
 Donate link: https://www.zhuige.com/
 Tags: 追格,官网,小程序,H5,微信,百度
 Requires at least: 5.6
 Tested up to: 6.5
-Stable tag: 1.7.3
+Stable tag: 1.8.2
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-酱茄企业官网小程序，专为中小企业开发的轻量级企业建站小程序（前端基于uni-app开发），后台操作简单，维护方便，无需过多配置就能搭建一个企业小程序。
+追格企业官网Free小程序，专为中小企业开发的轻量级企业建站小程序（前端基于uni-app开发），后台操作简单，维护方便，无需过多配置就能搭建一个企业小程序。
 
 == Description ==
 
@@ -25,7 +25,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 1. 把jiangqie-ow-free文件夹上传到/wp-content/plugins/目录下
 
-2. 在后台插件列表中启用"酱茄企业官网Free"
+2. 在后台插件列表中启用"追格企业官网Free"
 
 3. 设置微信/百度小程序的appid，及其他配置信息
 
@@ -47,6 +47,13 @@ github下载：https://github.com/zhuige-com/jiangqie_ow_free
 2. screenshot-2.png
 
 == Changelog ==
+
+## 1.8.2（2024-07-16）
+1. 从酱茄迁移到追格
+2. 修复了已知的问题
+
+## 1.8.1（2024-05-21）
+1. 支持 vue3
 
 ## 1.7.3（2024-04-22）
 1. 代码整理

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * 酱茄企业官网Free
+ * 追格企业官网Free
  * Author: 追格
  * Help document: https://www.zhuige.com/docs/gwfree.html
  * github: https://github.com/zhuige-com/jiangqie_ow_free
@@ -17,8 +17,8 @@ class JiangQieOwFreeFeedbackList extends WP_List_Table
 	public function __construct()
 	{
 		parent::__construct(array(
-			'singular' => '酱茄留言反馈',    // Singular name of the listed records.
-			'plural'   => '酱茄留言反馈',    // Plural name of the listed records.
+			'singular' => '追格留言反馈',    // Singular name of the listed records.
+			'plural'   => '追格留言反馈',    // Plural name of the listed records.
 			'ajax'     => false,       		// Does this table support ajax?
 		));
 
